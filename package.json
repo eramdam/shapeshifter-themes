@@ -4,11 +4,17 @@
 	"description": "Beep beep tweet!",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node server.js",
+		"precommit": "lint-staged"
 	},
 	"dependencies": {
-		"twit": "^2.1.0",
-		"express": "^4.14.0"
+		"dotenv": "^5.0.1",
+		"express": "^4.14.0",
+		"husky": "^0.14.3",
+		"lint-staged": "^7.0.0",
+		"prettier": "^1.11.1",
+		"prettier-eslint-cli": "^4.7.1",
+		"twit": "^2.1.0"
 	},
 	"engines": {
 		"node": "6.9.1"
@@ -18,11 +24,25 @@
 	},
 	"keywords": [
 		"node",
-    "glitch",
+		"glitch",
 		"gomix",
-    "hyperdev",
+		"hyperdev",
 		"twitter",
 		"twitterbot",
 		"bot"
-	]
+	],
+	"devDependencies": {
+		"eslint": "^4.19.1",
+		"eslint-config-airbnb": "^16.1.0",
+		"eslint-plugin-import": "^2.9.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.7.0"
+	},
+	"lint-staged": {
+		"*.js": [
+			"prettier-eslint --write",
+			"eslint",
+			"git add"
+		]
+	}
 }
