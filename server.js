@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 /* Setting things up. */
+const fs = require('fs');
 const express = require('express');
 
 const app = express();
@@ -23,18 +24,36 @@ app.use(express.static('public'));
 /* You can use uptimerobot.com or a similar site to hit your /BOT_ENDPOINT to wake up your app and make your Twitter bot tweet. */
 
 app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
-  /* The example below tweets out "Hello world!". */
-  T.post('statuses/update', { status: 'hello world 👋' }, (err) => {
-    if (err) {
-      res.sendStatus(500);
-      console.log('Error!');
-      console.log(err);
-    } else {
-      res.sendStatus(200);
-    }
+  const imgContent = fs.readFileSync('./public/picture.png', {
+    encoding: 'base64',
   });
+
+  T.post('media/upload', { media_data: imgContent })
+    .catch((err) => {
+      res.sendStatus(500);
+      console.log('Error');
+      console.log(err);
+    })
+    .then(({ data }) => {
+      const mediaId = data.media_id_string;
+      const params = { media_id: mediaId };
+
+      T.post('media/metadata/create', params).then(() => {
+        T.post('statuses/update', {
+          status: 'Testing img upload',
+          media_ids: [mediaId],
+        }).then((result) => {
+          console.log(result.data);
+          res.sendStatus(200);
+        });
+      });
+    });
 });
 
 const listener = app.listen(process.env.PORT, () => {
-  console.log(`Your bot is running on port ${listener.address().port}`);
+  if (process.env.NODE_ENV === 'dev') {
+    console.log(`Your bot is running on port http://localhost:${
+      listener.address().port
+    }/${process.env.BOT_ENDPOINT}`);
+  }
 });
