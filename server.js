@@ -21,9 +21,11 @@ app.use(express.static('public'));
 
 /* You can use uptimerobot.com or a similar site to hit your /BOT_ENDPOINT to wake up your app and make your Twitter bot tweet. */
 app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
-  const imgContent = fs.readFileSync('./public/meme.jpg', {
+  const imgContent = fs.readFileSync('./assets/002_aluminumalloy161.gif', {
     encoding: 'base64',
   });
+
+  res.sendStatus(200);
 
   T.post('media/upload', { media_data: imgContent })
     .then(({ data }) => {
@@ -32,15 +34,13 @@ app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
 
       return T.post('media/metadata/create', params).then(() =>
         T.post('statuses/update', {
-          status: 'Testing img upload 2',
+          status: 'Testing img upload 32',
           media_ids: [mediaId],
         }).then((result) => {
           console.log(result.data);
-          res.sendStatus(200);
         }));
     })
     .catch((err) => {
-      res.sendStatus(500);
       console.log('Error');
       console.log(err);
     });
