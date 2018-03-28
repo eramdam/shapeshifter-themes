@@ -1,6 +1,7 @@
 require('dotenv').config();
 /* Setting things up. */
 const fs = require('fs');
+const path = require('path');
 const fetch = require('node-fetch');
 const express = require('express');
 
@@ -35,23 +36,24 @@ app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
 
   const themeToTweet = themes[random(0, themes.length - 1)];
   const imgPath = themeToTweet.thumbnails[0];
+  const savedFile = path.basename(imgPath);
 
   fetch(`https://raw.githubusercontent.com/eramdam/shapeshifter-themes/master/${imgPath}`)
     .then((imgRes) => {
-      const dest = fs.createWriteStream(imgPath);
+      const dest = fs.createWriteStream(savedFile);
       imgRes.body.pipe(dest);
       return dest;
     })
     .then((writeStream) => {
       writeStream.on('close', () => {
-        const imgContent = fs.readFileSync(imgPath, {
+        const imgContent = fs.readFileSync(savedFile, {
           encoding: 'base64',
         });
         const status = `${themeToTweet.name} - ${themeToTweet.author}`;
 
         // Post on Mastodon
         M.post('media', {
-          file: fs.createReadStream(imgPath),
+          file: fs.createReadStream(savedFile),
         }).then((response) => {
           M.post(
             'statuses',
@@ -81,13 +83,13 @@ app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
                     ).then((result) => {
                       console.log('Tweeting success');
                       console.log(result.data);
-                      fs.unlinkSync(imgPath);
+                      fs.unlinkSync(savedFile);
                     }));
                 })
                 .catch((err) => {
                   console.log('Error when tweeting');
                   console.log(err);
-                  fs.unlinkSync(imgPath);
+                  fs.unlinkSync(savedFile);
                 });
             },
           );
