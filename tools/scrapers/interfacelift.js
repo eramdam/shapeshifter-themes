@@ -8,7 +8,7 @@ exports.extractThemesFromBody = (htmlBody) => {
       const $preview = $(el);
 
       return {
-        thumbnail: $preview.find('img').attr('src'),
+        thumbnails: [$preview.find('img').attr('src')],
         name: $preview
           .next('.list_text')
           .find('h1')

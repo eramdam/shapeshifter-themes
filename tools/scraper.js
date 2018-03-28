@@ -33,19 +33,19 @@ async function run() {
 
   for (const theme of themesData) {
     await sleep(200);
-    const imgPath = `./assets/${theme.thumbnail.split('/').pop()}`;
+    const imgPath = `./assets/${theme.thumbnails[0].split('/').pop()}`;
     if (!fs.existsSync(imgPath)) {
-      console.log(`fetching ${theme.thumbnail}`);
-      await fetch(theme.thumbnail).then((res) => {
+      console.log(`fetching ${theme.thumbnails[0]}`);
+      await fetch(theme.thumbnails[0]).then((res) => {
         const dest = fs.createWriteStream(imgPath);
         res.body.pipe(dest);
         return imgPath;
       });
     } else {
-      console.log('already got', theme.thumbnail);
+      console.log('already got', theme.thumbnails);
     }
 
-    theme.thumbnail = path.resolve(__dirname, imgPath);
+    theme.thumbnails[0] = path.resolve(__dirname, imgPath);
   }
 
   console.log(`Saving themes data: ${themesData.length} themes`);
