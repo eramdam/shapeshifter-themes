@@ -4,7 +4,7 @@
 	"description": "Beep beep tweet!",
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js",
+		"start": "node server.js"
 	},
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.2",
@@ -18,7 +18,7 @@
 		"twit": "^2.1.0"
 	},
 	"engines": {
-		"node": "6.9.1"
+		"node": "9.8.0"
 	},
 	"repository": {
 		"url": ""
