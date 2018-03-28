@@ -36,7 +36,7 @@ async function run() {
 
   for (const theme of themesData) {
     await sleep(200);
-    const imgPath = `./data/assets/${theme.thumbnail.split('/').pop()}`;
+    const imgPath = `./assets/${theme.thumbnail.split('/').pop()}`;
     if (!fs.existsSync(imgPath)) {
       console.log(`fetching ${theme.thumbnail}`);
       await fetch(theme.thumbnail).then((res) => {

@@ -1,3 +1,4 @@
+---
 frankentheme
 Adam Bucci
 file:///Users/damien/Desktop/ResExcellence/websites/www.resexcellence.com:80/themes/adam_bucci/frankentheme/02-14_frankentheme_v3_pr.png
@@ -1579,3 +1580,4 @@ file:///Users/damien/Desktop/ResExcellence/websites/www.resexcellence.com:80/the
 Ti
 Michael Rabe     
 file:///Users/damien/Desktop/ResExcellence/websites/www.resexcellence.com:80/themes/images/08-23-ti.gif
+---

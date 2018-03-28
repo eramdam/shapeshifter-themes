@@ -3,7 +3,9 @@ const path = require('path');
 
 const fileContent = fs.readFileSync('./resexcellence.md', { encoding: 'utf8' });
 
-const parsed = fileContent.split('---\n---').map(i => i.trim());
+const parsed = fileContent
+  .split('---\n---')
+  .map(i => i.replace('---', '').trim());
 
 const existingThumbnails = thumbnails =>
   thumbnails.filter(t => fs.existsSync(t.replace('file://', '')));
