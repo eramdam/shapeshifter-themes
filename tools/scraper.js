@@ -5,9 +5,6 @@ const path = require('path');
 const { isString } = require('lodash');
 const Interfacelift = require('./scrapers/interfacelift');
 
-// http://macgui.com/downloads/?mode=category&cat_id=10
-// https://web.archive.org/web/20110126155426/https://interfacelift.com/themes-mac/
-
 const sleep = n => new Promise(resolve => setTimeout(resolve, n));
 
 const fetchPage = url => fetch(url).then(res => res.text());
