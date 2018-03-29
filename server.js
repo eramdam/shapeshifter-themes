@@ -59,6 +59,10 @@ app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
             'statuses',
             {
               status,
+              /**
+               * Mark the media as sensitive if we have a gif, it can sometimes be flashy.
+               */
+              sensitive: savedFile.includes('.gif'),
               media_ids: [response.data.id],
             },
             (tootRes) => {
@@ -72,19 +76,14 @@ app.all(`/${process.env.BOT_ENDPOINT}`, (req, res) => {
                   const params = { media_id: mediaId };
 
                   return T.post('media/metadata/create', params).then(() =>
-                    T.post(
-                      'statuses/update',
-                      {
-                        status,
-                        media_ids: [
-                          mediaId,
-                        ],
-                      },
-                    ).then((result) => {
+                    T.post('statuses/update', {
+                      status,
+                      media_ids: [mediaId],
+                    }).then((result) => {
                       console.log('Tweeting success');
                       console.log(result.data);
                       fs.unlinkSync(savedFile);
-                    }));
+                    }) );
                 })
                 .catch((err) => {
                   console.log('Error when tweeting');
