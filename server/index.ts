@@ -7,9 +7,10 @@ import { postThemeToMastodon, postThemeToTwitter } from "./post";
 const app = express();
 
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
-  const themeToTweet = themes[random(0, themes.length - 1)];
-  await postThemeToMastodon(themeToTweet);
-  await postThemeToTwitter(themeToTweet);
+  const theme = themes[random(0, themes.length - 1)];
+  await postThemeToMastodon(theme);
+  await postThemeToTwitter(theme);
+  console.log(`Posted ${theme.name} - ${theme.author}`);
   res.sendStatus(200);
 });
 
