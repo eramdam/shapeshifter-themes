@@ -16,7 +16,6 @@ const config = {
     api_url: "https://botsin.space/"
   }
 };
-console.log(config);
 
 export async function postThemeToTwitter(theme: Theme) {
   const twitter = new Twit({
