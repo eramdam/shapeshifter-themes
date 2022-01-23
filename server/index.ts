@@ -8,8 +8,7 @@ const app = express();
 
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   const theme = themes[random(0, themes.length - 1)];
-  await postThemeToMastodon(theme);
-  await postThemeToTwitter(theme);
+  await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
   console.log(`Posted ${theme.name} - ${theme.author}`);
   res.sendStatus(200);
 });
