@@ -46,6 +46,9 @@ export async function postThemeToTwitter(theme: Theme) {
     // @ts-expect-error
     media_ids: [attachment.data.media_id_string]
   });
+
+  console.log(post);
+  return post;
 }
 
 export async function postThemeToMastodon(theme: Theme) {
@@ -66,6 +69,7 @@ export async function postThemeToMastodon(theme: Theme) {
     visibility: "public",
     mediaIds: [attachment.id]
   });
+  console.log(status);
 
   return status;
 }
