@@ -28,7 +28,7 @@ export async function postThemeToTwitter(theme: Theme) {
     });
     const attachment = await twitter.post("media/upload", {
       media_data: fs.readFileSync(
-        path.resolve(__dirname, "..", theme.thumbnails[0]),
+        path.resolve(__dirname, "..", "..", theme.thumbnails[0]),
         {
           encoding: "base64"
         }
@@ -64,7 +64,7 @@ export async function postThemeToMastodon(theme: Theme) {
 
     const attachment = await masto.mediaAttachments.create({
       file: fs.createReadStream(
-        path.resolve(__dirname, "..", theme.thumbnails[0])
+        path.resolve(__dirname, "..", "..", theme.thumbnails[0])
       ),
       description: `${theme.name} - ${theme.author}`
     });
