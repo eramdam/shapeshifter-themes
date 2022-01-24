@@ -18,56 +18,66 @@ const config = {
 };
 
 export async function postThemeToTwitter(theme: Theme) {
-  const twitter = new Twit({
-    consumer_key: config.twitter.consumer_key,
-    consumer_secret: config.twitter.consumer_secret,
-    access_token: config.twitter.access_token,
-    access_token_secret: config.twitter.access_token_secret,
-    strictSSL: true
-  });
-  const attachment = await twitter.post("media/upload", {
-    media_data: fs.readFileSync(
-      path.resolve(__dirname, "..", theme.thumbnails[0]),
-      {
-        encoding: "base64"
+  try {
+    const twitter = new Twit({
+      consumer_key: config.twitter.consumer_key,
+      consumer_secret: config.twitter.consumer_secret,
+      access_token: config.twitter.access_token,
+      access_token_secret: config.twitter.access_token_secret,
+      strictSSL: true
+    });
+    const attachment = await twitter.post("media/upload", {
+      media_data: fs.readFileSync(
+        path.resolve(__dirname, "..", theme.thumbnails[0]),
+        {
+          encoding: "base64"
+        }
+      ),
+      alt_text: {
+        text: `${theme.name} - ${theme.author}`
       }
-    ),
-    alt_text: {
-      text: `${theme.name} - ${theme.author}`
-    }
-  });
+    });
 
-  await twitter.post("media/metadata/create", {
-    // @ts-expect-error
-    media_id: attachment.data.media_id_string
-  });
-  const post = await twitter.post("statuses/update", {
-    status: `${theme.name} - ${theme.author}`,
-    // @ts-expect-error
-    media_ids: [attachment.data.media_id_string]
-  });
+    await twitter.post("media/metadata/create", {
+      // @ts-expect-error
+      media_id: attachment.data.media_id_string
+    });
+    const post = await twitter.post("statuses/update", {
+      status: `${theme.name} - ${theme.author}`,
+      // @ts-expect-error
+      media_ids: [attachment.data.media_id_string]
+    });
 
-  return post;
+    return post;
+  } catch (e) {
+    console.error(e);
+    return undefined;
+  }
 }
 
 export async function postThemeToMastodon(theme: Theme) {
-  const masto = await login({
-    url: config.mastodon.api_url,
-    accessToken: config.mastodon.access_token
-  });
+  try {
+    const masto = await login({
+      url: config.mastodon.api_url,
+      accessToken: config.mastodon.access_token
+    });
 
-  const attachment = await masto.mediaAttachments.create({
-    file: fs.createReadStream(
-      path.resolve(__dirname, "..", theme.thumbnails[0])
-    ),
-    description: `${theme.name} - ${theme.author}`
-  });
+    const attachment = await masto.mediaAttachments.create({
+      file: fs.createReadStream(
+        path.resolve(__dirname, "..", theme.thumbnails[0])
+      ),
+      description: `${theme.name} - ${theme.author}`
+    });
 
-  const status = await masto.statuses.create({
-    status: `${theme.name} - ${theme.author}`,
-    visibility: "public",
-    mediaIds: [attachment.id]
-  });
+    const status = await masto.statuses.create({
+      status: `${theme.name} - ${theme.author}`,
+      visibility: "public",
+      mediaIds: [attachment.id]
+    });
 
-  return status;
+    return status;
+  } catch (e) {
+    console.error(e);
+    return undefined;
+  }
 }
