@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "ts-node server/index.ts",
 		"build": "tsc -p .",
-		"serve": "forever start server/index.js"
+		"serve": "forever stopall && forever start server/index.js"
 	},
 	"dependencies": {
 		"@types/express": "^4.17.13",
