@@ -26,26 +26,33 @@ export async function postThemeToTwitter(theme: Theme) {
       access_token_secret: config.twitter.access_token_secret,
       strictSSL: true
     });
-    const attachment = await twitter.post("media/upload", {
-      media_data: fs.readFileSync(
-        path.resolve(__dirname, "..", "..", theme.thumbnails[0]),
-        {
-          encoding: "base64"
-        }
-      ),
-      alt_text: {
-        text: `${theme.name} - ${theme.author}`
-      }
-    });
+    const attachments = await Promise.all(
+      theme.thumbnails.map(thumbnail => {
+        return twitter.post("media/upload", {
+          media_data: fs.readFileSync(
+            path.resolve(__dirname, "..", "..", thumbnail),
+            {
+              encoding: "base64"
+            }
+          ),
+          alt_text: {
+            text: `${theme.name} - ${theme.author}`
+          }
+        });
+      })
+    );
 
-    await twitter.post("media/metadata/create", {
-      // @ts-expect-error
-      media_id: attachment.data.media_id_string
-    });
+    for (const attachment of attachments) {
+      await twitter.post("media/metadata/create", {
+        // @ts-expect-error
+        media_id: attachment.data.media_id_string
+      });
+    }
+
     const post = await twitter.post("statuses/update", {
       status: `${theme.name} - ${theme.author}`,
       // @ts-expect-error
-      media_ids: [attachment.data.media_id_string]
+      media_ids: attachments.map(a => a.data.media_id_string)
     });
 
     return post;
@@ -62,17 +69,19 @@ export async function postThemeToMastodon(theme: Theme) {
       accessToken: config.mastodon.access_token
     });
 
-    const attachment = await masto.mediaAttachments.create({
-      file: fs.createReadStream(
-        path.resolve(__dirname, "..", "..", theme.thumbnails[0])
-      ),
-      description: `${theme.name} - ${theme.author}`
-    });
+    const attachments = await Promise.all(
+      theme.thumbnails.map(thumbnail => {
+        return masto.mediaAttachments.create({
+          file: fs.createReadStream(path.resolve(__dirname, "..", thumbnail)),
+          description: `${theme.name} - ${theme.author}`
+        });
+      })
+    );
 
     const status = await masto.statuses.create({
       status: `${theme.name} - ${theme.author}`,
       visibility: "public",
-      mediaIds: [attachment.id]
+      mediaIds: attachments.map(t => t.id)
     });
 
     return status;
