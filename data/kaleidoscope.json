@@ -993,14 +993,6 @@
   },
   {
     "author": "Leon Chaim Bach",
-    "name": "Arts And Crafts",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/artsandcrafts.sit",
-    "thumbnails": [
-      "./assets/artsandcrafts.gif"
-    ]
-  },
-  {
-    "author": "Leon Chaim Bach",
     "name": "Victoria Regina",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/victoriaregina.sit",
     "thumbnails": [
@@ -1297,14 +1289,6 @@
   },
   {
     "author": "Balitaranto",
-    "name": "allGreen",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/allgreen.sit",
-    "thumbnails": [
-      "./assets/allgreen.gif"
-    ]
-  },
-  {
-    "author": "Balitaranto",
     "name": "iGreen",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/igreen.sit",
     "thumbnails": [
@@ -1325,14 +1309,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/studiobal.sit",
     "thumbnails": [
       "./assets/studiobal.gif"
-    ]
-  },
-  {
-    "author": "Balitaranto",
-    "name": "Work.2",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/work.2.sit",
-    "thumbnails": [
-      "./assets/work.2.gif"
     ]
   },
   {
@@ -1633,14 +1609,6 @@
   },
   {
     "author": "Patricia Baron",
-    "name": "APB Metallic Colors",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbmetalliccolors.sit",
-    "thumbnails": [
-      "./assets/apbmetalliccolors.gif"
-    ]
-  },
-  {
-    "author": "Patricia Baron",
     "name": "APB Black",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbblack.sit",
     "thumbnails": [
@@ -1665,26 +1633,10 @@
   },
   {
     "author": "Patricia Baron",
-    "name": "APB Wood",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbwood.sit",
-    "thumbnails": [
-      "./assets/apbwood.gif"
-    ]
-  },
-  {
-    "author": "Patricia Baron",
     "name": "APB Metallic Blue",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbmetallicblue.sit",
     "thumbnails": [
       "./assets/apbmetallicblue.gif"
-    ]
-  },
-  {
-    "author": "Patricia Baron",
-    "name": "APB Metal",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbmetal.sit",
-    "thumbnails": [
-      "./assets/apbmetal.gif"
     ]
   },
   {
@@ -1709,14 +1661,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apbblue.sit",
     "thumbnails": [
       "./assets/apbblue.gif"
-    ]
-  },
-  {
-    "author": "Patricia Baron",
-    "name": "APB",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apb.sit",
-    "thumbnails": [
-      "./assets/apb.gif"
     ]
   },
   {
@@ -1877,14 +1821,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/grainyshadows.sit",
     "thumbnails": [
       "./assets/grainyshadows.gif"
-    ]
-  },
-  {
-    "author": "Ruth Bartlett",
-    "name": "Jelym",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/jelym.sit",
-    "thumbnails": [
-      "./assets/jelym.gif"
     ]
   },
   {
@@ -2353,14 +2289,6 @@
   },
   {
     "author": "Erik Bernhardsson",
-    "name": "Tantfjant GreenTantfjant Red",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/tantfjant-gubbstruttii.sit",
-    "thumbnails": [
-      "./assets/tantfjantgreen.gif"
-    ]
-  },
-  {
-    "author": "Erik Bernhardsson",
     "name": "Gubbstrutt GreenGubbstrutt Red",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/gubbstrutt.sit",
     "thumbnails": [
@@ -2381,22 +2309,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/3-dblue.sit",
     "thumbnails": [
       "./assets/3-dblue.gif"
-    ]
-  },
-  {
-    "author": "Jonathan Berry",
-    "name": "Grey Bliss",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/greybliss.sit",
-    "thumbnails": [
-      "./assets/greybliss.gif"
-    ]
-  },
-  {
-    "author": "Jonathan Berry",
-    "name": "Blue Desire",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bluedesire.sit",
-    "thumbnails": [
-      "./assets/bluedesire.gif"
     ]
   },
   {
@@ -2456,14 +2368,6 @@
     ]
   },
   {
-    "author": "Milo Bird",
-    "name": "Oil Slick",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/oilslick.sit",
-    "thumbnails": [
-      "./assets/oilslick.gif"
-    ]
-  },
-  {
     "author": "Ashley The BlackRabite",
     "name": "Fantasy7",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/fantasy7.sit",
@@ -2477,14 +2381,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/sublime.sit",
     "thumbnails": [
       "./assets/sublime.gif"
-    ]
-  },
-  {
-    "author": "John Bloor",
-    "name": "H-Be",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/h-be.sit",
-    "thumbnails": [
-      "./assets/h-be.gif"
     ]
   },
   {
@@ -2544,14 +2440,6 @@
     ]
   },
   {
-    "author": "Peter Bogardus",
-    "name": "Airplane",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/airplane.sit",
-    "thumbnails": [
-      "./assets/airplane.gif"
-    ]
-  },
-  {
     "author": "David Bogut",
     "name": "Mac On Bivouac",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/maconbivouac.sit",
@@ -2581,14 +2469,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/windos.sit",
     "thumbnails": [
       "./assets/windos.gif"
-    ]
-  },
-  {
-    "author": "Francois Bordenave-Gabriel",
-    "name": "French Wine",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/frenchwine.sit",
-    "thumbnails": [
-      "./assets/frenchwine.gif"
     ]
   },
   {
@@ -2784,14 +2664,6 @@
     ]
   },
   {
-    "author": "Brian Brasher",
-    "name": "LeadMichele",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/leadmichele.sit",
-    "thumbnails": [
-      "./assets/leadmichele.gif"
-    ]
-  },
-  {
     "author": "Brandon Brice",
     "name": "Helm",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/helm.sit",
@@ -2832,14 +2704,6 @@
     ]
   },
   {
-    "author": "Laurent Briet",
-    "name": "Radiosity",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/radiosity.sit",
-    "thumbnails": [
-      "./assets/radiosity.gif"
-    ]
-  },
-  {
     "author": "Andrew Brooks",
     "name": "IzzyMOS",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/izzymos.sit",
@@ -2877,38 +2741,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blockrockinbricks!ii.sit",
     "thumbnails": [
       "./assets/blockrockinbricks!ii.gif"
-    ]
-  },
-  {
-    "author": "Jesse Burgheimer",
-    "name": "Stone Cold Groove",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/stonecoldgroove.sit",
-    "thumbnails": [
-      "./assets/stonecoldgroove.gif"
-    ]
-  },
-  {
-    "author": "Jesse Burgheimer",
-    "name": "Creamed Lima Beans",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/creamedlimabeans.sit",
-    "thumbnails": [
-      "./assets/creamedlimabeans.gif"
-    ]
-  },
-  {
-    "author": "Jesse Burgheimer",
-    "name": "Antenna Ball",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/antennaball.sit",
-    "thumbnails": [
-      "./assets/antennaball.gif"
-    ]
-  },
-  {
-    "author": "Jesse Burgheimer",
-    "name": "Block Rockin' Bricks!",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blockrockinbricks!.sit",
-    "thumbnails": [
-      "./assets/blockrockinbricks!.gif"
     ]
   },
   {
@@ -3425,14 +3257,6 @@
   },
   {
     "author": "Adam Cederblom",
-    "name": "Platinum Corporate GreyPlatinum Blue And WhitePlatinum GrapePlatinum LimePlatinum StrawberryPlatinum Tangerine",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/platinum.sit",
-    "thumbnails": [
-      "./assets/platinum.gif"
-    ]
-  },
-  {
-    "author": "Adam Cederblom",
     "name": "Surge",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/surge.sit",
     "thumbnails": [
@@ -3509,14 +3333,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/win95colorsi.sit",
     "thumbnails": [
       "./assets/win95crimson.gif"
-    ]
-  },
-  {
-    "author": "James Chandler",
-    "name": "Math",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/math.sit",
-    "thumbnails": [
-      "./assets/math.gif"
     ]
   },
   {
@@ -3629,14 +3445,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/interstellar.sit",
     "thumbnails": [
       "./assets/interstellar.gif"
-    ]
-  },
-  {
-    "author": "Randy Chikosky",
-    "name": "Necromancy",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/necromancy.sit",
-    "thumbnails": [
-      "./assets/necromancy.gif"
     ]
   },
   {
@@ -3945,14 +3753,6 @@
   },
   {
     "author": "Matthew Cooper",
-    "name": "Pure Innocence",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/pureinnocence.sit",
-    "thumbnails": [
-      "./assets/pureinnocence.gif"
-    ]
-  },
-  {
-    "author": "Matthew Cooper",
     "name": "Pleasant Dreams",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/pleasantdreams.sit",
     "thumbnails": [
@@ -3981,14 +3781,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/aliensky.sit",
     "thumbnails": [
       "./assets/aliensky.gif"
-    ]
-  },
-  {
-    "author": "Robert Cortez",
-    "name": "NightHawk",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nighthawk.sit",
-    "thumbnails": [
-      "./assets/nighthawk.gif"
     ]
   },
   {
@@ -4153,14 +3945,6 @@
   },
   {
     "author": "Rob Croft",
-    "name": "Christmas Eve Gift",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/christmasevegift.sit",
-    "thumbnails": [
-      "./assets/christmasevegift.gif"
-    ]
-  },
-  {
-    "author": "Rob Croft",
     "name": "Filligree",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/filligree.sit",
     "thumbnails": [
@@ -4173,14 +3957,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blackgold.sit",
     "thumbnails": [
       "./assets/blackgold.gif"
-    ]
-  },
-  {
-    "author": "Rob Croft",
-    "name": "Confederacy",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/confederacy.sit",
-    "thumbnails": [
-      "./assets/confederacy.gif"
     ]
   },
   {
@@ -4233,14 +4009,6 @@
   },
   {
     "author": "Rob Croft",
-    "name": "Air Force",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/airforcerob.sit",
-    "thumbnails": [
-      "./assets/airforcerob.gif"
-    ]
-  },
-  {
-    "author": "Rob Croft",
     "name": "Purple Haze",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/purplehazerob.sit",
     "thumbnails": [
@@ -4253,14 +4021,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/washington.sit",
     "thumbnails": [
       "./assets/washington.gif"
-    ]
-  },
-  {
-    "author": "Rob Croft",
-    "name": "French Mustard",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/frenchmustard.sit",
-    "thumbnails": [
-      "./assets/frenchmustard.gif"
     ]
   },
   {
@@ -4413,14 +4173,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/skapple.sit",
     "thumbnails": [
       "./assets/skapple.gif"
-    ]
-  },
-  {
-    "author": "DXoft",
-    "name": "ArrakisBlack Moon RisingCaves Of SteelDark DesignDark Design DeltaDark Design DiamondExKaliburExkalibur DiamondFoundation DeltaHammetHammet DiamondHyperionNemesisWorld Of Tiers",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/dadhitech.sit",
-    "thumbnails": [
-      "./assets/arrakis-ht.gif"
     ]
   },
   {
@@ -4848,14 +4600,6 @@
     ]
   },
   {
-    "author": "Daniel Dickison",
-    "name": "Evergreen",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/evergreen.sit",
-    "thumbnails": [
-      "./assets/evergreen.gif"
-    ]
-  },
-  {
     "author": "Bryan Dickson",
     "name": "Fire Shine",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/fireshine.sit",
@@ -4917,14 +4661,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/dv.sit",
     "thumbnails": [
       "./assets/dv.gif"
-    ]
-  },
-  {
-    "author": "DigitalVolume",
-    "name": "DigitalVolume",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/digitalvolume.sit",
-    "thumbnails": [
-      "./assets/digitalvolume.gif"
     ]
   },
   {
@@ -5200,14 +4936,6 @@
     ]
   },
   {
-    "author": "Mattii Du Puy",
-    "name": "Mattx64",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/mattx64.sit",
-    "thumbnails": [
-      "./assets/mattx64.gif"
-    ]
-  },
-  {
     "author": "Mathias Dubois",
     "name": "Savanne",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/savanne.sit",
@@ -5241,14 +4969,6 @@
   },
   {
     "author": "Terry Duncan",
-    "name": "Starship GUI Starship GUI Academic Staship GUI Klaxon Starship GUI Medicine",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/starshipgui.sit",
-    "thumbnails": [
-      "./assets/starshipgui.gif"
-    ]
-  },
-  {
-    "author": "Terry Duncan",
     "name": "Diver's Paradise",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/diversparadise.sit",
     "thumbnails": [
@@ -5257,26 +4977,10 @@
   },
   {
     "author": "Terry Duncan",
-    "name": "Leather",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/leatherterry.sit",
-    "thumbnails": [
-      "./assets/leatherterry.gif"
-    ]
-  },
-  {
-    "author": "Terry Duncan",
     "name": "Easter",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/easterterry.sit",
     "thumbnails": [
       "./assets/easterterry.gif"
-    ]
-  },
-  {
-    "author": "Terry Duncan",
-    "name": "Kinetic Energy",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/kineticenergy.sit",
-    "thumbnails": [
-      "./assets/kineticenergy.gif"
     ]
   },
   {
@@ -5313,14 +5017,6 @@
   },
   {
     "author": "Terry Duncan",
-    "name": "Easy",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/easyterry.sit",
-    "thumbnails": [
-      "./assets/easyterry.gif"
-    ]
-  },
-  {
-    "author": "Terry Duncan",
     "name": "Cloud",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/cloudterry.sit",
     "thumbnails": [
@@ -5349,14 +5045,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/practical.sit",
     "thumbnails": [
       "./assets/practical.gif"
-    ]
-  },
-  {
-    "author": "Brad Dusen",
-    "name": "PhobosDeimos",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/phobosanddeimos.sit",
-    "thumbnails": [
-      "./assets/phobos.gif"
     ]
   },
   {
@@ -5893,14 +5581,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/country.sit",
     "thumbnails": [
       "./assets/country.gif"
-    ]
-  },
-  {
-    "author": "Travis Enoch",
-    "name": "SimpT",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/simpt.sit",
-    "thumbnails": [
-      "./assets/simpt.gif"
     ]
   },
   {
@@ -7328,14 +7008,6 @@
     ]
   },
   {
-    "author": "Patrick Gierke",
-    "name": "NuMacintosh PlusNuNeXTNuWindows 3.1NuWindows 95NuXWindowsRhapsodian",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/theoperatingcollection.sit",
-    "thumbnails": [
-      "./assets/numacintoshplus.gif"
-    ]
-  },
-  {
     "author": "Kiel Gillard",
     "name": "Grey UI",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/greyui.sit",
@@ -7720,14 +7392,6 @@
     ]
   },
   {
-    "author": "Chris Guse",
-    "name": "Ode To My IIvx",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/odetomyiivx.sit",
-    "thumbnails": [
-      "./assets/odetomyiivx.gif"
-    ]
-  },
-  {
     "author": "Grant Guthrie",
     "name": "deeply",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/deeply.sit",
@@ -7789,14 +7453,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nightstick.sit",
     "thumbnails": [
       "./assets/nightstick.gif"
-    ]
-  },
-  {
-    "author": "Gwendolyn",
-    "name": "Not Fade Away",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/notfadeawaylynne.sit",
-    "thumbnails": [
-      "./assets/notfadeawaylynne.gif"
     ]
   },
   {
@@ -9704,38 +9360,6 @@
     ]
   },
   {
-    "author": "Nitehawk Jarrett",
-    "name": "HawkOS",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/hawkos.sit",
-    "thumbnails": [
-      "./assets/hawkos.gif"
-    ]
-  },
-  {
-    "author": "Martin Jedenberg",
-    "name": "Tallbarr",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/tallbarr.sit",
-    "thumbnails": [
-      "./assets/tallbarr.gif"
-    ]
-  },
-  {
-    "author": "Martin Jedenberg",
-    "name": "Apelsin",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/apelsin.sit",
-    "thumbnails": [
-      "./assets/apelsin.gif"
-    ]
-  },
-  {
-    "author": "Martin Jedenberg",
-    "name": "Blabar",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blabar.sit",
-    "thumbnails": [
-      "./assets/blabar.gif"
-    ]
-  },
-  {
     "author": "Hans Jensen",
     "name": "NeXT LeAP",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nextleap.sit",
@@ -10209,14 +9833,6 @@
   },
   {
     "author": "Kacey",
-    "name": "Grey MarbleMoss MarbleRose Marble",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/marbles.sit",
-    "thumbnails": [
-      "./assets/greymarble.gif"
-    ]
-  },
-  {
-    "author": "Kacey",
     "name": "Fireball",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/fireball.sit",
     "thumbnails": [
@@ -10445,14 +10061,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/r2.sit",
     "thumbnails": [
       "./assets/r2.gif"
-    ]
-  },
-  {
-    "author": "Nobuhiro Kawai",
-    "name": "C3",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/c3.sit",
-    "thumbnails": [
-      "./assets/c3.gif"
     ]
   },
   {
@@ -11393,14 +11001,6 @@
   },
   {
     "author": "Kuming",
-    "name": "Prelude",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/prelude.sit",
-    "thumbnails": [
-      "./assets/prelude.gif"
-    ]
-  },
-  {
-    "author": "Kuming",
     "name": "Ruwee!-II",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/ruwee!-ii.sit",
     "thumbnails": [
@@ -11569,14 +11169,6 @@
   },
   {
     "author": "koby",
-    "name": "Suzume Under",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/suzumeunder.sit",
-    "thumbnails": [
-      "./assets/suzumeunder.gif"
-    ]
-  },
-  {
-    "author": "koby",
     "name": "DeltaSeven",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/deltaseven.sit",
     "thumbnails": [
@@ -11589,14 +11181,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/cheetah.sit",
     "thumbnails": [
       "./assets/cheetah.gif"
-    ]
-  },
-  {
-    "author": "Scott Lahteine",
-    "name": "Planet Mac",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/planetmac.sit",
-    "thumbnails": [
-      "./assets/planetmac.gif"
     ]
   },
   {
@@ -11800,14 +11384,6 @@
     ]
   },
   {
-    "author": "Jeff Langbein",
-    "name": "caMehT",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/cameht.sit",
-    "thumbnails": [
-      "./assets/cameht.gif"
-    ]
-  },
-  {
     "author": "Tavis Larkham",
     "name": "Homer",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/homer.sit",
@@ -11821,78 +11397,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/monster.sit",
     "thumbnails": [
       "./assets/monster.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Tock",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/tock.sit",
-    "thumbnails": [
-      "./assets/tock.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Pane",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/pane.sit",
-    "thumbnails": [
-      "./assets/pane.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Escape",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/escape.sit",
-    "thumbnails": [
-      "./assets/escape.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Grill",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/grill.sit",
-    "thumbnails": [
-      "./assets/grill.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Puff",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/puff.sit",
-    "thumbnails": [
-      "./assets/puff.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Oasis",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/oasis.sit",
-    "thumbnails": [
-      "./assets/oasis.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Shamrock",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/shamrocked.sit",
-    "thumbnails": [
-      "./assets/shamrocked.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Shadows",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/shadows.sit",
-    "thumbnails": [
-      "./assets/shadows.gif"
-    ]
-  },
-  {
-    "author": "Ed Latimer",
-    "name": "Noir",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/noir.sit",
-    "thumbnails": [
-      "./assets/noir.gif"
     ]
   },
   {
@@ -12129,14 +11633,6 @@
   },
   {
     "author": "Andrew Lee",
-    "name": "Hi-Platinum CarbonHi-Platinum ClassicHi-Platinum FusionHi-Platinum Fusion G3Hi-Platinum ProHi-Platinum XHi-Platinum ZoeyiHiP",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/hi-platinum.sit",
-    "thumbnails": [
-      "./assets/hi-platinumcarbon.gif"
-    ]
-  },
-  {
-    "author": "Andrew Lee",
     "name": "Alfresco",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/alfresco.sit",
     "thumbnails": [
@@ -12281,14 +11777,6 @@
   },
   {
     "author": "Juli Lesca",
-    "name": "Fina",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/fina.sit",
-    "thumbnails": [
-      "./assets/fina.gif"
-    ]
-  },
-  {
-    "author": "Juli Lesca",
     "name": "Kid",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/kid.sit",
     "thumbnails": [
@@ -12305,30 +11793,6 @@
   },
   {
     "author": "Jean-Sebastien Levesque",
-    "name": "Eux-Autres Mission",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/eux-autresmission.sit",
-    "thumbnails": [
-      "./assets/eux-autresmission.gif"
-    ]
-  },
-  {
-    "author": "Jean-Sebastien Levesque",
-    "name": "Eux-Autres B.L.U.E.",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/eux-autresblue.sit",
-    "thumbnails": [
-      "./assets/eux-autresblue.gif"
-    ]
-  },
-  {
-    "author": "Jean-Sebastien Levesque",
-    "name": "Eux-Autres Weapons",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/eux-autresweapons.sit",
-    "thumbnails": [
-      "./assets/eux-autresweapons.gif"
-    ]
-  },
-  {
-    "author": "Jean-Sebastien Levesque",
     "name": "Eux-Autres Tech",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/eux-autrestech.sit",
     "thumbnails": [
@@ -12341,14 +11805,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/eux-autres.sit",
     "thumbnails": [
       "./assets/eux-autres.gif"
-    ]
-  },
-  {
-    "author": "Jean-Sebastien Levesque",
-    "name": "Bass! Gray",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bass!gray.sit",
-    "thumbnails": [
-      "./assets/bass!gray.gif"
     ]
   },
   {
@@ -12385,14 +11841,6 @@
   },
   {
     "author": "Jean-Sebastien Levesque",
-    "name": "Bass! Colors",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bass!colors.sit",
-    "thumbnails": [
-      "./assets/bass!colors.gif"
-    ]
-  },
-  {
-    "author": "Jean-Sebastien Levesque",
     "name": "Embody",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/embody.sit",
     "thumbnails": [
@@ -12416,14 +11864,6 @@
     ]
   },
   {
-    "author": "David Lewis",
-    "name": "MondrianMercuryLake Road",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/davidlewis.sit",
-    "thumbnails": [
-      "./assets/mondrian.gif"
-    ]
-  },
-  {
     "author": "Josh Lewis",
     "name": "Beryllium Copper HiColor LiteBeryllium Copper LoColor LitePlutonium 246 LiteEnriched Plutonium 246 LiteUranium 242 LiteJosh's Mercury LiteRed Mercury Lite",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/heavymetalslite.sit",
@@ -12437,30 +11877,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/heavymetals.sit",
     "thumbnails": [
       "./assets/berylliumcopperhicolor.gif"
-    ]
-  },
-  {
-    "author": "Josh Lewis",
-    "name": "L-Levels BlueL-Levels GrayL-Levels GreenL-Levels Red",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/llevels.sit",
-    "thumbnails": [
-      "./assets/l-levelsblue.gif"
-    ]
-  },
-  {
-    "author": "Robert Lewis",
-    "name": "Nicotene",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nicotene.sit",
-    "thumbnails": [
-      "./assets/nicotene.gif"
-    ]
-  },
-  {
-    "author": "Robert Lewis",
-    "name": "Funk",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/funk.sit",
-    "thumbnails": [
-      "./assets/funk.gif"
     ]
   },
   {
@@ -12493,14 +11909,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/softer.sit",
     "thumbnails": [
       "./assets/softer.gif"
-    ]
-  },
-  {
-    "author": "Patricia Lillie",
-    "name": "DinerDiner Too",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/diner.sit",
-    "thumbnails": [
-      "./assets/diner.gif"
     ]
   },
   {
@@ -13129,14 +12537,6 @@
   },
   {
     "author": "Chad Margetts",
-    "name": "Chameleon Jungle FX ClassicChameleon Jungle FX Type BChameleon Karma FX ClassicChameleon Karma FX Type BChameleon Lemon FX ClassicChameleon Lemon FX Type BChameleon Primal FX ClassicChameleon Primal FX Type BChameleon Ventana FX ClassicChameleon Ventana FX Type B",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/chameleonfxvolii.sit",
-    "thumbnails": [
-      "./assets/chameleonjunglefx.gif"
-    ]
-  },
-  {
-    "author": "Chad Margetts",
     "name": "Chameleon Midnight FX ClassicChameleon Midnight FX Type BChameleon Paradise FX ClassicChameleon Paradise FX Type BChameleon Phantom FX ClassicChameleon Phantom FX Type BChameleon Platinum FX ClassicChameleon Platinum FX Type BChameleon Rustic FX ClassicChameleon Rustic FX Type B",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/chameleonfxvoli.sit",
     "thumbnails": [
@@ -13649,26 +13049,10 @@
   },
   {
     "author": "Brad Matter",
-    "name": "Be Lucid",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/belucid.sit",
-    "thumbnails": [
-      "./assets/belucid.gif"
-    ]
-  },
-  {
-    "author": "Brad Matter",
     "name": "System 7 Nostalgia Silver",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/system7nostalgiasilver.sit",
     "thumbnails": [
       "./assets/system7nostalgiasilver.gif"
-    ]
-  },
-  {
-    "author": "Brad Matter",
-    "name": "System Zero Bold +",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/systemzeroboldplus.sit",
-    "thumbnails": [
-      "./assets/systemzeroboldplus.gif"
     ]
   },
   {
@@ -13693,14 +13077,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/systemseven-dot-seven.sit",
     "thumbnails": [
       "./assets/systemseven-dot-seven.gif"
-    ]
-  },
-  {
-    "author": "Bill Matthews",
-    "name": "Executive",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/executivebill.sit",
-    "thumbnails": [
-      "./assets/executivebill.gif"
     ]
   },
   {
@@ -13845,14 +13221,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/halloween1.sit",
     "thumbnails": [
       "./assets/halloween1.gif"
-    ]
-  },
-  {
-    "author": "Bo McCarty",
-    "name": "Bluecoal",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bluecoal.sit",
-    "thumbnails": [
-      "./assets/bluecoal.gif"
     ]
   },
   {
@@ -15169,14 +14537,6 @@
   },
   {
     "author": "Tomoko Nakamine",
-    "name": "Jingle Bell",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/jinglebell.sit",
-    "thumbnails": [
-      "./assets/jinglebell.gif"
-    ]
-  },
-  {
-    "author": "Tomoko Nakamine",
     "name": "Black Cat",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blackcat.sit",
     "thumbnails": [
@@ -15205,14 +14565,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/cab.sit",
     "thumbnails": [
       "./assets/cab.gif"
-    ]
-  },
-  {
-    "author": "Tomoko Nakamine",
-    "name": "Tulip",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/tulip.sit",
-    "thumbnails": [
-      "./assets/tulip.gif"
     ]
   },
   {
@@ -15333,14 +14685,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/windows95light.sit",
     "thumbnails": [
       "./assets/windows95light.gif"
-    ]
-  },
-  {
-    "author": "Yoshikazu Naruoka",
-    "name": "SuperBlack Classic",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/superblackclassic.sit",
-    "thumbnails": [
-      "./assets/superblackclassic.gif"
     ]
   },
   {
@@ -15585,14 +14929,6 @@
   },
   {
     "author": "Ross Neely",
-    "name": "Apple BlackinumApple Blackintosh",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/appleblackinum-blackintosh.sit",
-    "thumbnails": [
-      "./assets/appleblackinum.gif"
-    ]
-  },
-  {
-    "author": "Ross Neely",
     "name": "Perfect Platinum",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/perfectplatinum.sit",
     "thumbnails": [
@@ -15781,14 +15117,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/potiphar.sit",
     "thumbnails": [
       "./assets/potiphar.gif"
-    ]
-  },
-  {
-    "author": "Johanna Nestrell",
-    "name": "Naomi",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/naomi.sit",
-    "thumbnails": [
-      "./assets/naomi.gif"
     ]
   },
   {
@@ -16024,14 +15352,6 @@
     ]
   },
   {
-    "author": "Michael Nickerson",
-    "name": "Darkshadow's Red",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/darkshadowsred.sit",
-    "thumbnails": [
-      "./assets/darkshadowsred.gif"
-    ]
-  },
-  {
     "author": "Takio Nihei",
     "name": "System 7 Slipguard",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/system7slipguard.sit",
@@ -16053,14 +15373,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/n2.sit",
     "thumbnails": [
       "./assets/n2.gif"
-    ]
-  },
-  {
-    "author": "Temis Nunez",
-    "name": "LED Eclipse 2 PlainLED Eclipse 2 BlueLED Eclipse 2 SilverLED Eclipse 2 Yellow",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/ledeclipse2.sit",
-    "thumbnails": [
-      "./assets/ledeclipse2plain.gif"
     ]
   },
   {
@@ -16149,14 +15461,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/qualityimac.sit",
     "thumbnails": [
       "./assets/qualityimac.gif"
-    ]
-  },
-  {
-    "author": "Michael O'Brien",
-    "name": "Classic TelevisionDeco Television",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/television.sit",
-    "thumbnails": [
-      "./assets/televisionclassic.gif"
     ]
   },
   {
@@ -16281,14 +15585,6 @@
   },
   {
     "author": "Denny Ochi",
-    "name": "Den",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/den.sit",
-    "thumbnails": [
-      "./assets/den.gif"
-    ]
-  },
-  {
-    "author": "Denny Ochi",
     "name": "Jamaica",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/jamaica.sit",
     "thumbnails": [
@@ -16317,14 +15613,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/redpearls.sit",
     "thumbnails": [
       "./assets/redpearls.gif"
-    ]
-  },
-  {
-    "author": "Hitomi Ohara",
-    "name": "Dusty Purple",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/dustypurple.sit",
-    "thumbnails": [
-      "./assets/dustypurple.gif"
     ]
   },
   {
@@ -16440,14 +15728,6 @@
     ]
   },
   {
-    "author": "David Ostwald",
-    "name": "Crazy Dave Planet!!!",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/crazydaveplanet!!!.sit",
-    "thumbnails": [
-      "./assets/crazydaveplanet!!!.gif"
-    ]
-  },
-  {
     "author": "Andrea Ottmer",
     "name": "afo-buttons",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/afo-buttons.sit",
@@ -16525,14 +15805,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/airforce.sit",
     "thumbnails": [
       "./assets/airforce.gif"
-    ]
-  },
-  {
-    "author": "Joe Parker",
-    "name": "Ji",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/ji.sit",
-    "thumbnails": [
-      "./assets/ji.gif"
     ]
   },
   {
@@ -17000,22 +16272,6 @@
     ]
   },
   {
-    "author": "Terry Pilkington",
-    "name": "Spatial Distortion II",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/spatialdistortionii.sit",
-    "thumbnails": [
-      "./assets/spatialdistortionii.gif"
-    ]
-  },
-  {
-    "author": "Terry Pilkington",
-    "name": "Spatial Distortion",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/spatialdistortion.sit",
-    "thumbnails": [
-      "./assets/spatialdistortion.gif"
-    ]
-  },
-  {
     "author": "Carl Pitts",
     "name": "Holiday Delights 2000",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/holidaydelights2000.sit",
@@ -17069,14 +16325,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/theburnedliner.sit",
     "thumbnails": [
       "./assets/theburnedliner.gif"
-    ]
-  },
-  {
-    "author": "Carl Pitts",
-    "name": "The Aqualiner",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/theaqualiner.sit",
-    "thumbnails": [
-      "./assets/theaqualiner.gif"
     ]
   },
   {
@@ -17321,14 +16569,6 @@
   },
   {
     "author": "Jeni Pleskow",
-    "name": "Stereo Matte",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/stereomatte.sit",
-    "thumbnails": [
-      "./assets/stereomatte.gif"
-    ]
-  },
-  {
-    "author": "Jeni Pleskow",
     "name": "Beyond The Pale",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/beyondthepale.sit",
     "thumbnails": [
@@ -17505,34 +16745,10 @@
   },
   {
     "author": "Michael Rabe",
-    "name": "Thin Red Line",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/thinredline.sit",
-    "thumbnails": [
-      "./assets/thinredline.gif"
-    ]
-  },
-  {
-    "author": "Michael Rabe",
     "name": "Chalkboard",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/chalkboard.sit",
     "thumbnails": [
       "./assets/chalkboard.gif"
-    ]
-  },
-  {
-    "author": "Michael Rabe",
-    "name": "Blue Moon",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bluemoongem.sit",
-    "thumbnails": [
-      "./assets/bluemoongem.gif"
-    ]
-  },
-  {
-    "author": "Michael Rabe",
-    "name": "Slate Board",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/slateboardgem.sit",
-    "thumbnails": [
-      "./assets/slateboardgem.gif"
     ]
   },
   {
@@ -17557,14 +16773,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/watergem.sit",
     "thumbnails": [
       "./assets/watergem.gif"
-    ]
-  },
-  {
-    "author": "Michael Rabe",
-    "name": "Emerald Gem",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/emeraldgem.sit",
-    "thumbnails": [
-      "./assets/emeraldgem.gif"
     ]
   },
   {
@@ -17905,14 +17113,6 @@
   },
   {
     "author": "Peter Renfroe",
-    "name": "Electric Ice",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/electricice.sit",
-    "thumbnails": [
-      "./assets/electricice.gif"
-    ]
-  },
-  {
-    "author": "Peter Renfroe",
     "name": "Industrial Zone",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/industrialzone.sit",
     "thumbnails": [
@@ -18085,14 +17285,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/gnome.sit",
     "thumbnails": [
       "./assets/gnome.gif"
-    ]
-  },
-  {
-    "author": "Rebecca Riall",
-    "name": "Molly Delensed",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/mollydelensed.sit",
-    "thumbnails": [
-      "./assets/mollydelensed.gif"
     ]
   },
   {
@@ -18320,14 +17512,6 @@
     ]
   },
   {
-    "author": "Roberto Rocchetti",
-    "name": "Blue Bilbo",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bluebilbo.sit",
-    "thumbnails": [
-      "./assets/bluebilbo.gif"
-    ]
-  },
-  {
     "author": "Eric Rossbach",
     "name": "Ruby Tuesday",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/rubytuesday.sit",
@@ -18513,14 +17697,6 @@
   },
   {
     "author": "Robin Rundkvist",
-    "name": "Speed Thing",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/speedthing.sit",
-    "thumbnails": [
-      "./assets/speedthing.gif"
-    ]
-  },
-  {
-    "author": "Robin Rundkvist",
     "name": "Platie",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/platie.sit",
     "thumbnails": [
@@ -18545,14 +17721,6 @@
   },
   {
     "author": "Robin Rundkvist",
-    "name": "Invader",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/invader.sit",
-    "thumbnails": [
-      "./assets/invader.gif"
-    ]
-  },
-  {
-    "author": "Robin Rundkvist",
     "name": "This Is",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/thisis.sit",
     "thumbnails": [
@@ -18569,14 +17737,6 @@
   },
   {
     "author": "Robin Rundkvist",
-    "name": "Conphir",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/conphir.sit",
-    "thumbnails": [
-      "./assets/conphir.gif"
-    ]
-  },
-  {
-    "author": "Robin Rundkvist",
     "name": "Greek",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/greek.sit",
     "thumbnails": [
@@ -18589,14 +17749,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/thelightning.sit",
     "thumbnails": [
       "./assets/thelightning.gif"
-    ]
-  },
-  {
-    "author": "Robin Rundkvist",
-    "name": "Colorized",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/colorized.sit",
-    "thumbnails": [
-      "./assets/colorized.gif"
     ]
   },
   {
@@ -18733,14 +17885,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/aksentwhite.sit",
     "thumbnails": [
       "./assets/aksentwhite.gif"
-    ]
-  },
-  {
-    "author": "Saint",
-    "name": "Mister Blue",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/misterblue.sit",
-    "thumbnails": [
-      "./assets/misterblue.gif"
     ]
   },
   {
@@ -19201,14 +18345,6 @@
   },
   {
     "author": "Shiocop",
-    "name": "5555",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/5555.sit",
-    "thumbnails": [
-      "./assets/5555.gif"
-    ]
-  },
-  {
-    "author": "Shiocop",
     "name": "7979",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/7979.sit",
     "thumbnails": [
@@ -19229,14 +18365,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/0303shoal.sit",
     "thumbnails": [
       "./assets/0303shoal.gif"
-    ]
-  },
-  {
-    "author": "Shiocop",
-    "name": "0099",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/0099.sit",
-    "thumbnails": [
-      "./assets/0099.gif"
     ]
   },
   {
@@ -19309,22 +18437,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/6666.sit",
     "thumbnails": [
       "./assets/6666.gif"
-    ]
-  },
-  {
-    "author": "Shiocop",
-    "name": "1981",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/1981.sit",
-    "thumbnails": [
-      "./assets/1981.gif"
-    ]
-  },
-  {
-    "author": "Shiocop",
-    "name": "1022",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/1022.sit",
-    "thumbnails": [
-      "./assets/1022.gif"
     ]
   },
   {
@@ -19633,26 +18745,10 @@
   },
   {
     "author": "Paul Siemens",
-    "name": "Independence Day",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/independenceday.sit",
-    "thumbnails": [
-      "./assets/independenceday.gif"
-    ]
-  },
-  {
-    "author": "Paul Siemens",
     "name": "Christmas Fir",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/christmasfir.sit",
     "thumbnails": [
       "./assets/christmasfir.gif"
-    ]
-  },
-  {
-    "author": "Paul Siemens",
-    "name": "Christmas In Red And Green",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/christmasinredandgreen.sit",
-    "thumbnails": [
-      "./assets/christmasinredandgreen.gif"
     ]
   },
   {
@@ -19697,14 +18793,6 @@
   },
   {
     "author": "Russell Silver",
-    "name": "Manezhnaya",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/manezhnaya.sit",
-    "thumbnails": [
-      "./assets/manezhnaya.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
     "name": "Doli",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/doli.sit",
     "thumbnails": [
@@ -19713,42 +18801,10 @@
   },
   {
     "author": "Russell Silver",
-    "name": "Be Studio",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bestudio.sit",
-    "thumbnails": [
-      "./assets/bestudio.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
-    "name": "Studio Variant",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/studiovariant.sit",
-    "thumbnails": [
-      "./assets/studiovariant.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
-    "name": "InterNEX",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/internex.sit",
-    "thumbnails": [
-      "./assets/internex.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
     "name": "Studio",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/studio.sit",
     "thumbnails": [
       "./assets/studio.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
-    "name": "Connex",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/connex.sit",
-    "thumbnails": [
-      "./assets/connex.gif"
     ]
   },
   {
@@ -19773,14 +18829,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/soltau.sit",
     "thumbnails": [
       "./assets/soltau.gif"
-    ]
-  },
-  {
-    "author": "Russell Silver",
-    "name": "Crombee",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/crombee.sit",
-    "thumbnails": [
-      "./assets/crombee.gif"
     ]
   },
   {
@@ -19897,14 +18945,6 @@
   },
   {
     "author": "Stephane Sinotte",
-    "name": "Stephen's Circus",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/stephenscircus.sit",
-    "thumbnails": [
-      "./assets/stephenscircus.gif"
-    ]
-  },
-  {
-    "author": "Stephane Sinotte",
     "name": "Stephen's Circus 2",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/stephenscircus2.sit",
     "thumbnails": [
@@ -19949,22 +18989,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blueroom.sit",
     "thumbnails": [
       "./assets/blueroom.gif"
-    ]
-  },
-  {
-    "author": "Perry Lloyd Smith",
-    "name": "Blueprint",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blueprint.sit",
-    "thumbnails": [
-      "./assets/blueprint.gif"
-    ]
-  },
-  {
-    "author": "Ryan Smith",
-    "name": "Sage And Spirit",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/sageandspirit.sit",
-    "thumbnails": [
-      "./assets/sageandspirit.gif"
     ]
   },
   {
@@ -20077,14 +19101,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/althea.sit",
     "thumbnails": [
       "./assets/althea.gif"
-    ]
-  },
-  {
-    "author": "B. Smith-Mannschott",
-    "name": "Simple White",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/simplewhite.sit",
-    "thumbnails": [
-      "./assets/simplewhite.gif"
     ]
   },
   {
@@ -20425,26 +19441,10 @@
   },
   {
     "author": "Philipp Stumpp",
-    "name": "Colourful \"Brick\"",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/colourfulbrick.sit",
-    "thumbnails": [
-      "./assets/colourfulbrick.gif"
-    ]
-  },
-  {
-    "author": "Philipp Stumpp",
     "name": "Colourful \"Slime Toast\"",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/colourfulslimetoast.sit",
     "thumbnails": [
       "./assets/colourfulslimetoast.gif"
-    ]
-  },
-  {
-    "author": "Philipp Stumpp",
-    "name": "Colourful",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/colourful.sit",
-    "thumbnails": [
-      "./assets/colourful.gif"
     ]
   },
   {
@@ -20501,14 +19501,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/countryclub.sit",
     "thumbnails": [
       "./assets/countryclub.gif"
-    ]
-  },
-  {
-    "author": "Steve Sulzer",
-    "name": "Glimmer",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/glimmer.sit",
-    "thumbnails": [
-      "./assets/glimmer.gif"
     ]
   },
   {
@@ -20717,14 +19709,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/!.bonechina.sit",
     "thumbnails": [
       "./assets/!.bonechina.gif"
-    ]
-  },
-  {
-    "author": "Barrie Sutcliffe",
-    "name": "GarbageGarbage RGB",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/garbage.sit",
-    "thumbnails": [
-      "./assets/garbage.gif"
     ]
   },
   {
@@ -21065,14 +20049,6 @@
   },
   {
     "author": "Yasuo Suzuki",
-    "name": "PaperCraft",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/papercraft.sit",
-    "thumbnails": [
-      "./assets/papercraft.gif"
-    ]
-  },
-  {
-    "author": "Yasuo Suzuki",
     "name": "G.Revolution",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/g.revolution.sit",
     "thumbnails": [
@@ -21117,14 +20093,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/xlrtypezero.sit",
     "thumbnails": [
       "./assets/xlrtypezero.gif"
-    ]
-  },
-  {
-    "author": "Yasuo Suzuki",
-    "name": "iMoon",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/imoon.sit",
-    "thumbnails": [
-      "./assets/imoon.gif"
     ]
   },
   {
@@ -21541,14 +20509,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/lever.sit",
     "thumbnails": [
       "./assets/lever.gif"
-    ]
-  },
-  {
-    "author": "Woo Kong Teik",
-    "name": "iGlow",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/iglow.sit",
-    "thumbnails": [
-      "./assets/iglow.gif"
     ]
   },
   {
@@ -22145,14 +21105,6 @@
   },
   {
     "author": "Curtis Townson",
-    "name": "Radioactive ThunderlizardRadioactive Thunderlizard -",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/radioactivethunderlizard.sit",
-    "thumbnails": [
-      "./assets/radioactivethunderlizard.gif"
-    ]
-  },
-  {
-    "author": "Curtis Townson",
     "name": "Beatnik K2",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/beatnikk2.sit",
     "thumbnails": [
@@ -22205,14 +21157,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nihonkaze.sit",
     "thumbnails": [
       "./assets/nihonkaze.gif"
-    ]
-  },
-  {
-    "author": "Daniel Tubb",
-    "name": "Kurkaton AquaKurkaton BlueKurkaton GreenKurkaton GrellowKurkaton OrangeKurkaton PurpleKurkaton RedKurkaton RurpleKurkaton VioletKurkaton Yellow",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/kurkatonandfamily.sit",
-    "thumbnails": [
-      "./assets/kurkatonaqua.gif"
     ]
   },
   {
@@ -22464,14 +21408,6 @@
     ]
   },
   {
-    "author": "Shingo Ueno",
-    "name": "Green ButtonsGreen Plastic",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/greenbuttons.sit",
-    "thumbnails": [
-      "./assets/greenbuttons.gif"
-    ]
-  },
-  {
     "author": "Takayuki Uesugi",
     "name": "Gircym",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/gircym.sit",
@@ -22677,14 +21613,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/jorgen.sit",
     "thumbnails": [
       "./assets/jorgen.gif"
-    ]
-  },
-  {
-    "author": "Wes Vasher",
-    "name": "All Smiles",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/allsmiles.sit",
-    "thumbnails": [
-      "./assets/allsmiles.gif"
     ]
   },
   {
@@ -22905,14 +21833,6 @@
   },
   {
     "author": "Rene van den Berg",
-    "name": "E-Box",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/e-box1.sit",
-    "thumbnails": [
-      "./assets/e-box1.gif"
-    ]
-  },
-  {
-    "author": "Rene van den Berg",
     "name": "E-Box 5",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/e-box5.sit",
     "thumbnails": [
@@ -22965,30 +21885,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/bebamboo.sit",
     "thumbnails": [
       "./assets/bebamboo.gif"
-    ]
-  },
-  {
-    "author": "Rene van den Berg",
-    "name": "3Coll 3",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/3coll3.sit",
-    "thumbnails": [
-      "./assets/3coll3.gif"
-    ]
-  },
-  {
-    "author": "Rene van den Berg",
-    "name": "3Coll 2 Light",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/3coll2light.sit",
-    "thumbnails": [
-      "./assets/3coll2light.gif"
-    ]
-  },
-  {
-    "author": "Rene van den Berg",
-    "name": "Dawn",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/dawn.sit",
-    "thumbnails": [
-      "./assets/dawn.gif"
     ]
   },
   {
@@ -23061,14 +21957,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/crayonos.sit",
     "thumbnails": [
       "./assets/crayonos.gif"
-    ]
-  },
-  {
-    "author": "Karl von Laudermann",
-    "name": "Spheres",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/spheres.sit",
-    "thumbnails": [
-      "./assets/spheres.gif"
     ]
   },
   {
@@ -23384,14 +22272,6 @@
     ]
   },
   {
-    "author": "M. Werdenskog",
-    "name": "OS 13",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/os13.sit",
-    "thumbnails": [
-      "./assets/os13.gif"
-    ]
-  },
-  {
     "author": "Kyle Wheeler",
     "name": "Corporate Gray",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/corporategray.sit",
@@ -23469,22 +22349,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/blackened.sit",
     "thumbnails": [
       "./assets/blackened.gif"
-    ]
-  },
-  {
-    "author": "Stephen Willis",
-    "name": "ZebraSkin",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/zebraskin.sit",
-    "thumbnails": [
-      "./assets/zebraskin.gif"
-    ]
-  },
-  {
-    "author": "Stephen Willis",
-    "name": "TIXIT",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/tixit.sit",
-    "thumbnails": [
-      "./assets/tixit.gif"
     ]
   },
   {
@@ -23809,14 +22673,6 @@
   },
   {
     "author": "Corey Woollard",
-    "name": "Hidden",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/hidden.sit",
-    "thumbnails": [
-      "./assets/hidden.gif"
-    ]
-  },
-  {
-    "author": "Corey Woollard",
     "name": "NoNayme",
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/nonayme.sit",
     "thumbnails": [
@@ -23853,14 +22709,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/metalbondilights.sit",
     "thumbnails": [
       "./assets/metalbondilights.gif"
-    ]
-  },
-  {
-    "author": "Corey Woollard",
-    "name": "Dark Lazer Blood Shot",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/darklazerbloodshot.sit",
-    "thumbnails": [
-      "./assets/darklazerbloodshot.gif"
     ]
   },
   {
@@ -23917,14 +22765,6 @@
     "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/appleview.sit",
     "thumbnails": [
       "./assets/appleview.gif"
-    ]
-  },
-  {
-    "author": "Matt Wronkiewicz",
-    "name": "CDE",
-    "download": "https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/track.cgi/cde.sit",
-    "thumbnails": [
-      "./assets/cde.gif"
     ]
   },
   {
