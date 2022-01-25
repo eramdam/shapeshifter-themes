@@ -1,0 +1,79 @@
+    <html data-adblockkey="MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANHZLSNGAhe0lWbSycFlY7t3c4tFHP+Epw8naGgm3CR8CftAihnB7Jkt+vFmvIf3BV/p3RpOrZ/XbZsX9uh0m9UCAwEAAQ==_F5vLymLnmAJI7zslT/fQf4uERCgS8qYPXFRQRPwsHokqrm4r3YX450BGT0Zo5X0kPQVi8qKJp5OVWrMERN1Xlw=="> 
+
+<head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app227.us.archive.org';v.server_ms=151;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="/_static/js/bundle-playback.js?v=rQCmsv02" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=UHAOicsW" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.kaleidoscope.net/?f","20150708120236","https://web.archive.org/","web","/_static/",
+	      "1436356956");
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=fantwOh2" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=qtvMKcIJ" />
+<!-- End Wayback Rewrite JS Include -->
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Kaleidoscope.net</title>
+            <script type="text/javascript">;
+        if(self != top) top.location.href = 'http://'+location.hostname+'/?redir=frame&uid=www559d115ca0fd30.03599407';
+        </script>
+        <script type="text/javascript" src="https://web.archive.org/web/20150708120236js_/http://return.uk.domainnamesales.com/return_js.php?d=kaleidoscope.net&amp;s=1436356956"></script>
+
+    <script type="text/javascript" src="/web/20150708120236js_/http://www.kaleidoscope.net/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function GetParam(name) {
+            var match = new RegExp(name +  
+                "=*([^&]+)*", "i").exec(location.search);   
+            if (match == null)             
+                match = new RegExp(name + "=(.+)", "i").exec(location.search);  
+            if (match == null) return null;             
+                match = match + "";           
+            //**convert match to a string       
+            result = match.split(",");          
+            return decodeURIComponent(result[1]);     
+        }  
+
+        function logStatus(type) {   
+            $.ajax({         
+                cache: false, 
+                global: false,  
+                async: true,    
+                type: "POST",  
+                url: '/logpstatus.php',
+                data: {uid: GetParam('uid'), type: type}  
+            });                
+        }        
+    </script>
+
+    </head>
+    <frameset cols="1,*,1" border="0">
+        <frame name="top" src="/web/20150708120236fw_/http://www.kaleidoscope.net/tg.php?uid=www559d115ca0fd30.03599407" scrolling="no" frameborder="0" noresize framespacing="0" marginwidth="0" marginheight="0">
+        <frame src="/web/20150708120236fw_/http://www.kaleidoscope.net/search_caf.php?uid=www559d115ca0fd30.03599407&amp;src=hydra&amp;abp=1&amp;country=US" scrolling="auto" framespacing="0" marginwidth="0" marginheight="0" noresize>
+        <frame src="/web/20150708120236fw_/http://www.kaleidoscope.net/page.php?www559d115ca0fd30.03599407"></frame>
+    </frameset>
+    <noframes>
+            </noframes>
+</html>
+
+<!--
+     FILE ARCHIVED ON 12:02:36 Jul 08, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 19:07:03 Jan 24, 2022.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 56.117
+  exclusion.robots: 0.138
+  exclusion.robots.policy: 0.132
+  RedisCDXSource: 0.544
+  esindex: 0.006
+  LoadShardBlock: 31.087 (3)
+  PetaboxLoader3.datanode: 47.208 (4)
+  CDXLines.iter: 21.734 (3)
+  load_resource: 91.819
+  PetaboxLoader3.resolve: 60.766
+-->
