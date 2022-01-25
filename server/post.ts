@@ -72,7 +72,9 @@ export async function postThemeToMastodon(theme: Theme) {
     const attachments = await Promise.all(
       theme.thumbnails.map(thumbnail => {
         return masto.mediaAttachments.create({
-          file: fs.createReadStream(path.resolve(__dirname, "..", thumbnail)),
+          file: fs.createReadStream(
+            path.resolve(__dirname, "..", "..", thumbnail)
+          ),
           description: `${theme.name} - ${theme.author}`
         });
       })

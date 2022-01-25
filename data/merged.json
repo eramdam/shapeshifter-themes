@@ -9,9 +9,7 @@
   {
     "thumbnails": [
       "assets/193_rhino-0.png",
-      "assets/193_rhino-1.png",
-      "assets/193_rhino-2.png",
-      "assets/193_rhino-3.png"
+      "assets/193_rhino-1.png"
     ],
     "name": "Rhino",
     "author": "Toner"
@@ -26,9 +24,7 @@
   {
     "thumbnails": [
       "assets/191_neon-0.png",
-      "assets/191_neon-1.png",
-      "assets/191_neon-2.png",
-      "assets/191_neon-3.png"
+      "assets/191_neon-1.png"
     ],
     "name": "Neon",
     "author": "Toner"
@@ -57,9 +53,7 @@
   {
     "thumbnails": [
       "assets/187_crystalclear-1.2-0.png",
-      "assets/187_crystalclear-1.2-1.png",
-      "assets/187_crystalclear-1.2-2.png",
-      "assets/187_crystalclear-1.2-3.png"
+      "assets/187_crystalclear-1.2-1.png"
     ],
     "name": "Crystal Clear 1.2",
     "author": "Leland Scott"
@@ -67,9 +61,7 @@
   {
     "thumbnails": [
       "assets/186_ninichi-0.png",
-      "assets/186_ninichi-1.png",
-      "assets/186_ninichi-2.png",
-      "assets/186_ninichi-3.png"
+      "assets/186_ninichi-1.png"
     ],
     "name": "Ninichi",
     "author": "Carlos Wever"
@@ -88,8 +80,7 @@
     "thumbnails": [
       "assets/184_odio-0.png",
       "assets/184_odio-1.png",
-      "assets/184_odio-2.png",
-      "assets/184_odio-3.png"
+      "assets/184_odio-2.png"
     ],
     "name": "Odio",
     "author": "Carlos Wever"
@@ -111,9 +102,7 @@
   {
     "thumbnails": [
       "assets/181_tenfive-0.png",
-      "assets/181_tenfive-1.png",
-      "assets/181_tenfive-2.png",
-      "assets/181_tenfive-3.png"
+      "assets/181_tenfive-1.png"
     ],
     "name": "TenFive",
     "author": "Austin Heller"
@@ -155,9 +144,7 @@
   {
     "thumbnails": [
       "assets/164_photopro-1.5-0.png",
-      "assets/164_photopro-1.5-1.png",
-      "assets/164_photopro-1.5-2.png",
-      "assets/164_photopro-1.5-3.png"
+      "assets/164_photopro-1.5-1.png"
     ],
     "name": "Photopro 1.5",
     "author": "Palli Svansson"
@@ -191,10 +178,7 @@
   },
   {
     "thumbnails": [
-      "assets/092_pxlprt-2.3-0.png",
-      "assets/092_pxlprt-2.3-1.png",
-      "assets/092_pxlprt-2.3-2.png",
-      "assets/092_pxlprt-2.3-3.png"
+      "assets/092_pxlprt-2.3-0.png"
     ],
     "name": "pxlprt 2.3",
     "author": "monochrom"
@@ -216,9 +200,7 @@
   {
     "thumbnails": [
       "assets/174_qure-0.png",
-      "assets/174_qure-1.png",
-      "assets/174_qure-2.png",
-      "assets/174_qure-3.png"
+      "assets/174_qure-1.png"
     ],
     "name": "Qure",
     "author": "Improv, Pastence"
@@ -227,8 +209,7 @@
     "thumbnails": [
       "assets/171_7-0.png",
       "assets/171_7-1.png",
-      "assets/171_7-2.png",
-      "assets/171_7-3.png"
+      "assets/171_7-2.png"
     ],
     "name": "7",
     "author": "H8LesS"
@@ -237,8 +218,7 @@
     "thumbnails": [
       "assets/157_tomorrow-2.0-0.png",
       "assets/157_tomorrow-2.0-1.png",
-      "assets/157_tomorrow-2.0-2.png",
-      "assets/157_tomorrow-2.0-3.png"
+      "assets/157_tomorrow-2.0-2.png"
     ],
     "name": "Tomorrow 2.0",
     "author": "jickpictures"
@@ -247,8 +227,7 @@
     "thumbnails": [
       "assets/167_amora-1.0-0.png",
       "assets/167_amora-1.0-1.png",
-      "assets/167_amora-1.0-2.png",
-      "assets/167_amora-1.0-3.png"
+      "assets/167_amora-1.0-2.png"
     ],
     "name": "Amora",
     "author": "David Lanham"
@@ -301,9 +280,7 @@
   {
     "thumbnails": [
       "assets/012_neos-2.2.1-0.png",
-      "assets/012_neos-2.2.1-1.png",
-      "assets/012_neos-2.2.1-2.png",
-      "assets/012_neos-2.2.1-3.png"
+      "assets/012_neos-2.2.1-1.png"
     ],
     "name": "NEOS 2.2.1",
     "author": "Daisuke Yamashita"
@@ -312,8 +289,7 @@
     "thumbnails": [
       "assets/163_suma-1.0-0.png",
       "assets/163_suma-1.0-1.png",
-      "assets/163_suma-1.0-2.png",
-      "assets/163_suma-1.0-3.png"
+      "assets/163_suma-1.0-2.png"
     ],
     "name": "SuMa 1",
     "author": "Jonas Rask"
@@ -331,9 +307,7 @@
   {
     "thumbnails": [
       "assets/158_deanach-3.0-0.png",
-      "assets/158_deanach-3.0-1.png",
-      "assets/158_deanach-3.0-2.png",
-      "assets/158_deanach-3.0-3.png"
+      "assets/158_deanach-3.0-1.png"
     ],
     "name": "Deanach OSX",
     "author": "Sonus Kace"
@@ -341,9 +315,7 @@
   {
     "thumbnails": [
       "assets/009_smoothstripes-5.1.2-0.png",
-      "assets/009_smoothstripes-5.1.2-1.png",
-      "assets/009_smoothstripes-5.1.2-2.png",
-      "assets/009_smoothstripes-5.1.2-3.png"
+      "assets/009_smoothstripes-5.1.2-1.png"
     ],
     "name": "SmoothStripes 5.1.2",
     "author": "Max Rudberg"
@@ -351,9 +323,7 @@
   {
     "thumbnails": [
       "assets/003_aquaextreme-3.1.2-0.png",
-      "assets/003_aquaextreme-3.1.2-1.png",
-      "assets/003_aquaextreme-3.1.2-2.png",
-      "assets/003_aquaextreme-3.1.2-3.png"
+      "assets/003_aquaextreme-3.1.2-1.png"
     ],
     "name": "Aqua Extreme 3.1.2",
     "author": "Max Rudberg"
@@ -362,8 +332,7 @@
     "thumbnails": [
       "assets/109_samui-2.0-0.png",
       "assets/109_samui-2.0-1.png",
-      "assets/109_samui-2.0-2.png",
-      "assets/109_samui-2.0-3.png"
+      "assets/109_samui-2.0-2.png"
     ],
     "name": "Samui 2.0",
     "author": "Brian Zeitler"
@@ -378,9 +347,7 @@
   {
     "thumbnails": [
       "assets/153_acua-1.0-0.png",
-      "assets/153_acua-1.0-1.png",
-      "assets/153_acua-1.0-2.png",
-      "assets/153_acua-1.0-3.png"
+      "assets/153_acua-1.0-1.png"
     ],
     "name": "Acua 1.0",
     "author": "Susumu Yoshida"
@@ -398,9 +365,7 @@
   {
     "thumbnails": [
       "assets/105_stomp-1.4-0.png",
-      "assets/105_stomp-1.4-1.png",
-      "assets/105_stomp-1.4-2.png",
-      "assets/105_stomp-1.4-3.png"
+      "assets/105_stomp-1.4-1.png"
     ],
     "name": "STOMP 1.4",
     "author": "Susumu Yoshida"
@@ -408,9 +373,7 @@
   {
     "thumbnails": [
       "assets/152_aquamini-1.1-0.png",
-      "assets/152_aquamini-1.1-1.png",
-      "assets/152_aquamini-1.1-2.png",
-      "assets/152_aquamini-1.1-3.png"
+      "assets/152_aquamini-1.1-1.png"
     ],
     "name": "Aqua Mini 1.1",
     "author": "Jerome Bareo"
@@ -428,9 +391,7 @@
   {
     "thumbnails": [
       "assets/147_truth-1.1-0.png",
-      "assets/147_truth-1.1-1.png",
-      "assets/147_truth-1.1-2.png",
-      "assets/147_truth-1.1-3.png"
+      "assets/147_truth-1.1-1.png"
     ],
     "name": "TRUTH 1.1",
     "author": "Susumu Yoshida"
@@ -438,9 +399,7 @@
   {
     "thumbnails": [
       "assets/118_eternal-1.2-0.png",
-      "assets/118_eternal-1.2-1.png",
-      "assets/118_eternal-1.2-2.png",
-      "assets/118_eternal-1.2-3.png"
+      "assets/118_eternal-1.2-1.png"
     ],
     "name": "ETERNAL 1.2",
     "author": "Susumu Yoshida"
@@ -449,8 +408,7 @@
     "thumbnails": [
       "assets/022_shinobi-2.4.1-0.png",
       "assets/022_shinobi-2.4.1-1.png",
-      "assets/022_shinobi-2.4.1-2.png",
-      "assets/022_shinobi-2.4.1-3.png"
+      "assets/022_shinobi-2.4.1-2.png"
     ],
     "name": "Shinobi 2.4.1",
     "author": "Takashi Izawa"
@@ -458,19 +416,14 @@
   {
     "thumbnails": [
       "assets/122_eternalaqua-1.2-0.png",
-      "assets/122_eternalaqua-1.2-1.png",
-      "assets/122_eternalaqua-1.2-2.png",
-      "assets/122_eternalaqua-1.2-3.png"
+      "assets/122_eternalaqua-1.2-1.png"
     ],
     "name": "ETERNAL AQUA 1.2",
     "author": "Susumu Yoshida"
   },
   {
     "thumbnails": [
-      "assets/150_core-1.0-0.png",
-      "assets/150_core-1.0-1.png",
-      "assets/150_core-1.0-2.png",
-      "assets/150_core-1.0-3.png"
+      "assets/150_core-1.0-0.png"
     ],
     "name": "Core 1.0",
     "author": "Jerome Bareo"
@@ -488,9 +441,7 @@
   {
     "thumbnails": [
       "assets/149_quad-1.0-0.png",
-      "assets/149_quad-1.0-1.png",
-      "assets/149_quad-1.0-2.png",
-      "assets/149_quad-1.0-3.png"
+      "assets/149_quad-1.0-1.png"
     ],
     "name": "QUAD 1.0",
     "author": "Susumu Yoshida"
@@ -499,8 +450,7 @@
     "thumbnails": [
       "assets/145_xidgalbook-1.2-0.png",
       "assets/145_xidgalbook-1.2-1.png",
-      "assets/145_xidgalbook-1.2-2.png",
-      "assets/145_xidgalbook-1.2-3.png"
+      "assets/145_xidgalbook-1.2-2.png"
     ],
     "name": "XiDG Albook 1.2",
     "author": "XiAP"
@@ -509,8 +459,7 @@
     "thumbnails": [
       "assets/126_frankentheme20-0.png",
       "assets/126_frankentheme20-1.png",
-      "assets/126_frankentheme20-2.png",
-      "assets/126_frankentheme20-3.png"
+      "assets/126_frankentheme20-2.png"
     ],
     "name": "Frankentheme 2.0",
     "author": "Themesmith"
@@ -573,9 +522,7 @@
   {
     "thumbnails": [
       "assets/119_it5-0.png",
-      "assets/119_it5-1.png",
-      "assets/119_it5-2.png",
-      "assets/119_it5-3.png"
+      "assets/119_it5-1.png"
     ],
     "name": "iT5",
     "author": "Ice Spectre"
@@ -583,9 +530,7 @@
   {
     "thumbnails": [
       "assets/117_blackberry1-0.png",
-      "assets/117_blackberry1-1.png",
-      "assets/117_blackberry1-2.png",
-      "assets/117_blackberry1-3.png"
+      "assets/117_blackberry1-1.png"
     ],
     "name": "Blackberry 1.0",
     "author": "Androo"
@@ -645,9 +590,7 @@
   {
     "thumbnails": [
       "assets/094_pm2k511-0.png",
-      "assets/094_pm2k511-1.png",
-      "assets/094_pm2k511-2.png",
-      "assets/094_pm2k511-3.png"
+      "assets/094_pm2k511-1.png"
     ],
     "name": "PM2k5 1.1",
     "author": "Swizcore Studio"
@@ -675,9 +618,7 @@
   {
     "thumbnails": [
       "assets/029_goodgrey14-0.png",
-      "assets/029_goodgrey14-1.png",
-      "assets/029_goodgrey14-2.png",
-      "assets/029_goodgrey14-3.png"
+      "assets/029_goodgrey14-1.png"
     ],
     "name": "Good Grey 1.4",
     "author": "Martin Ottosson"
@@ -691,10 +632,7 @@
   },
   {
     "thumbnails": [
-      "assets/107_milqu-0.png",
-      "assets/107_milqu-1.png",
-      "assets/107_milqu-2.png",
-      "assets/107_milqu-3.png"
+      "assets/107_milqu-0.png"
     ],
     "name": "Milqu",
     "author": "Patrick Yan"
@@ -712,9 +650,7 @@
   {
     "thumbnails": [
       "assets/104_niqu1-0.png",
-      "assets/104_niqu1-1.png",
-      "assets/104_niqu1-2.png",
-      "assets/104_niqu1-3.png"
+      "assets/104_niqu1-1.png"
     ],
     "name": "Niqu 1.0",
     "author": "Rick Patrick (esXXI)"
@@ -729,9 +665,7 @@
   {
     "thumbnails": [
       "assets/100_enigma10-0.png",
-      "assets/100_enigma10-1.png",
-      "assets/100_enigma10-2.png",
-      "assets/100_enigma10-3.png"
+      "assets/100_enigma10-1.png"
     ],
     "name": "Enigma 1.0",
     "author": "Hosince"
@@ -740,8 +674,7 @@
     "thumbnails": [
       "assets/020_fatale-0.png",
       "assets/020_fatale-1.png",
-      "assets/020_fatale-2.png",
-      "assets/020_fatale-3.png"
+      "assets/020_fatale-2.png"
     ],
     "name": "FatalE (beta)",
     "author": "Carbon"
@@ -778,8 +711,7 @@
     "thumbnails": [
       "assets/095_albook10-0.png",
       "assets/095_albook10-1.png",
-      "assets/095_albook10-2.png",
-      "assets/095_albook10-3.png"
+      "assets/095_albook10-2.png"
     ],
     "name": "Albook 1.0",
     "author": "XiAP"
@@ -794,9 +726,7 @@
   {
     "thumbnails": [
       "assets/004_bbxmercuryx15-0.png",
-      "assets/004_bbxmercuryx15-1.png",
-      "assets/004_bbxmercuryx15-2.png",
-      "assets/004_bbxmercuryx15-3.png"
+      "assets/004_bbxmercuryx15-1.png"
     ],
     "name": "BBX Mercury X 1.5",
     "author": "Max Rudberg"
@@ -838,9 +768,7 @@
   {
     "thumbnails": [
       "assets/090_sweetslumber111-0.png",
-      "assets/090_sweetslumber111-1.png",
-      "assets/090_sweetslumber111-2.png",
-      "assets/090_sweetslumber111-3.png"
+      "assets/090_sweetslumber111-1.png"
     ],
     "name": "Sweet Slumber 1.1.1",
     "author": "Daniel Goffin"
@@ -862,9 +790,7 @@
   {
     "thumbnails": [
       "assets/086_twistmas2004-0.png",
-      "assets/086_twistmas2004-1.png",
-      "assets/086_twistmas2004-2.png",
-      "assets/086_twistmas2004-3.png"
+      "assets/086_twistmas2004-1.png"
     ],
     "name": "Twistmas 2004",
     "author": "TwisterMc"
@@ -879,9 +805,7 @@
   {
     "thumbnails": [
       "assets/054_xmetal20-0.png",
-      "assets/054_xmetal20-1.png",
-      "assets/054_xmetal20-2.png",
-      "assets/054_xmetal20-3.png"
+      "assets/054_xmetal20-1.png"
     ],
     "name": "X-Metal 2.0",
     "author": "COTL GUI Studio"
@@ -1047,18 +971,14 @@
     "thumbnails": [
       "assets/038_classix10k12-0.png",
       "assets/038_classix10k12-1.png",
-      "assets/038_classix10k12-2.png",
-      "assets/038_classix10k12-3.png"
+      "assets/038_classix10k12-2.png"
     ],
     "name": "Classix 10k 1.2",
     "author": "Chris McElligott"
   },
   {
     "thumbnails": [
-      "assets/060_blackintosh10-0.png",
-      "assets/060_blackintosh10-1.png",
-      "assets/060_blackintosh10-2.png",
-      "assets/060_blackintosh10-3.png"
+      "assets/060_blackintosh10-0.png"
     ],
     "name": "Blackintosh 1.0",
     "author": "Androo"
@@ -1066,9 +986,7 @@
   {
     "thumbnails": [
       "assets/056_aquaextremetiger101-0.png",
-      "assets/056_aquaextremetiger101-1.png",
-      "assets/056_aquaextremetiger101-2.png",
-      "assets/056_aquaextremetiger101-3.png"
+      "assets/056_aquaextremetiger101-1.png"
     ],
     "name": "Aqua Extreme Tiger 1.0.1",
     "author": "Max Rudberg"
@@ -1076,19 +994,14 @@
   {
     "thumbnails": [
       "assets/053_plaster11-0.png",
-      "assets/053_plaster11-1.png",
-      "assets/053_plaster11-2.png",
-      "assets/053_plaster11-3.png"
+      "assets/053_plaster11-1.png"
     ],
     "name": "Plaster 1.1",
     "author": "Takashi Izawa"
   },
   {
     "thumbnails": [
-      "assets/052_prolcdblue12-0.png",
-      "assets/052_prolcdblue12-1.png",
-      "assets/052_prolcdblue12-2.png",
-      "assets/052_prolcdblue12-3.png"
+      "assets/052_prolcdblue12-0.png"
     ],
     "name": "ProLCD Blue 1.2",
     "author": "Harlan Lewis"
@@ -1105,10 +1018,7 @@
   },
   {
     "thumbnails": [
-      "assets/055_emanon10-0.png",
-      "assets/055_emanon10-1.png",
-      "assets/055_emanon10-2.png",
-      "assets/055_emanon10-3.png"
+      "assets/055_emanon10-0.png"
     ],
     "name": "Emanon 1.0",
     "author": "Peter MacWhinnie"
@@ -1116,9 +1026,7 @@
   {
     "thumbnails": [
       "assets/051_dtxanonb31-0.png",
-      "assets/051_dtxanonb31-1.png",
-      "assets/051_dtxanonb31-2.png",
-      "assets/051_dtxanonb31-3.png"
+      "assets/051_dtxanonb31-1.png"
     ],
     "name": "DT X-Anon b3.1",
     "author": "Dragon Tongue"
@@ -1135,20 +1043,14 @@
   },
   {
     "thumbnails": [
-      "assets/046_smoove11-0.png",
-      "assets/046_smoove11-1.png",
-      "assets/046_smoove11-2.png",
-      "assets/046_smoove11-3.png"
+      "assets/046_smoove11-0.png"
     ],
     "name": "Smoove 1.1",
     "author": "Dave Richardson"
   },
   {
     "thumbnails": [
-      "assets/047_beosx2-0.png",
-      "assets/047_beosx2-1.png",
-      "assets/047_beosx2-2.png",
-      "assets/047_beosx2-3.png"
+      "assets/047_beosx2-0.png"
     ],
     "name": "BeOSX 2.0",
     "author": "Swizcore Studio"
@@ -1156,9 +1058,7 @@
   {
     "thumbnails": [
       "assets/045_gasb31-0.png",
-      "assets/045_gasb31-1.png",
-      "assets/045_gasb31-2.png",
-      "assets/045_gasb31-3.png"
+      "assets/045_gasb31-1.png"
     ],
     "name": "Gripped Alloy Smooth b3.1",
     "author": "Dragon Tongue"
@@ -1166,19 +1066,14 @@
   {
     "thumbnails": [
       "assets/044_brasspaperb3-0.png",
-      "assets/044_brasspaperb3-1.png",
-      "assets/044_brasspaperb3-2.png",
-      "assets/044_brasspaperb3-3.png"
+      "assets/044_brasspaperb3-1.png"
     ],
     "name": "Brass Paper beta 3",
     "author": "Dragon Tongue"
   },
   {
     "thumbnails": [
-      "assets/043_paperplastic10-0.png",
-      "assets/043_paperplastic10-1.png",
-      "assets/043_paperplastic10-2.png",
-      "assets/043_paperplastic10-3.png"
+      "assets/043_paperplastic10-0.png"
     ],
     "name": "Paper & Plastic 1.0",
     "author": "XiAP"
@@ -1200,9 +1095,7 @@
   {
     "thumbnails": [
       "assets/024_istyle15-0.png",
-      "assets/024_istyle15-1.png",
-      "assets/024_istyle15-2.png",
-      "assets/024_istyle15-3.png"
+      "assets/024_istyle15-1.png"
     ],
     "name": "iStyle 1.5",
     "author": "COTL GUI Studio"
@@ -1210,9 +1103,7 @@
   {
     "thumbnails": [
       "assets/035_makkixbros302-0.png",
-      "assets/035_makkixbros302-1.png",
-      "assets/035_makkixbros302-2.png",
-      "assets/035_makkixbros302-3.png"
+      "assets/035_makkixbros302-1.png"
     ],
     "name": "MakkiX Bros. 3.0.2",
     "author": "Takashi Izawa"
@@ -1221,8 +1112,7 @@
     "thumbnails": [
       "assets/019_latium20-0.png",
       "assets/019_latium20-1.png",
-      "assets/019_latium20-2.png",
-      "assets/019_latium20-3.png"
+      "assets/019_latium20-2.png"
     ],
     "name": "Latium 2.0",
     "author": "Harlan Lewis"
@@ -1231,8 +1121,7 @@
     "thumbnails": [
       "assets/037_xisoftcandy10-0.png",
       "assets/037_xisoftcandy10-1.png",
-      "assets/037_xisoftcandy10-2.png",
-      "assets/037_xisoftcandy10-3.png"
+      "assets/037_xisoftcandy10-2.png"
     ],
     "name": "XiSoft Candy 1.0",
     "author": "XiAP"
@@ -1257,9 +1146,7 @@
   {
     "thumbnails": [
       "assets/032_cappuccino-0.png",
-      "assets/032_cappuccino-1.png",
-      "assets/032_cappuccino-2.png",
-      "assets/032_cappuccino-3.png"
+      "assets/032_cappuccino-1.png"
     ],
     "name": "Cappucino 2.0",
     "author": "Swizcore Studio"
@@ -1343,9 +1230,7 @@
   {
     "thumbnails": [
       "assets/011_studiopro111-0.png",
-      "assets/011_studiopro111-1.png",
-      "assets/011_studiopro111-2.png",
-      "assets/011_studiopro111-3.png"
+      "assets/011_studiopro111-1.png"
     ],
     "name": "Studio Pro 1.0.1",
     "author": "Swizcore Studio"
@@ -1775,9 +1660,7 @@
     "author": "Daisuke Yamashita",
     "thumbnails": [
       "assets/03-22_Pulsar_1.1_pr-0.png",
-      "assets/03-22_Pulsar_1.1_pr-1.png",
-      "assets/03-22_Pulsar_1.1_pr-2.png",
-      "assets/03-22_Pulsar_1.1_pr-3.png"
+      "assets/03-22_Pulsar_1.1_pr-1.png"
     ]
   },
   {
@@ -2018,9 +1901,7 @@
     "author": "COTL GUI Studio",
     "thumbnails": [
       "assets/10-28_xmetal_pr-0.png",
-      "assets/10-28_xmetal_pr-1.png",
-      "assets/10-28_xmetal_pr-2.png",
-      "assets/10-28_xmetal_pr-3.png"
+      "assets/10-28_xmetal_pr-1.png"
     ]
   },
   {
@@ -2551,10 +2432,7 @@
     "name": "DSX v3.1.1",
     "author": "Takashi Izawa",
     "thumbnails": [
-      "assets/02-01_dsx_311_lg-0.png",
-      "assets/02-01_dsx_311_lg-1.png",
-      "assets/02-01_dsx_311_lg-2.png",
-      "assets/02-01_dsx_311_lg-3.png"
+      "assets/02-01_dsx_311_lg-0.png"
     ]
   },
   {
@@ -2876,9 +2754,7 @@
     "author": "Takashi Izawa",
     "thumbnails": [
       "assets/10-14_alumitex_pr-0.png",
-      "assets/10-14_alumitex_pr-1.png",
-      "assets/10-14_alumitex_pr-2.png",
-      "assets/10-14_alumitex_pr-3.png"
+      "assets/10-14_alumitex_pr-1.png"
     ]
   },
   {
@@ -2927,8 +2803,7 @@
     "thumbnails": [
       "assets/09-25_brushed_pr-0.png",
       "assets/09-25_brushed_pr-1.png",
-      "assets/09-25_brushed_pr-2.png",
-      "assets/09-25_brushed_pr-3.png"
+      "assets/09-25_brushed_pr-2.png"
     ]
   },
   {
@@ -2971,8 +2846,7 @@
     "thumbnails": [
       "assets/09-02_sspowermetal_pr-0.png",
       "assets/09-02_sspowermetal_pr-1.png",
-      "assets/09-02_sspowermetal_pr-2.png",
-      "assets/09-02_sspowermetal_pr-3.png"
+      "assets/09-02_sspowermetal_pr-2.png"
     ]
   },
   {
@@ -3556,9 +3430,7 @@
     "author": "Michael Rabe",
     "thumbnails": [
       "assets/08-23-ti-0.png",
-      "assets/08-23-ti-1.png",
-      "assets/08-23-ti-2.png",
-      "assets/08-23-ti-3.png"
+      "assets/08-23-ti-1.png"
     ]
   }
 ]

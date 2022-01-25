@@ -4,10 +4,8 @@ import fs from "fs";
 
 (async () => {
   merged.forEach(theme => {
-    theme.thumbnails.forEach((thumbnail, index) => {
-      if (!thumbnail.startsWith("assets/")) {
-        theme.thumbnails[index] = `assets/${thumbnail}`;
-      }
+    theme.thumbnails = theme.thumbnails.filter((thumbnail, index) => {
+      return fs.existsSync(thumbnail);
     });
   });
 
