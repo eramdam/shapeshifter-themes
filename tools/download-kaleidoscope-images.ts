@@ -5,23 +5,23 @@ import path from "path";
 
 (async () => {
   for (const theme of kaleidoscope) {
-    const imagePath = `./assets/${path.basename(theme.image)}`;
+    const imagePath = `./assets/${path.basename(theme.thumbnails[0])}`;
 
     if (fs.existsSync(imagePath)) {
-      console.log(`Skipping ${theme.image}`);
-      theme.image = imagePath;
+      console.log(`Skipping ${theme.thumbnails[0]}`);
+      theme.thumbnails[0] = imagePath;
       continue;
     }
 
-    console.log(theme.image);
+    console.log(theme.thumbnails[0]);
     await axios
-      .get(theme.image, {
+      .get(theme.thumbnails[0], {
         responseType: "stream"
       })
       .then(res => {
         res.data.pipe(fs.createWriteStream(imagePath));
       });
-    theme.image = imagePath;
+    theme.thumbnails[0] = imagePath;
   }
 
   fs.writeFileSync("./data/kaleidoscope.json", JSON.stringify(kaleidoscope));
