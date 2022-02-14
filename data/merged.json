@@ -558,7 +558,9 @@
   },
   {
     "thumbnails": [
-      "assets/114_dragon10.jpg"
+      "assets/114_dragon10.jpg",
+      "assets/09-22_DRAGON_1.0_pr.png",
+      "assets/09-22_DRAGON_1.0_lg.jpg"
     ],
     "name": "DRAGON 1.0",
     "author": "Susumu Yoshida"
@@ -702,7 +704,9 @@
   },
   {
     "thumbnails": [
-      "assets/096_one.jpg"
+      "assets/096_one.jpg",
+      "assets/02-15_One_pr.png",
+      "assets/02-15_One_lg.jpg"
     ],
     "name": "One",
     "author": "Brett Lavalla"
@@ -1087,7 +1091,9 @@
   },
   {
     "thumbnails": [
-      "assets/041_demetallifizer.jpg"
+      "assets/041_demetallifizer.jpg",
+      "assets/04-08_demetallifizer10_pr.jpg",
+      "assets/04-08_demetallifizer10_lg.jpg"
     ],
     "name": "Demetallifizer",
     "author": "Peter MacWhinnie"
@@ -1267,7 +1273,9 @@
       "assets/005_brushed35-0.png",
       "assets/005_brushed35-1.png",
       "assets/005_brushed35-2.png",
-      "assets/005_brushed35-3.png"
+      "assets/005_brushed35-3.png",
+      "assets/01-14_brushed35_pr.jpg",
+      "assets/01-14_brushed35_lg.jpg"
     ],
     "name": "Brushed 3.5",
     "author": "Max Rudberg"
@@ -1300,13 +1308,7 @@
     "author": "Gerrit Vanoppen",
     "thumbnails": [
       "assets/01-03_Underling_v4_pr.png",
-      "assets/01-03_Underling_v4_lg.jpg"
-    ]
-  },
-  {
-    "name": "Underling",
-    "author": "Gerrit Vanoppen",
-    "thumbnails": [
+      "assets/01-03_Underling_v4_lg.jpg",
       "assets/01-03_Underling_v4_pr.png",
       "assets/01-03_Underling_v4_lg.jpg"
     ]
@@ -1348,14 +1350,6 @@
     "thumbnails": [
       "assets/10-04_Xi-FreshSnow_C_pr.png",
       "assets/10-04_Xi-FreshSnow_C_lg.jpg"
-    ]
-  },
-  {
-    "name": "DRAGON 1.0",
-    "author": "Susumu Yoshida",
-    "thumbnails": [
-      "assets/09-22_DRAGON_1.0_pr.png",
-      "assets/09-22_DRAGON_1.0_lg.jpg"
     ]
   },
   {
@@ -1482,7 +1476,8 @@
     "author": "Martin Ottosson",
     "thumbnails": [
       "assets/06-23_Good_Grey_1.4_pr.png",
-      "assets/06-23_Good_Grey_1.4_lg.jpg"
+      "assets/06-23_Good_Grey_1.4_lg.jpg",
+      "assets/11-11_goodgrey13_lg.jpg"
     ]
   },
   {
@@ -1496,7 +1491,9 @@
     "name": "Azure",
     "author": "Chris McElligot",
     "thumbnails": [
-      "assets/06-02_Azure_2.0_pr.png"
+      "assets/06-02_Azure_2.0_pr.png",
+      "assets/03-24_Azure_1.5_pr.png",
+      "assets/03-24_Azure_1.5_lg.jpg"
     ]
   },
   {
@@ -1524,7 +1521,10 @@
     "name": "Milk",
     "author": "Max Rudberg",
     "thumbnails": [
-      "assets/05-24_Milk_3.2_pr.png"
+      "assets/05-24_Milk_3.2_pr.png",
+      "assets/07-24_milk162_pr.jpg",
+      "assets/12-24_Milk.png",
+      "assets/09-26_Milk.png"
     ]
   },
   {
@@ -1580,7 +1580,11 @@
     "author": "Max Rudberg",
     "thumbnails": [
       "assets/05-16_AluminumAlloy_1.7_pr.png",
-      "assets/05-16_AluminumAlloy_1.7_lg.jpg"
+      "assets/05-16_AluminumAlloy_1.7_lg.jpg",
+      "assets/01-18_AlumAlloy_1.6.1_pr.png",
+      "assets/01-18_AlumAlloy_1.6.1_lg.jpg",
+      "assets/01-18_AlumAlloy_1.6.1_pr.png",
+      "assets/01-18_AlumAlloy_1.6.1_lg.jpg"
     ]
   },
   {
@@ -1588,13 +1592,7 @@
     "author": "Sagefire",
     "thumbnails": [
       "assets/08-30_Iridium_pr.png",
-      "assets/09-22_Iridium_1.6.5_lg.jpg"
-    ]
-  },
-  {
-    "name": "Iridium",
-    "author": "Sagefire",
-    "thumbnails": [
+      "assets/09-22_Iridium_1.6.5_lg.jpg",
       "assets/08-30_Iridium_pr.png",
       "assets/09-22_Iridium_1.6.5_lg.jpg"
     ]
@@ -1604,7 +1602,10 @@
     "author": "Laine Lee",
     "thumbnails": [
       "assets/05-19_Pillowtalk_Sky_3_pr.png",
-      "assets/05-19_Pillowtalk_Sky_3_lg.jpg"
+      "assets/05-19_Pillowtalk_Sky_3_lg.jpg",
+      "assets/theme_Pillow_09-18.png",
+      "assets/theme_Pillow_09-18.png",
+      "assets/theme_Pillow_08-01.png"
     ]
   },
   {
@@ -1629,14 +1630,6 @@
     "thumbnails": [
       "assets/03-29_Enigma_1.0_pr.png",
       "assets/03-29_Enigma_1.0_lg.jpg"
-    ]
-  },
-  {
-    "name": "Azure",
-    "author": "Chris McElligot",
-    "thumbnails": [
-      "assets/03-24_Azure_1.5_pr.png",
-      "assets/03-24_Azure_1.5_lg.jpg"
     ]
   },
   {
@@ -1688,14 +1681,6 @@
     ]
   },
   {
-    "name": "One",
-    "author": "Brett Lavalla",
-    "thumbnails": [
-      "assets/02-15_One_pr.png",
-      "assets/02-15_One_lg.jpg"
-    ]
-  },
-  {
     "name": "XiDG Albook",
     "author": "XiAP Developer Group",
     "thumbnails": [
@@ -1732,7 +1717,8 @@
     "author": "Max Rudberg",
     "thumbnails": [
       "assets/01-25_BBXMercuryX_1.5_pr.png",
-      "assets/01-25_BBXMercuryX_1.5_lg.jpg"
+      "assets/01-25_BBXMercuryX_1.5_lg.jpg",
+      "assets/12-03_BBX_Mercury.png"
     ]
   },
   {
@@ -1741,22 +1727,6 @@
     "thumbnails": [
       "assets/01-20_AquaBox_pr.png",
       "assets/01-20_AquaBox_lg.jpg"
-    ]
-  },
-  {
-    "name": "Aluminum Alloy",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/01-18_AlumAlloy_1.6.1_pr.png",
-      "assets/01-18_AlumAlloy_1.6.1_lg.jpg"
-    ]
-  },
-  {
-    "name": "Aluminum Alloy",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/01-18_AlumAlloy_1.6.1_pr.png",
-      "assets/01-18_AlumAlloy_1.6.1_lg.jpg"
     ]
   },
   {
@@ -1848,13 +1818,6 @@
     ]
   },
   {
-    "name": "Good Grey",
-    "author": "Martin Ottosson",
-    "thumbnails": [
-      "assets/11-11_goodgrey13_lg.jpg"
-    ]
-  },
-  {
     "name": "Quaker 3",
     "author": "Blake Stephens",
     "thumbnails": [
@@ -1901,7 +1864,9 @@
     "author": "COTL GUI Studio",
     "thumbnails": [
       "assets/10-28_xmetal_pr-0.png",
-      "assets/10-28_xmetal_pr-1.png"
+      "assets/10-28_xmetal_pr-1.png",
+      "assets/06-29_xmetal10_pr.png",
+      "assets/06-29_xmetal10_lg.jpg"
     ]
   },
   {
@@ -1965,14 +1930,6 @@
     "thumbnails": [
       "assets/07-06-prolcdblue_pr.png",
       "assets/07-06-prolcdblue_lg.jpg"
-    ]
-  },
-  {
-    "name": "X-Metal",
-    "author": "COTL GUI Studio",
-    "thumbnails": [
-      "assets/06-29_xmetal10_pr.png",
-      "assets/06-29_xmetal10_lg.jpg"
     ]
   },
   {
@@ -2108,7 +2065,8 @@
     "author": "Takashi Izawa",
     "thumbnails": [
       "assets/04-22_makkix301_pr.png",
-      "assets/04-22_makkix301_lg.jpg"
+      "assets/04-22_makkix301_lg.jpg",
+      "assets/06-19_Makki.jpg"
     ]
   },
   {
@@ -2116,7 +2074,9 @@
     "author": "Takashi Izawa",
     "thumbnails": [
       "assets/04-22_maggrax301_pr.png",
-      "assets/04-22_maggrax301_lg.jpg"
+      "assets/04-22_maggrax301_lg.jpg",
+      "assets/10-16_maggrax_pr.jpg",
+      "assets/10-16_maggrax_lg.jpg"
     ]
   },
   {
@@ -2124,7 +2084,9 @@
     "author": "Takashi Izawa",
     "thumbnails": [
       "assets/04-20_shinobi23_pr.png",
-      "assets/04-20_shinobi23_lg.jpg"
+      "assets/04-20_shinobi23_lg.jpg",
+      "assets/10-21_shinobi_pr.jpg",
+      "assets/10-21_shinobi_lg.jpg"
     ]
   },
   {
@@ -2191,14 +2153,6 @@
     ]
   },
   {
-    "name": "Demetallifizer",
-    "author": "Peter MacWhinnie",
-    "thumbnails": [
-      "assets/04-08_demetallifizer10_pr.jpg",
-      "assets/04-08_demetallifizer10_lg.jpg"
-    ]
-  },
-  {
     "name": "Metallika",
     "author": "dewey99",
     "thumbnails": [
@@ -2227,7 +2181,8 @@
     "author": "John Tewksbury",
     "thumbnails": [
       "assets/03-30_titanium74_pr.jpg",
-      "assets/03-30_titanium74_lg.jpg"
+      "assets/03-30_titanium74_lg.jpg",
+      "assets/01-08-titanium.jpg"
     ]
   },
   {
@@ -2295,7 +2250,11 @@
     "name": "Rhapsodized",
     "author": "Max Rudberg",
     "thumbnails": [
-      "assets/03-18_rhapsodized14_pr.jpg"
+      "assets/03-18_rhapsodized14_pr.jpg",
+      "assets/07-31_rhapsodized_pr-0.png",
+      "assets/07-31_rhapsodized_pr-1.png",
+      "assets/07-31_rhapsodized_pr-2.png",
+      "assets/07-31_rhapsodized_pr-3.png"
     ]
   },
   {
@@ -2357,7 +2316,8 @@
     "author": "Kevin Husted",
     "thumbnails": [
       "assets/03-02_NeXT20_pr.jpg",
-      "assets/03-02_NeXT20_lg.jpg"
+      "assets/03-02_NeXT20_lg.jpg",
+      "assets/02-04-next.jpg"
     ]
   },
   {
@@ -2497,14 +2457,6 @@
     "thumbnails": [
       "assets/11-20_pxd3_pr.jpg",
       "assets/11-20_pxd3_lg.jpg"
-    ]
-  },
-  {
-    "name": "Brushed 3.5",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/01-14_brushed35_pr.jpg",
-      "assets/01-14_brushed35_lg.jpg"
     ]
   },
   {
@@ -2702,14 +2654,6 @@
     ]
   },
   {
-    "name": "Shinobi",
-    "author": "Takashi Izawa",
-    "thumbnails": [
-      "assets/10-21_shinobi_pr.jpg",
-      "assets/10-21_shinobi_lg.jpg"
-    ]
-  },
-  {
     "name": "Titanium 5",
     "author": "JohnTewksbury",
     "thumbnails": [
@@ -2738,15 +2682,8 @@
     "author": "Takashi Izawa",
     "thumbnails": [
       "assets/10-16_dsx_pr.jpg",
-      "assets/10-16_dsx_lg.jpg"
-    ]
-  },
-  {
-    "name": "MaggraX",
-    "author": "Takashi Izawa",
-    "thumbnails": [
-      "assets/10-16_maggrax_pr.jpg",
-      "assets/10-16_maggrax_lg.jpg"
+      "assets/10-16_dsx_lg.jpg",
+      "assets/02-04-dsx.jpg"
     ]
   },
   {
@@ -2811,13 +2748,7 @@
     "author": "vjpriority",
     "thumbnails": [
       "assets/09-25_champagne_pr.jpg",
-      "assets/09-25_champagne_lg.jpg"
-    ]
-  },
-  {
-    "name": "Champagne",
-    "author": "vjpriority",
-    "thumbnails": [
+      "assets/09-25_champagne_lg.jpg",
       "assets/09-25_champagne_pr.jpg",
       "assets/09-25_champagne_lg.jpg"
     ]
@@ -2878,16 +2809,6 @@
     ]
   },
   {
-    "name": "Rhapsodized",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/07-31_rhapsodized_pr-0.png",
-      "assets/07-31_rhapsodized_pr-1.png",
-      "assets/07-31_rhapsodized_pr-2.png",
-      "assets/07-31_rhapsodized_pr-3.png"
-    ]
-  },
-  {
     "name": "Flagship",
     "author": "TopsyDesigns",
     "thumbnails": [
@@ -2899,13 +2820,6 @@
     "author": "R. Galza",
     "thumbnails": [
       "assets/07-28_pantherpro_pr.jpg"
-    ]
-  },
-  {
-    "name": "Milk",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/07-24_milk162_pr.jpg"
     ]
   },
   {
@@ -2927,13 +2841,6 @@
     "author": "Max Rudberg",
     "thumbnails": [
       "assets/07-07_smoothstripes_preview.jpg"
-    ]
-  },
-  {
-    "name": "Pillowtalk-Sky",
-    "author": "Laine Lee",
-    "thumbnails": [
-      "assets/theme_Pillow_09-18.png"
     ]
   },
   {
@@ -2975,17 +2882,11 @@
     ]
   },
   {
-    "name": "BBX Mercury X",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/12-03_BBX_Mercury.png"
-    ]
-  },
-  {
     "name": "Pastel",
     "author": "Longway",
     "thumbnails": [
-      "assets/12-19_pastel.png"
+      "assets/12-19_pastel.png",
+      "assets/06-19_Pastel.jpg"
     ]
   },
   {
@@ -3020,14 +2921,9 @@
     "name": "Classic Platinum",
     "author": "Max Rudberg",
     "thumbnails": [
-      "assets/12-24_ClassicPlatinum.png"
-    ]
-  },
-  {
-    "name": "Milk",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/12-24_Milk.png"
+      "assets/12-24_ClassicPlatinum.png",
+      "assets/09-26_classicplatinum.png",
+      "assets/04-06-02_ClassicPlatinum.jpg"
     ]
   },
   {
@@ -3153,31 +3049,10 @@
     ]
   },
   {
-    "name": "Pillowtalk-Sky",
-    "author": "Laine Lee",
-    "thumbnails": [
-      "assets/theme_Pillow_09-18.png"
-    ]
-  },
-  {
-    "name": "Milk",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/09-26_Milk.png"
-    ]
-  },
-  {
     "name": "DSX 2.0",
     "author": "izawa",
     "thumbnails": [
       "assets/09-26_DSX2.png"
-    ]
-  },
-  {
-    "name": "Classic Platinum",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/09-26_classicplatinum.png"
     ]
   },
   {
@@ -3212,14 +3087,8 @@
     "name": "Brushed",
     "author": "Max Rudberg",
     "thumbnails": [
-      "assets/theme_brushed_02.jpg"
-    ]
-  },
-  {
-    "name": "Pillowtalk-Sky",
-    "author": "Laine Lee",
-    "thumbnails": [
-      "assets/theme_Pillow_08-01.png"
+      "assets/theme_brushed_02.jpg",
+      "assets/04-06-02_Brushed.jpg"
     ]
   },
   {
@@ -3258,24 +3127,10 @@
     ]
   },
   {
-    "name": "Pastel",
-    "author": "Longway",
-    "thumbnails": [
-      "assets/06-19_Pastel.jpg"
-    ]
-  },
-  {
     "name": "AJ",
     "author": "Cyber Thief",
     "thumbnails": [
       "assets/06-19_AJ.jpg"
-    ]
-  },
-  {
-    "name": "MakkiX",
-    "author": "Takashi Izawa",
-    "thumbnails": [
-      "assets/06-19_Makki.jpg"
     ]
   },
   {
@@ -3342,38 +3197,10 @@
     ]
   },
   {
-    "name": "Classic Platinum",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/04-06-02_ClassicPlatinum.jpg"
-    ]
-  },
-  {
-    "name": "Brushed",
-    "author": "Max Rudberg",
-    "thumbnails": [
-      "assets/04-06-02_Brushed.jpg"
-    ]
-  },
-  {
     "name": "BeOS X",
     "author": "Max Rudberg",
     "thumbnails": [
       "assets/4-5-02_BoOSX.jpg"
-    ]
-  },
-  {
-    "name": "NeXT",
-    "author": "Kevin Husted",
-    "thumbnails": [
-      "assets/02-04-next.jpg"
-    ]
-  },
-  {
-    "name": "DSX",
-    "author": "Takashi Izawa",
-    "thumbnails": [
-      "assets/02-04-dsx.jpg"
     ]
   },
   {
@@ -3388,13 +3215,6 @@
     "author": "Matthew Stoton",
     "thumbnails": [
       "assets/01-08-darkaqua.jpg"
-    ]
-  },
-  {
-    "name": "Titanium",
-    "author": "John Tewksbury",
-    "thumbnails": [
-      "assets/01-08-titanium.jpg"
     ]
   },
   {
