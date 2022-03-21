@@ -27,7 +27,7 @@ export async function postThemeToTwitter(theme: Theme) {
       strictSSL: true
     });
     const attachments = await Promise.all(
-      theme.thumbnails.map(thumbnail => {
+      theme.thumbnails.slice(0, 4).map(thumbnail => {
         return twitter.post("media/upload", {
           media_data: fs.readFileSync(
             path.resolve(__dirname, "..", "..", thumbnail),
@@ -70,7 +70,7 @@ export async function postThemeToMastodon(theme: Theme) {
     });
 
     const attachments = await Promise.all(
-      theme.thumbnails.map(thumbnail => {
+      theme.thumbnails.slice(0, 4).map(thumbnail => {
         return masto.mediaAttachments.create({
           file: fs.createReadStream(
             path.resolve(__dirname, "..", "..", thumbnail)
