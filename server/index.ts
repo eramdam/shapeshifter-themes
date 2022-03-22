@@ -28,9 +28,11 @@ async function pickTheme() {
 
   let pickedTheme = sample(collection) || collection[0];
   let pickedHash = objectHash(pickedTheme);
+  let tries = 0;
   console.log({ pickedTheme, pickedHash });
 
-  while (tweetedHashs.find(h => h === pickedHash)) {
+  while (tweetedHashs.find(h => h === pickedHash) && tries < 10) {
+    tries++;
     pickedTheme = sample(collection) || collection[0];
     pickedHash = objectHash(pickedTheme);
     console.log({ pickedTheme, pickedHash });
