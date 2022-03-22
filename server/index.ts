@@ -16,6 +16,7 @@ async function pickTheme() {
   const collection = currentHourIsEven
     ? kaleidoscopeThemes
     : shapeshifterThemes;
+  console.log({ currentHourIsEven });
 
   // If we tweeted everything, we reset the list
   if (
@@ -27,6 +28,7 @@ async function pickTheme() {
 
   let pickedTheme = sample(collection) || collection[0];
   let pickedHash = objectHash(pickedTheme);
+  console.log({ pickedTheme, pickedHash });
 
   while (tweetedHashs.find(h => h === pickedHash)) {
     pickedTheme = sample(collection) || collection[0];
