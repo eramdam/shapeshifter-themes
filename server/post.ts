@@ -49,8 +49,21 @@ export async function postThemeToTwitter(theme: Theme) {
       });
     }
 
+    function padString(str: string) {
+      return str.length > 120 ? `${str.slice(0, 119)}…` : str;
+    }
+
+    function getStatusText() {
+      const baseStatus = `${theme.name} - ${theme.author}`;
+      if (baseStatus.length >= 250) {
+        return baseStatus;
+      }
+
+      return `${padString(theme.name)} - ${padString(theme.author)}`;
+    }
+
     const post = await twitter.post("statuses/update", {
-      status: `${theme.name} - ${theme.author}`,
+      status: getStatusText(),
       // @ts-expect-error
       media_ids: attachments.map(a => a.data.media_id_string)
     });
@@ -80,8 +93,21 @@ export async function postThemeToMastodon(theme: Theme) {
       })
     );
 
+    function padString(str: string) {
+      return str.length > 220 ? `${str.slice(0, 219)}…` : str;
+    }
+
+    function getStatusText() {
+      const baseStatus = `${theme.name} - ${theme.author}`;
+      if (baseStatus.length >= 450) {
+        return baseStatus;
+      }
+
+      return `${padString(theme.name)} - ${padString(theme.author)}`;
+    }
+
     const status = await masto.statuses.create({
-      status: `${theme.name} - ${theme.author}`,
+      status: getStatusText(),
       visibility: "public",
       mediaIds: attachments.map(t => t.id)
     });
