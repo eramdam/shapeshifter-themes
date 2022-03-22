@@ -33,6 +33,7 @@ async function pickTheme() {
   while (tweetedHashs.find(h => h === pickedHash)) {
     pickedTheme = sample(collection) || collection[0];
     pickedHash = objectHash(pickedTheme);
+    console.log({ pickedTheme, pickedHash });
   }
 
   tweetedHashs.push(pickedHash);
