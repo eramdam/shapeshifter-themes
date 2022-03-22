@@ -1,6 +1,6 @@
 require("dotenv").config();
 import express from "express";
-import { sample } from "lodash";
+import _, { sample } from "lodash";
 import shapeshifterThemes from "../data/merged.json";
 import kaleidoscopeThemes from "../data/kaleidoscope.json";
 import { postThemeToMastodon, postThemeToTwitter } from "./post";
@@ -10,37 +10,56 @@ import objectHash from "object-hash";
 const app = express();
 
 async function pickTheme() {
-  const hashPath = "./data/tweeted-hashs.txt";
-  let tweetedHashs = (await fs.readFile(hashPath)).toString().split("\n");
   const currentHourIsEven = new Date().getHours() % 2 === 0;
-  const collection = currentHourIsEven
-    ? kaleidoscopeThemes
-    : shapeshifterThemes;
-  console.log({ currentHourIsEven });
+  // Decide what themes to choose from
+  const themes = currentHourIsEven ? kaleidoscopeThemes : shapeshifterThemes;
+  const shapeShifterHashes = (
+    await fs.readFile("./data/shapeshifter-hashes.txt")
+  )
+    .toString()
+    .split("\n");
+  const kaleidoscopeHashes = (
+    await fs.readFile("./data/kaleidoscope-hashes.txt")
+  )
+    .toString()
+    .split("\n");
+
+  // Filter our tweeted hashes to only list the themes we care about right now
+  let tweetedHashes = (await fs.readFile("./data/tweeted-hashs.txt"))
+    .toString()
+    .split("\n");
+  tweetedHashes = currentHourIsEven
+    ? tweetedHashes.filter(h => kaleidoscopeHashes.includes(h))
+    : tweetedHashes.filter(h => shapeShifterHashes.includes(h));
+
+  // Get the list of remaining hashes
+  let remainingHashes = _.difference(
+    currentHourIsEven ? kaleidoscopeHashes : shapeShifterHashes,
+    tweetedHashes
+  );
 
   // If we tweeted everything, we reset the list
-  if (
-    tweetedHashs.length ===
-    kaleidoscopeThemes.length + shapeshifterThemes.length
-  ) {
-    tweetedHashs = [];
+  if (remainingHashes.length === 0) {
+    tweetedHashes = [];
+    remainingHashes = currentHourIsEven
+      ? kaleidoscopeHashes
+      : shapeShifterHashes;
   }
 
-  let pickedTheme = sample(collection) || collection[0];
-  let pickedHash = objectHash(pickedTheme);
-  let tries = 0;
-  console.log({ pickedTheme, pickedHash });
+  let pickedHash = sample(remainingHashes) || remainingHashes[0];
+  const pickedTheme =
+    [...kaleidoscopeThemes, ...shapeshifterThemes].find(
+      t => pickedHash === objectHash(t)
+    ) ||
+    sample(themes) ||
+    themes[0];
 
-  while (tweetedHashs.find(h => h === pickedHash) && tries < 10) {
-    tries++;
-    pickedTheme = sample(collection) || collection[0];
-    pickedHash = objectHash(pickedTheme);
-    console.log({ pickedTheme, pickedHash });
-  }
+  tweetedHashes.push(pickedHash);
 
-  tweetedHashs.push(pickedHash);
-
-  await fs.writeFile(hashPath, tweetedHashs.join("\n").trim());
+  await fs.writeFile(
+    "./data/tweeted-hashs.txt",
+    tweetedHashes.join("\n").trim()
+  );
 
   return pickedTheme;
 }
@@ -48,7 +67,6 @@ async function pickTheme() {
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
     const theme = await pickTheme();
-    console.log({ theme });
     await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
     console.log(`Posted ${theme.name} - ${theme.author}`);
     res.sendStatus(200);
