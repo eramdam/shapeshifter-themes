@@ -41,10 +41,15 @@ async function pickTheme() {
 }
 
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
-  const theme = await pickTheme();
-  await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
-  console.log(`Posted ${theme.name} - ${theme.author}`);
-  res.sendStatus(200);
+  try {
+    const theme = await pickTheme();
+    await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
+    console.log(`Posted ${theme.name} - ${theme.author}`);
+    res.sendStatus(200);
+  } catch (e) {
+    console.error(e);
+    res.sendStatus(500);
+  }
 });
 
 const listener = app.listen(process.env.PORT, () => {
