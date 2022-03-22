@@ -43,6 +43,7 @@ async function pickTheme() {
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
     const theme = await pickTheme();
+    console.log({ theme });
     await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
     console.log(`Posted ${theme.name} - ${theme.author}`);
     res.sendStatus(200);
