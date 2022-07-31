@@ -3,7 +3,11 @@ import express from "express";
 import _, { sample } from "lodash";
 import shapeshifterThemes from "../data/merged.json";
 import kaleidoscopeThemes from "../data/kaleidoscope.json";
-import { postThemeToMastodon, postThemeToTwitter } from "./post";
+import {
+  postThemeToCohost,
+  postThemeToMastodon,
+  postThemeToTwitter
+} from "./post";
 import fs from "fs/promises";
 import objectHash from "object-hash";
 
@@ -67,7 +71,11 @@ async function pickTheme() {
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
     const theme = await pickTheme();
-    await Promise.all([postThemeToMastodon(theme), postThemeToTwitter(theme)]);
+    await Promise.all([
+      postThemeToMastodon(theme),
+      postThemeToTwitter(theme),
+      postThemeToCohost(theme)
+    ]);
     console.log(`Posted ${theme.name} - ${theme.author}`);
     res.sendStatus(200);
   } catch (e) {

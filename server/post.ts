@@ -3,6 +3,8 @@ import Twit from "twit";
 import { Theme } from "./types";
 import fs from "fs";
 import path from "path";
+// @ts-expect-error
+import cohost from "cohost";
 
 const config = {
   twitter: {
@@ -14,6 +16,11 @@ const config = {
   mastodon: {
     access_token: process.env.MASTO_ACCESS_TOKEN || "",
     api_url: "https://botsin.space/"
+  },
+  cohost: {
+    email: process.env.COHOST_EMAIL || "",
+    password: process.env.COHOST_PASSWORD || "",
+    projectHandle: process.env.COHOST_PROJECT || ""
   }
 };
 
@@ -117,4 +124,62 @@ export async function postThemeToMastodon(theme: Theme) {
     console.error(e);
     return undefined;
   }
+}
+
+export async function postThemeToCohost(theme: Theme) {
+  const user = new cohost.User();
+  await user.login(config.cohost.email, config.cohost.password);
+  const projects = await user.getProjects();
+  const projectToPostTo = projects.find(
+    (p: any) => p.handle === config.cohost.projectHandle
+  );
+
+  if (!projectToPostTo) {
+    console.error(
+      new Error(`No cohost projects found for ${config.cohost.projectHandle}`)
+    );
+    return undefined;
+  }
+
+  const basePost = {
+    postState: 0,
+    headline: "",
+    adultContent: false,
+    cws: [],
+    tags: [],
+    blocks: [
+      {
+        type: "markdown",
+        markdown: { content: `${theme.name} by ${theme.author}` }
+      }
+    ]
+  };
+
+  const draftId = await cohost.Post.create(projectToPostTo, basePost);
+
+  const attachmentsData = await Promise.all(
+    theme.thumbnails.slice(0, 4).map(thumbnail => {
+      return projectToPostTo.uploadAttachment(
+        draftId,
+        path.resolve(__dirname, "..", "..", thumbnail)
+      );
+    })
+  );
+
+  await cohost.Post.update(projectToPostTo, draftId, {
+    ...basePost,
+    postState: 1,
+    blocks: [
+      ...basePost.blocks,
+      ...attachmentsData.map(attachment => {
+        return {
+          type: "attachment",
+          attachment: {
+            ...attachment,
+            altText: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`
+          }
+        };
+      })
+    ]
+  });
 }
