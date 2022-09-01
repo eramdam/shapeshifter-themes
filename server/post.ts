@@ -146,7 +146,14 @@ export async function postThemeToCohost(theme: Theme) {
     headline: "",
     adultContent: false,
     cws: [],
-    tags: [],
+    tags: [
+      "macthemes",
+      "macintosh",
+      "mac osx",
+      "shapeshifter",
+      "kaleidoscope",
+      "customization"
+    ],
     blocks: [
       {
         type: "markdown",
