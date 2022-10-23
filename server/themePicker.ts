@@ -47,7 +47,7 @@ export async function pickTheme(shouldUseClassicTheme: boolean) {
 
   const pickedIndex = crypto.randomInt(0, remainingHashes.length);
   let pickedHash = remainingHashes[pickedIndex];
-  const pickedTheme = themes.find(t => pickedHash === objectHash(t));
+  const pickedTheme = themes.find(t => pickedHash === objectHash(t))!;
 
   tweetedHashes = [...tweetedHashes, pickedHash];
 
