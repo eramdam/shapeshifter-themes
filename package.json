@@ -15,7 +15,6 @@
 		"@types/object-hash": "^2.2.1",
 		"@types/twit": "^2.2.30",
 		"axios": "^0.25.0",
-		"cheerio": "^1.0.0-rc.10",
 		"cohost": "github:eramdam/cohost.js#files-upload",
 		"dotenv": "^14.2.0",
 		"eslint": "^8.7.0",
@@ -28,10 +27,13 @@
 		"mastodon": "^1.2.2",
 		"node-fetch": "^3.2.0",
 		"object-hash": "^2.2.0",
-		"puppeteer": "^13.1.1",
 		"ts-node": "^10.4.0",
 		"twit": "^2.2.11",
 		"typescript": "^4.5.5"
+	},
+	"devDependencies": {
+		"cheerio": "^1.0.0-rc.10",
+		"puppeteer": "^13.1.1"
 	},
 	"engines": {
 		"node": "16.13.0"
