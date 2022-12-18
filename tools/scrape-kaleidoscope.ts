@@ -1,17 +1,17 @@
 import fs from "fs/promises";
 import path from "path";
 import _ from "lodash";
-import puppeteer from "puppeteer";
+import puppeteer, { Page } from "puppeteer";
 
 const BASE_URL = `https://web.archive.org/web/20060925184448fw_`;
 const BASE_PAGE = `https://web.archive.org/web/20060925184448fw_/http://www.kaleidoscope.net/cgi-bin/schemes.cgi`;
 
-async function getAuthorsOnPage(url: string, page: puppeteer.Page) {
+async function getAuthorsOnPage(url: string, page: Page) {
   console.log(url);
   await page.goto(url, { timeout: 0 });
 
   const authorLinks = (
-    await page.$$<HTMLAnchorElement>('body a[href*="schemes.cgi?author="]')
+    await page.$$('body a[href*="schemes.cgi?author="]')
   ).map(el => el.evaluate(node => node.href));
   const authorsOnPage = (await Promise.all(authorLinks)).map(
     a => `${BASE_URL}/${a}`
@@ -27,35 +27,31 @@ interface Theme {
   download: string;
 }
 
-async function getThemesOnPage(
-  url: string,
-  page: puppeteer.Page
-): Promise<Theme[]> {
+async function getThemesOnPage(url: string, page: Page): Promise<Theme[]> {
   console.log(url);
   await page.goto(url, { timeout: 0 });
 
   const authorNameTableTextPromise = (
-    await page.$<HTMLTableElement>("table + ul > p > table")
+    await page.$("table + ul > p > table")
   )?.evaluate(node => node.textContent?.trim());
   const authorNameTableText = (await authorNameTableTextPromise) || "";
   const authorName = authorNameTableText.replace("Creations by ", "");
 
-  const themeTablePromises = (
-    await page.$$<HTMLImageElement>('img[src$="/download.gif"]')
-  ).map(el =>
-    el.evaluate(node => {
-      const tableElement = node.closest("table");
+  const themeTablePromises = (await page.$$('img[src$="/download.gif"]')).map(
+    el =>
+      el.evaluate(node => {
+        const tableElement = node.closest("table");
 
-      const image = tableElement?.querySelector<HTMLImageElement>(
-        'img[src*="screensnapz/"]'
-      )?.src;
-      const themeName = tableElement
-        ?.querySelector<HTMLFontElement>('font[size="5"]')
-        ?.textContent?.trim();
-      const downloadLink = node.closest("a")?.href;
+        const image = tableElement?.querySelector<HTMLImageElement>(
+          'img[src*="screensnapz/"]'
+        )?.src;
+        const themeName = tableElement
+          ?.querySelector<HTMLFontElement>('font[size="5"]')
+          ?.textContent?.trim();
+        const downloadLink = node.closest("a")?.href;
 
-      return { image, themeName, downloadLink };
-    })
+        return { image, themeName, downloadLink };
+      })
   );
 
   return _(await Promise.all(themeTablePromises))
@@ -79,7 +75,7 @@ async function getThemesOnPage(
   await page.goto(BASE_PAGE, { timeout: 0 });
 
   const letterAnchors = (
-    await page.$$<HTMLAnchorElement>(`body a[href^="schemes.cgi?archive="]`)
+    await page.$$(`body a[href^="schemes.cgi?archive="]`)
   ).map(el => el.evaluate(node => node.href));
   const letterLinks = (await Promise.all(letterAnchors)).map(
     a => `${BASE_URL}/${a}`

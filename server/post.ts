@@ -1,4 +1,3 @@
-// @ts-expect-error
 import { login } from "masto/fetch";
 import Twit from "twit";
 import { Theme } from "./types";
