@@ -1,8 +1,6 @@
-import merged from "../data/merged.json";
-import path from "path";
 import fs from "fs";
-import util from "util";
 import _ from "lodash";
+import merged from "../data/merged.json";
 
 (async () => {
   const final = _(merged)

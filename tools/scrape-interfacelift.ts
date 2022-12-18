@@ -1,10 +1,7 @@
 import axios from "axios";
-import fs from "fs";
 import cheerio from "cheerio";
-import path from "path";
+import fs from "fs";
 import { compact, isString } from "lodash";
-
-const sleep = (n: number) => new Promise(resolve => setTimeout(resolve, n));
 
 const fetchPage = (url: string) => axios.get(url).then(res => res.data);
 const BASE_URL = "/web/20110126155426/https://interfacelift.com/themes-mac/";

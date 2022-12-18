@@ -1,10 +1,9 @@
-import kaleidoscope from "../data/kaleidoscope.json";
-import path from "path";
 import fs from "fs";
+import kaleidoscope from "../data/kaleidoscope.json";
 
 (async () => {
   kaleidoscope.forEach(theme => {
-    theme.thumbnails = theme.thumbnails.filter((thumbnail, index) => {
+    theme.thumbnails = theme.thumbnails.filter(thumbnail => {
       return fs.existsSync(thumbnail);
     });
   });

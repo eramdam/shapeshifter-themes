@@ -1,10 +1,9 @@
-import merged from "../data/merged.json";
-import path from "path";
 import fs from "fs";
+import merged from "../data/merged.json";
 
 (async () => {
   merged.forEach(theme => {
-    theme.thumbnails = theme.thumbnails.filter((thumbnail, index) => {
+    theme.thumbnails = theme.thumbnails.filter(thumbnail => {
       return fs.existsSync(thumbnail);
     });
   });
