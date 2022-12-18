@@ -1,4 +1,4 @@
-import { login } from "masto/fetch";
+import { login } from "masto";
 import Twit from "twit";
 import { Theme } from "./types";
 import fs from "fs";
@@ -89,16 +89,23 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       url: config.mastodon.api_url,
       accessToken: config.mastodon.access_token
     });
+    console.log("[Mastodon] Logged in");
 
+    console.log(
+      `[Mastodon] Uploading ${theme.thumbnails.slice(0, 4).length} thumbnails`
+    );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
         return masto.mediaAttachments.create({
-          file: new Blob([
-            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail))
-          ]),
+          file: fs.createReadStream(
+            path.resolve(__dirname, "..", "..", thumbnail)
+          ),
           description: `${theme.name} - ${theme.author}`
         });
       })
+    );
+    console.log(
+      `[Mastodon] Uploaded ${theme.thumbnails.slice(0, 4).length} thumbnails`
     );
 
     function padString(str: string) {
@@ -114,6 +121,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       return `${padString(theme.name)} - ${padString(theme.author)}`;
     }
 
+    console.log(`[Mastodon] Posting...`);
     const status = await masto.statuses.create({
       status: getStatusText(),
       visibility: "public",
@@ -122,7 +130,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
 
     return status;
   } catch (e) {
-    if (e instanceof MastoTimeoutError) {
+    if (String(e).includes("Timeout") || e instanceof MastoTimeoutError) {
       console.log("Timed out, trying again");
       return postThemeToMastodon(theme);
     }
