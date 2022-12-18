@@ -1,10 +1,12 @@
-import { login } from "masto";
+// @ts-expect-error
+import { login } from "masto/fetch";
 import Twit from "twit";
 import { Theme } from "./types";
 import fs from "fs";
 import path from "path";
 // @ts-expect-error
 import cohost from "cohost";
+import { MastoTimeoutError } from "masto";
 
 const config = {
   twitter: {
@@ -82,7 +84,7 @@ export async function postThemeToTwitter(theme: Theme) {
   }
 }
 
-export async function postThemeToMastodon(theme: Theme) {
+export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
   try {
     const masto = await login({
       url: config.mastodon.api_url,
@@ -92,9 +94,9 @@ export async function postThemeToMastodon(theme: Theme) {
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
         return masto.mediaAttachments.create({
-          file: fs.createReadStream(
-            path.resolve(__dirname, "..", "..", thumbnail)
-          ),
+          file: new Blob([
+            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail))
+          ]),
           description: `${theme.name} - ${theme.author}`
         });
       })
@@ -121,6 +123,11 @@ export async function postThemeToMastodon(theme: Theme) {
 
     return status;
   } catch (e) {
+    if (e instanceof MastoTimeoutError) {
+      console.log("Timed out, trying again");
+      return postThemeToMastodon(theme);
+    }
+
     console.error(e);
     return undefined;
   }
