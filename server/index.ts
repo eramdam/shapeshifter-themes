@@ -1,12 +1,12 @@
-require("dotenv").config();
+import "dotenv/config";
 import express from "express";
 
 import {
   postThemeToCohost,
   postThemeToMastodon,
   postThemeToTwitter
-} from "./post";
-import { pickTheme } from "./themePicker";
+} from "./post.js";
+import { pickTheme } from "./themePicker.js";
 
 const app = express();
 

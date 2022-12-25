@@ -1,9 +1,9 @@
 import fs from "fs";
 import fsPromises from "fs/promises";
-import _, { sample, uniq } from "lodash";
+import _ from "lodash";
 import objectHash from "object-hash";
-import kaleidoscopeThemes from "../data/kaleidoscope.json";
-import shapeshifterThemes from "../data/merged.json";
+import kaleidoscopeThemes from "../data/kaleidoscope.json" assert { type: "json" };
+import shapeshifterThemes from "../data/merged.json" assert { type: "json" };
 import crypto from "crypto";
 
 const shapeShifterHashes = fs
@@ -29,7 +29,7 @@ export async function pickTheme(shouldUseClassicTheme: boolean) {
     : shapeShifterHashes;
 
   // Filter our tweeted hashes to only list the themes we care about right now
-  let tweetedHashes = uniq(
+  let tweetedHashes = _.uniq(
     (await fsPromises.readFile(`./data/${tweetedHashesPath}`))
       .toString()
       .split("\n")
