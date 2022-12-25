@@ -1,11 +1,13 @@
-import { login } from "masto";
 import Twit from "twit";
-import { Theme } from "./types";
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 // @ts-expect-error
 import cohost from "cohost";
-import { MastoTimeoutError } from "masto";
+import { login } from "masto";
+import { Theme } from "./types.js";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = {
   twitter: {
@@ -89,6 +91,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       url: config.mastodon.api_url,
       accessToken: config.mastodon.access_token
     });
+
     console.log("[Mastodon] Logged in");
 
     console.log(
@@ -96,10 +99,10 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
-        return masto.mediaAttachments.create({
-          file: fs.createReadStream(
-            path.resolve(__dirname, "..", "..", thumbnail)
-          ),
+        return masto.v2.mediaAttachments.create({
+          file: new Blob([
+            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail))
+          ]),
           description: `${theme.name} - ${theme.author}`
         });
       })
@@ -122,7 +125,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     }
 
     console.log(`[Mastodon] Posting...`);
-    const status = await masto.statuses.create({
+    const status = await masto.v1.statuses.create({
       status: getStatusText(),
       visibility: "public",
       mediaIds: attachments.map(t => t.id)
@@ -130,7 +133,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
 
     return status;
   } catch (e) {
-    if (String(e).includes("Timeout") || e instanceof MastoTimeoutError) {
+    if (String(e).includes("Timeout")) {
       console.log("Timed out, trying again");
       return postThemeToMastodon(theme);
     }
