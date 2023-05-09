@@ -1,0 +1,13 @@
+services:
+  app:
+    image: node:18-alpine
+    command: sh -c "npm install --production && npm run build && node dist/server/index.js"
+    ports:
+      - 3000:80
+    working_dir: /app
+    volumes:
+      - ./:/app
+      # Creates empty folder to prevent node_modules from being overwritten by volume
+      - /app/node_modules
+    environment:
+      PORT: 80
