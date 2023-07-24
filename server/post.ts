@@ -7,6 +7,9 @@ import { login } from "masto";
 import { Theme } from "./types.js";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import AtProto from "@atproto/api";
+import mime from "mime-types";
+const { BskyAgent, RichText } = AtProto;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = {
@@ -24,6 +27,10 @@ const config = {
     email: process.env.COHOST_EMAIL || "",
     password: process.env.COHOST_PASSWORD || "",
     projectHandle: process.env.COHOST_PROJECT || ""
+  },
+  bluesky: {
+    email: process.env.BSKY_ID || "",
+    password: process.env.BSKY_PASSWORD || ""
   }
 };
 
@@ -205,5 +212,66 @@ export async function postThemeToCohost(theme: Theme) {
         };
       })
     ]
+  });
+}
+
+export async function postThemeToBluesky(theme: Theme) {
+  const agent = new BskyAgent({ service: "https://staging.bsky.social" });
+  await agent.login({
+    identifier: process.env.BSKY_ID || "",
+    password: process.env.BSKY_PASSWORD || ""
+  });
+
+  const imageRecords = await Promise.all(
+    theme.thumbnails.slice(0, 4).map(thumbnail => {
+      return new Promise<Awaited<ReturnType<typeof agent.uploadBlob>>>(
+        async resolve => {
+          console.log(`[bsky] uploading ${thumbnail}`);
+          const response = await agent.uploadBlob(
+            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail)),
+            {
+              encoding:
+                mime.lookup(path.resolve(__dirname, "..", "..", thumbnail)) ||
+                ""
+            }
+          );
+
+          resolve(response);
+        }
+      );
+    })
+  );
+
+  function padString(str: string) {
+    return str.length > 220 ? `${str.slice(0, 219)}…` : str;
+  }
+
+  function getStatusText() {
+    const baseStatus = `${theme.name} - ${theme.author}`;
+    if (baseStatus.length >= 450) {
+      return baseStatus;
+    }
+
+    return `${padString(theme.name)} - ${padString(theme.author)}`;
+  }
+
+  const rt = new RichText({ text: getStatusText() });
+  await rt.detectFacets(agent);
+
+  await agent.post({
+    $type: "app.bsky.feed.post",
+    text: rt.text,
+    facets: rt.facets,
+    embed: imageRecords.length
+      ? {
+          $type: "app.bsky.embed.images",
+          images: imageRecords.map(r => {
+            return {
+              image: r.data.blob,
+              alt: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`
+            };
+          })
+        }
+      : undefined
   });
 }
