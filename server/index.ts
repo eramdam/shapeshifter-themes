@@ -4,7 +4,8 @@ import express from "express";
 import {
   postThemeToBluesky,
   postThemeToCohost,
-  postThemeToMastodon
+  postThemeToMastodon,
+  postThemeToTwitter
 } from "./post.js";
 import { pickTheme } from "./themePicker.js";
 
@@ -17,7 +18,8 @@ app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
     await Promise.all([
       postThemeToMastodon(theme),
       postThemeToCohost(theme),
-      postThemeToBluesky(theme)
+      postThemeToBluesky(theme),
+      postThemeToTwitter(theme)
     ]);
     console.log(`Posted ${theme.name} - ${theme.author}`);
     res.sendStatus(200);
