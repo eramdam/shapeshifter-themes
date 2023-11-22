@@ -44,7 +44,11 @@ export async function postThemeToTwitter(theme: Theme) {
       accessToken: config.twitter.access_token,
       accessSecret: config.twitter.access_token_secret
     });
+    console.log("[twitter] logged in");
 
+    console.log(
+      `[twitter] Uploading ${theme.thumbnails.slice(0, 4).length} thumbnails`
+    );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
         const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnail);
@@ -94,16 +98,14 @@ export async function postThemeToTwitter(theme: Theme) {
       return `${padString(theme.name)} - ${padString(theme.author)}`;
     }
 
-    const post = await twitter.v2.tweet(getStatusText(), {
+    console.log(`[twitter] Posting...`);
+    await twitter.v2.tweet(getStatusText(), {
       media: {
         media_ids: attachments
       }
     });
-
-    return post;
   } catch (e) {
     console.error(e);
-    return undefined;
   }
 }
 
@@ -167,6 +169,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
 
 export async function postThemeToCohost(theme: Theme) {
   const user = new cohost.User();
+  console.log("[cohost] logged in");
   await user.login(config.cohost.email, config.cohost.password);
   const projects = await user.getProjects();
   const projectToPostTo = projects.find(
@@ -179,6 +182,7 @@ export async function postThemeToCohost(theme: Theme) {
     );
     return undefined;
   }
+  console.log("[cohost] found project");
 
   const basePost = {
     postState: 0,
@@ -211,6 +215,9 @@ export async function postThemeToCohost(theme: Theme) {
       );
     })
   );
+  console.log(
+    `[cohost] Uploading ${theme.thumbnails.slice(0, 4).length} thumbnails`
+  );
 
   await cohost.Post.update(projectToPostTo, draftId, {
     ...basePost,
@@ -228,6 +235,8 @@ export async function postThemeToCohost(theme: Theme) {
       })
     ]
   });
+
+  console.log("[cohost] Posted");
 }
 
 export async function postThemeToBluesky(theme: Theme) {
@@ -273,6 +282,7 @@ export async function postThemeToBluesky(theme: Theme) {
   const rt = new RichText({ text: getStatusText() });
   await rt.detectFacets(agent);
 
+  console.log(`[bsky] Posting...`);
   await agent.post({
     $type: "app.bsky.feed.post",
     text: rt.text,
