@@ -9,6 +9,8 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import AtProto from "@atproto/api";
 import mime from "mime-types";
+import { TwitterApi } from "twitter-api-v2";
+import sharp from "sharp";
 const { BskyAgent, RichText } = AtProto;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -36,35 +38,48 @@ const config = {
 
 export async function postThemeToTwitter(theme: Theme) {
   try {
-    const twitter = new Twit({
-      consumer_key: config.twitter.consumer_key,
-      consumer_secret: config.twitter.consumer_secret,
-      access_token: config.twitter.access_token,
-      access_token_secret: config.twitter.access_token_secret,
-      strictSSL: true
+    const twitter = new TwitterApi({
+      appKey: config.twitter.consumer_key,
+      appSecret: config.twitter.consumer_secret,
+      accessToken: config.twitter.access_token,
+      accessSecret: config.twitter.access_token_secret
     });
+
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
-        return twitter.post("media/upload", {
-          media_data: fs.readFileSync(
-            path.resolve(__dirname, "..", "..", thumbnail),
-            {
-              encoding: "base64"
+        const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnail);
+        return sharp(thumbnailPath)
+          .metadata()
+          .then(async data => {
+            if (data.format === "gif" && data.pages === 1) {
+              return {
+                buf: await sharp(thumbnailPath).png().toBuffer(),
+                format: mime.lookup("png") || ""
+              };
             }
-          ),
+
+            return {
+              buf: await sharp(thumbnailPath).toBuffer(),
+              format: mime.lookup(thumbnailPath) || ""
+            };
+          })
+          .then(buf => {
+            return twitter.v1.uploadMedia(buf.buf, {
+              mimeType: buf.format
+            });
+          });
+      })
+    );
+
+    await Promise.all(
+      attachments.map(a => {
+        return twitter.v1.createMediaMetadata(a, {
           alt_text: {
             text: `${theme.name} - ${theme.author}`
           }
         });
       })
     );
-
-    for (const attachment of attachments) {
-      await twitter.post("media/metadata/create", {
-        // @ts-expect-error
-        media_id: attachment.data.media_id_string
-      });
-    }
 
     function padString(str: string) {
       return str.length > 120 ? `${str.slice(0, 119)}…` : str;
@@ -79,10 +94,10 @@ export async function postThemeToTwitter(theme: Theme) {
       return `${padString(theme.name)} - ${padString(theme.author)}`;
     }
 
-    const post = await twitter.post("statuses/update", {
-      status: getStatusText(),
-      // @ts-expect-error
-      media_ids: attachments.map(a => a.data.media_id_string)
+    const post = await twitter.v2.tweet(getStatusText(), {
+      media: {
+        media_ids: attachments
+      }
     });
 
     return post;
