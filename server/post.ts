@@ -1,4 +1,3 @@
-import Twit from "twit";
 import fs from "node:fs";
 import path from "node:path";
 // @ts-expect-error

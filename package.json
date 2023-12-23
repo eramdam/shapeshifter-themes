@@ -19,7 +19,6 @@
     "@types/mime-types": "^2.1.1",
     "@types/node": "^18.11.17",
     "@types/object-hash": "^3.0.2",
-    "@types/twit": "^2.2.31",
     "axios": "^1.2.1",
     "cheerio": "^1.0.0-rc.10",
     "cohost": "github:eramdam/cohost.js#files-upload",
