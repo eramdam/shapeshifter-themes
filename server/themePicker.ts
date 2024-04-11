@@ -19,8 +19,8 @@ const kaleidoscopeHashes = fs
 
 const themes = [...kaleidoscopeThemes, ...shapeshifterThemes];
 export async function pickTheme() {
-  const shouldUseClassicTheme = new Date().getHours() % 2 === 0;
   // Decide what themes to choose from
+  const shouldUseClassicTheme = new Date().getHours() % 2 === 0;
 
   const tweetedHashesPath = shouldUseClassicTheme
     ? "tweeted-kaleidoscope.txt"
