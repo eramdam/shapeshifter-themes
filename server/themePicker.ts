@@ -18,7 +18,8 @@ const kaleidoscopeHashes = fs
   .map(i => i.trim());
 
 const themes = [...kaleidoscopeThemes, ...shapeshifterThemes];
-export async function pickTheme(shouldUseClassicTheme: boolean) {
+export async function pickTheme() {
+  const shouldUseClassicTheme = new Date().getHours() % 2 === 0;
   // Decide what themes to choose from
 
   const tweetedHashesPath = shouldUseClassicTheme
