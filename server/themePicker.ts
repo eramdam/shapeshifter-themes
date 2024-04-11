@@ -1,10 +1,10 @@
+import crypto from "crypto";
 import fs from "fs";
 import fsPromises from "fs/promises";
 import _ from "lodash";
 import objectHash from "object-hash";
 import kaleidoscopeThemes from "../data/kaleidoscope.json" assert { type: "json" };
 import shapeshifterThemes from "../data/merged.json" assert { type: "json" };
-import crypto from "crypto";
 
 const shapeShifterHashes = fs
   .readFileSync("./data/shapeshifter-hashes.txt")
@@ -17,10 +17,33 @@ const kaleidoscopeHashes = fs
   .split("\n")
   .map(i => i.trim());
 
+const TOTAL_HOURS = 24;
+
+// Grab all themes.
 const themes = [...kaleidoscopeThemes, ...shapeshifterThemes];
-export async function pickTheme() {
-  // Decide what themes to choose from
-  const shouldUseClassicTheme = new Date().getHours() % 2 === 0;
+// Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
+const kaleidoscopeOf = Math.floor(
+  percentageOf(
+    percentage(kaleidoscopeThemes.length, themes.length),
+    TOTAL_HOURS
+  )
+);
+// All of the hours
+const hours = Array.from({ length: TOTAL_HOURS }).map((_val, index) => index);
+
+const memoizedShuffle = _.memoize(_dateString => {
+  return _.shuffle(hours);
+});
+
+export async function pickTheme(hour?: number) {
+  // Get current hour (0-23)
+  const currentHour = hour ?? new Date().getHours();
+  // Shuffle hours by memoizing using the current _day_ so distribution is constant for a given day
+  const shuffledHours = memoizedShuffle(new Date().toDateString());
+  // Grab index of the current hour in our shuffled array
+  const hourIndex = shuffledHours.indexOf(currentHour);
+  // Is the index smaller than the percentage of classic themes?
+  const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
 
   const tweetedHashesPath = shouldUseClassicTheme
     ? "tweeted-kaleidoscope.txt"
@@ -57,5 +80,16 @@ export async function pickTheme() {
     tweetedHashes.join("\n").trim()
   );
 
-  return pickedTheme;
+  return {
+    ...pickedTheme,
+    shouldUseClassicTheme
+  };
+}
+
+function percentage(partial: number, total: number) {
+  return (100 * partial) / total;
+}
+
+function percentageOf(percentage: number, total: number) {
+  return (percentage / 100) * total;
 }
