@@ -13,15 +13,16 @@ const app = express();
 
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
-    const currentHourIsEven = new Date().getHours() % 2 === 0;
-    const theme = await pickTheme(currentHourIsEven);
+    const theme = await pickTheme();
     await Promise.all([
       postThemeToMastodon(theme),
       postThemeToCohost(theme),
       postThemeToBluesky(theme),
       postThemeToTwitter(theme)
     ]);
-    console.log(`Posted ${theme.name} - ${theme.author}`);
+    console.log(
+      `Posted ${theme.name} - ${theme.author} - isClassic: ${theme.shouldUseClassicTheme}`
+    );
     res.sendStatus(200);
   } catch (e) {
     console.error(e);
