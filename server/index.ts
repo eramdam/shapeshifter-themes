@@ -30,6 +30,10 @@ app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   }
 });
 
+app.get(`/${process.env.BOT_ENDPOINT}-ping`, async (req, res) => {
+  return res.sendStatus(200);
+});
+
 const listener = app.listen(process.env.PORT, () => {
   console.log(
     `Your bot is running on port http://localhost:${
