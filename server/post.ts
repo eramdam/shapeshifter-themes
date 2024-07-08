@@ -194,7 +194,8 @@ export async function postThemeToCohost(theme: Theme) {
       "mac osx",
       "shapeshifter",
       "kaleidoscope",
-      "customization"
+      "customization",
+      "automated"
     ],
     blocks: [
       {
