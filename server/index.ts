@@ -16,7 +16,6 @@ app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
     const theme = await pickTheme();
     await Promise.all([
       postThemeToMastodon(theme),
-      postThemeToCohost(theme),
       postThemeToBluesky(theme),
       postThemeToTwitter(theme)
     ]);
