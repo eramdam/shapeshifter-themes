@@ -8,17 +8,24 @@ import {
   postThemeToTwitter
 } from "./post.js";
 import { pickTheme } from "./themePicker.js";
+import _ from "lodash";
 
 const app = express();
+
+const shouldPostToTwitter = process.env.TWITTER_ENABLED === "true";
+const shouldPostToMastodon = process.env.MASTO_ENABLED === "true";
+const shouldPostToBsky = process.env.BSKY_ENABLED === "true";
 
 app.all(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
     const theme = await pickTheme();
-    await Promise.all([
-      postThemeToMastodon(theme),
-      postThemeToBluesky(theme),
-      postThemeToTwitter(theme)
-    ]);
+    await Promise.all(
+      _.compact([
+        shouldPostToMastodon && postThemeToMastodon(theme),
+        shouldPostToBsky && postThemeToBluesky(theme),
+        shouldPostToTwitter && postThemeToTwitter(theme)
+      ])
+    );
     console.log(
       `Posted ${theme.name} - ${theme.author} - isClassic: ${theme.shouldUseClassicTheme}`
     );
