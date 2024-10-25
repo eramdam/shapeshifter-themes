@@ -3,7 +3,7 @@ services:
     image: node:18-alpine
     command: sh -c "npm install --production && npm run build && node dist/server/index.js"
     ports:
-      - 3000:80
+      - "${PORT}:80"
     working_dir: /app
     deploy:
       restart_policy:
