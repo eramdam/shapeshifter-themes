@@ -1,7 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-// @ts-expect-error
-import cohost from "cohost";
 import { login } from "masto";
 import { Theme } from "./types.js";
 import { dirname } from "node:path";
@@ -164,79 +162,6 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     console.error(e);
     return undefined;
   }
-}
-
-export async function postThemeToCohost(theme: Theme) {
-  const user = new cohost.User();
-  console.log("[cohost] logged in");
-  await user.login(config.cohost.email, config.cohost.password);
-  const projects = await user.getProjects();
-  const projectToPostTo = projects.find(
-    (p: any) => p.handle === config.cohost.projectHandle
-  );
-
-  if (!projectToPostTo) {
-    console.error(
-      new Error(`No cohost projects found for ${config.cohost.projectHandle}`)
-    );
-    return undefined;
-  }
-  console.log("[cohost] found project");
-
-  const basePost = {
-    postState: 0,
-    headline: "",
-    adultContent: false,
-    cws: [],
-    tags: [
-      "macthemes",
-      "macintosh",
-      "mac osx",
-      "shapeshifter",
-      "kaleidoscope",
-      "customization",
-      "automated"
-    ],
-    blocks: [
-      {
-        type: "markdown",
-        markdown: { content: `${theme.name} by ${theme.author}` }
-      }
-    ]
-  };
-
-  const draftId = await cohost.Post.create(projectToPostTo, basePost);
-
-  const attachmentsData = await Promise.all(
-    theme.thumbnails.slice(0, 4).map(thumbnail => {
-      return projectToPostTo.uploadAttachment(
-        draftId,
-        path.resolve(__dirname, "..", "..", thumbnail)
-      );
-    })
-  );
-  console.log(
-    `[cohost] Uploading ${theme.thumbnails.slice(0, 4).length} thumbnails`
-  );
-
-  await cohost.Post.update(projectToPostTo, draftId, {
-    ...basePost,
-    postState: 1,
-    blocks: [
-      ...basePost.blocks,
-      ...attachmentsData.map(attachment => {
-        return {
-          type: "attachment",
-          attachment: {
-            ...attachment,
-            altText: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`
-          }
-        };
-      })
-    ]
-  });
-
-  console.log("[cohost] Posted");
 }
 
 export async function postThemeToBluesky(theme: Theme) {

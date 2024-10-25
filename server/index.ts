@@ -3,7 +3,6 @@ import express from "express";
 
 import {
   postThemeToBluesky,
-  postThemeToCohost,
   postThemeToMastodon,
   postThemeToTwitter
 } from "./post.js";
