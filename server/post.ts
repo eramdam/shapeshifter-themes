@@ -22,7 +22,7 @@ const config = {
   },
   mastodon: {
     access_token: process.env.MASTO_ACCESS_TOKEN || "",
-    api_url: "https://botsin.space/"
+    api_url: process.env.MASTO_INSTANCE || ""
   },
   cohost: {
     email: process.env.COHOST_EMAIL || "",
