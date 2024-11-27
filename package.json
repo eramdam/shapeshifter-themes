@@ -12,7 +12,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@atproto/api": "^0.4.3",
+    "@atproto/api": "^0.13.18",
     "@types/express": "^4.17.15",
     "@types/lodash": "^4.14.191",
     "@types/mime-types": "^2.1.1",

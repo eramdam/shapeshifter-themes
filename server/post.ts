@@ -171,11 +171,31 @@ export async function postThemeToBluesky(theme: Theme) {
     password: process.env.BSKY_PASSWORD || ""
   });
 
+  const thumbnailsToUse = theme.thumbnails.slice(0, 4);
+
+  const imageMetaData = await Promise.all(
+    thumbnailsToUse.map(t => sharp(t).metadata())
+  );
+
   const imageRecords = await Promise.all(
-    theme.thumbnails.slice(0, 4).map(thumbnail => {
+    thumbnailsToUse.map((thumbnail, index) => {
       return new Promise<Awaited<ReturnType<typeof agent.uploadBlob>>>(
         async resolve => {
           console.log(`[bsky] uploading ${thumbnail}`);
+          if (
+            imageMetaData[index].format === "gif" &&
+            imageMetaData[index].pages === 1
+          ) {
+            const response = await agent.uploadBlob(
+              await sharp(thumbnail).png().toBuffer(),
+              {
+                encoding: "image/png"
+              }
+            );
+
+            return resolve(response);
+          }
+
           const response = await agent.uploadBlob(
             fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail)),
             {
@@ -215,10 +235,14 @@ export async function postThemeToBluesky(theme: Theme) {
     embed: imageRecords.length
       ? {
           $type: "app.bsky.embed.images",
-          images: imageRecords.map(r => {
+          images: imageRecords.map((r, index) => {
             return {
               image: r.data.blob,
-              alt: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`
+              alt: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`,
+              aspectRatio: {
+                width: imageMetaData[index].width,
+                height: imageMetaData[index].height
+              }
             };
           })
         }
