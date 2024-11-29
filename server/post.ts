@@ -4,11 +4,11 @@ import { login } from "masto";
 import { Theme } from "./types.js";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import AtProto from "@atproto/api";
+import { AtpAgent, RichText } from "@atproto/api";
 import mime from "mime-types";
 import { TwitterApi } from "twitter-api-v2";
 import sharp from "sharp";
-const { BskyAgent, RichText } = AtProto;
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = {
@@ -165,7 +165,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
 }
 
 export async function postThemeToBluesky(theme: Theme) {
-  const agent = new BskyAgent({ service: "https://staging.bsky.social" });
+  const agent = new AtpAgent({ service: "https://staging.bsky.social" });
   await agent.login({
     identifier: process.env.BSKY_ID || "",
     password: process.env.BSKY_PASSWORD || ""
