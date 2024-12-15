@@ -120,12 +120,28 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
-        return masto.v2.mediaAttachments.create({
-          file: new Blob([
-            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail))
-          ]),
-          description: `${theme.name} - ${theme.author}`
-        });
+        const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnail);
+        return sharp(thumbnailPath)
+          .metadata()
+          .then(async data => {
+            if (data.format === "gif" && data.pages === 1) {
+              return {
+                buf: await sharp(thumbnailPath).png().toBuffer(),
+                format: mime.lookup("png") || ""
+              };
+            }
+
+            return {
+              buf: await sharp(thumbnailPath).toBuffer(),
+              format: mime.lookup(thumbnailPath) || ""
+            };
+          })
+          .then(buf => {
+            return masto.v2.mediaAttachments.create({
+              file: new Blob([buf.buf]),
+              description: `${theme.name} - ${theme.author}`
+            });
+          });
       })
     );
     console.log(
