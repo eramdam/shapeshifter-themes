@@ -93,3 +93,9 @@ function percentage(partial: number, total: number) {
 function percentageOf(percentage: number, total: number) {
   return (percentage / 100) * total;
 }
+
+export function findThemeForHash(hash: string) {
+  return themes.find(t => {
+    return objectHash(t) === hash;
+  });
+}
