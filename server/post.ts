@@ -48,27 +48,11 @@ export async function postThemeToTwitter(theme: Theme) {
     );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
-        const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnail);
-        return sharp(thumbnailPath)
-          .metadata()
-          .then(async data => {
-            if (data.format === "gif" && data.pages === 1) {
-              return {
-                buf: await sharp(thumbnailPath).png().toBuffer(),
-                format: mime.lookup("png") || ""
-              };
-            }
-
-            return {
-              buf: await sharp(thumbnailPath).toBuffer(),
-              format: mime.lookup(thumbnailPath) || ""
-            };
-          })
-          .then(buf => {
-            return twitter.v1.uploadMedia(buf.buf, {
-              mimeType: buf.format
-            });
+        return handleSingleThumbnail(thumbnail).then(buf => {
+          return twitter.v1.uploadMedia(buf.buf, {
+            mimeType: buf.format
           });
+        });
       })
     );
 
@@ -120,28 +104,12 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     );
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
-        const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnail);
-        return sharp(thumbnailPath)
-          .metadata()
-          .then(async data => {
-            if (data.format === "gif" && data.pages === 1) {
-              return {
-                buf: await sharp(thumbnailPath).png().toBuffer(),
-                format: mime.lookup("png") || ""
-              };
-            }
-
-            return {
-              buf: await sharp(thumbnailPath).toBuffer(),
-              format: mime.lookup(thumbnailPath) || ""
-            };
-          })
-          .then(buf => {
-            return masto.v2.mediaAttachments.create({
-              file: new Blob([buf.buf]),
-              description: `${theme.name} - ${theme.author}`
-            });
+        return handleSingleThumbnail(thumbnail).then(buf => {
+          return masto.v2.mediaAttachments.create({
+            file: new Blob([buf.buf]),
+            description: `${theme.name} - ${theme.author}`
           });
+        });
       })
     );
     console.log(
@@ -189,41 +157,16 @@ export async function postThemeToBluesky(theme: Theme) {
 
   const thumbnailsToUse = theme.thumbnails.slice(0, 4);
 
-  const imageMetaData = await Promise.all(
-    thumbnailsToUse.map(t => sharp(t).metadata())
-  );
-
   const imageRecords = await Promise.all(
-    thumbnailsToUse.map((thumbnail, index) => {
-      return new Promise<Awaited<ReturnType<typeof agent.uploadBlob>>>(
-        async resolve => {
-          console.log(`[bsky] uploading ${thumbnail}`);
-          if (
-            imageMetaData[index].format === "gif" &&
-            imageMetaData[index].pages === 1
-          ) {
-            const response = await agent.uploadBlob(
-              await sharp(thumbnail).png().toBuffer(),
-              {
-                encoding: "image/png"
-              }
-            );
-
-            return resolve(response);
-          }
-
-          const response = await agent.uploadBlob(
-            fs.readFileSync(path.resolve(__dirname, "..", "..", thumbnail)),
-            {
-              encoding:
-                mime.lookup(path.resolve(__dirname, "..", "..", thumbnail)) ||
-                ""
-            }
-          );
-
-          resolve(response);
-        }
-      );
+    thumbnailsToUse.map(async thumbnail => {
+      return handleSingleThumbnail(thumbnail).then(async buf => {
+        return {
+          record: await agent.uploadBlob(buf.buf, {
+            encoding: buf.format
+          }),
+          metadata: buf.metadata
+        };
+      });
     })
   );
 
@@ -253,15 +196,36 @@ export async function postThemeToBluesky(theme: Theme) {
           $type: "app.bsky.embed.images",
           images: imageRecords.map((r, index) => {
             return {
-              image: r.data.blob,
+              image: r.record.data.blob,
               alt: `A preview of the Mac theme "${theme.name}" by "${theme.author}"`,
               aspectRatio: {
-                width: imageMetaData[index].width,
-                height: imageMetaData[index].height
+                width: r.metadata.width,
+                height: r.metadata.height
               }
             };
           })
         }
       : undefined
   });
+}
+
+async function handleSingleThumbnail(thumbnailFilename: string) {
+  const thumbnailPath = path.resolve(__dirname, "..", "..", thumbnailFilename);
+  return sharp(thumbnailPath)
+    .metadata()
+    .then(async data => {
+      if (data.format === "gif" && data.pages === 1) {
+        return {
+          buf: await sharp(thumbnailPath).png().toBuffer(),
+          format: mime.lookup("png") || "",
+          metadata: data
+        };
+      }
+
+      return {
+        buf: await sharp(thumbnailPath).toBuffer(),
+        format: mime.lookup(thumbnailPath) || "",
+        metadata: data
+      };
+    });
 }
