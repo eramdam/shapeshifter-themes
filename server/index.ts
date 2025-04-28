@@ -50,12 +50,7 @@ app.get(`/${process.env.BOT_ENDPOINT}-singletheme`, async (req, res) => {
       services.includes("mastodon") &&
         shouldPostToMastodon &&
         postThemeToMastodon(theme),
-      services.includes("bsky") &&
-        shouldPostToBsky &&
-        postThemeToBluesky(theme),
-      services.includes("twitter") &&
-        shouldPostToTwitter &&
-        postThemeToTwitter(theme)
+      services.includes("bsky") && shouldPostToBsky && postThemeToBluesky(theme)
     ])
   );
   console.log(`Posted ${theme.name} - ${theme.author}`);
