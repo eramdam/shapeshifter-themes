@@ -2,11 +2,7 @@ import "dotenv/config";
 import express from "express";
 import fs from "fs";
 
-import {
-  postThemeToBluesky,
-  postThemeToMastodon,
-  postThemeToTwitter
-} from "./post.js";
+import { postThemeToBluesky, postThemeToMastodon } from "./post.js";
 import { findThemeForHash, pickTheme } from "./themePicker.js";
 import _ from "lodash";
 
@@ -22,8 +18,7 @@ app.get(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
     await Promise.all(
       _.compact([
         shouldPostToMastodon && postThemeToMastodon(theme),
-        shouldPostToBsky && postThemeToBluesky(theme),
-        shouldPostToTwitter && postThemeToTwitter(theme)
+        shouldPostToBsky && postThemeToBluesky(theme)
       ])
     );
     console.log(

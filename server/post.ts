@@ -33,63 +33,6 @@ const config = {
   }
 };
 
-export async function postThemeToTwitter(theme: Theme) {
-  try {
-    const twitter = new TwitterApi({
-      appKey: config.twitter.consumer_key,
-      appSecret: config.twitter.consumer_secret,
-      accessToken: config.twitter.access_token,
-      accessSecret: config.twitter.access_token_secret
-    });
-    console.log("[twitter] logged in");
-
-    console.log(
-      `[twitter] Uploading ${theme.thumbnails.slice(0, 4).length} thumbnails`
-    );
-    const attachments = await Promise.all(
-      theme.thumbnails.slice(0, 4).map(thumbnail => {
-        return handleSingleThumbnail(thumbnail).then(buf => {
-          return twitter.v1.uploadMedia(buf.buf, {
-            mimeType: buf.format
-          });
-        });
-      })
-    );
-
-    await Promise.all(
-      attachments.map(a => {
-        return twitter.v1.createMediaMetadata(a, {
-          alt_text: {
-            text: `${theme.name} - ${theme.author}`
-          }
-        });
-      })
-    );
-
-    function padString(str: string) {
-      return str.length > 120 ? `${str.slice(0, 119)}…` : str;
-    }
-
-    function getStatusText() {
-      const baseStatus = `${theme.name} - ${theme.author}`;
-      if (baseStatus.length >= 250) {
-        return baseStatus;
-      }
-
-      return `${padString(theme.name)} - ${padString(theme.author)}`;
-    }
-
-    console.log(`[twitter] Posting...`);
-    await twitter.v2.tweet(getStatusText(), {
-      media: {
-        media_ids: attachments
-      }
-    });
-  } catch (e) {
-    console.error(e);
-  }
-}
-
 export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
   try {
     const masto = await login({
