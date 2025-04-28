@@ -1,10 +1,11 @@
 import crypto from "crypto";
 import fs from "fs";
+import path from "path";
 import fsPromises from "fs/promises";
 import _ from "lodash";
 import objectHash from "object-hash";
-import kaleidoscopeThemes from "../data/kaleidoscope.json" with { type: "json" };
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
+import { Theme } from "./types.js";
 
 const shapeShifterHashes = fs
   .readFileSync("./data/shapeshifter-hashes.txt")
@@ -19,12 +20,35 @@ const kaleidoscopeHashes = fs
 
 const TOTAL_HOURS = 24;
 
+const BASE_WEBSITE_URL = "https://bejewelled-hotteok-46f90d.netlify.app";
+const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
+const remoteThemesJson = await remoteThemes.json();
+const decompressedRemoteThemes = remoteThemesJson;
+const listFormatter = new Intl.ListFormat("en", {
+  style: "long",
+  type: "conjunction"
+});
+const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
+  (t: any) => {
+    return {
+      thumbnails: (t.thumbnails as string[]).map(t => {
+        return new URL(t, BASE_WEBSITE_URL).toString();
+      }),
+      name: t.name,
+      author: listFormatter.format(t.authors.map((a: any) => a.name)),
+      extra: {
+        url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString()
+      }
+    };
+  }
+);
+
 // Grab all themes.
-const themes = [...kaleidoscopeThemes, ...shapeshifterThemes];
+const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
 // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
 const kaleidoscopeOf = Math.floor(
   percentageOf(
-    percentage(kaleidoscopeThemes.length, themes.length),
+    percentage(formattedRemoteThemes.length, themes.length),
     TOTAL_HOURS
   )
 );
@@ -43,42 +67,29 @@ export async function pickTheme(hour?: number) {
   // Grab index of the current hour in our shuffled array
   const hourIndex = shuffledHours.indexOf(currentHour);
   // Is the index smaller than the percentage of classic themes?
-  const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
+  // const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
+  const shouldUseClassicTheme = true;
+  const collection = shouldUseClassicTheme
+    ? formattedRemoteThemes
+    : shapeshifterThemes;
+  const index = crypto.randomInt(0, collection.length - 1);
+  const pickedTheme = collection[index];
 
-  const tweetedHashesPath = shouldUseClassicTheme
-    ? "tweeted-kaleidoscope.txt"
-    : "tweeted-shapeshifter.txt";
-  const hashes = shouldUseClassicTheme
-    ? kaleidoscopeHashes
-    : shapeShifterHashes;
+  if (pickedTheme.thumbnails.some(t => t.startsWith("http"))) {
+    pickedTheme.thumbnails = await Promise.all(
+      pickedTheme.thumbnails.map(async t => {
+        if (!t.startsWith("http")) {
+          return t;
+        }
 
-  // Filter our tweeted hashes to only list the themes we care about right now
-  let tweetedHashes = _.uniq(
-    (await fsPromises.readFile(`./data/${tweetedHashesPath}`))
-      .toString()
-      .split("\n")
-      .map(i => i.trim())
-  );
-
-  // Get the list of remaining hashes
-  let remainingHashes = hashes.filter(h => !tweetedHashes.includes(h));
-
-  // If we tweeted everything, we reset the list
-  if (remainingHashes.length === 0) {
-    tweetedHashes = [];
-    remainingHashes = hashes;
+        const response = await fetch(t);
+        const buffer = await response.arrayBuffer();
+        const fileName = `assets/${path.basename(t)}`;
+        await fsPromises.writeFile(fileName, Buffer.from(buffer));
+        return fileName;
+      })
+    );
   }
-
-  const pickedIndex = crypto.randomInt(0, remainingHashes.length);
-  let pickedHash = remainingHashes[pickedIndex];
-  const pickedTheme = themes.find(t => pickedHash === objectHash(t))!;
-
-  tweetedHashes = [...tweetedHashes, pickedHash];
-
-  await fsPromises.writeFile(
-    `./data/${tweetedHashesPath}`,
-    tweetedHashes.join("\n").trim()
-  );
 
   return {
     ...pickedTheme,

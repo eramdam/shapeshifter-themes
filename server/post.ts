@@ -98,6 +98,7 @@ export async function postThemeToBluesky(theme: Theme) {
     password: process.env.BSKY_PASSWORD || ""
   });
 
+  console.log(theme);
   const thumbnailsToUse = theme.thumbnails.slice(0, 4);
 
   const imageRecords = await Promise.all(
@@ -126,7 +127,9 @@ export async function postThemeToBluesky(theme: Theme) {
     return `${padString(theme.name)} - ${padString(theme.author)}`;
   }
 
-  const rt = new RichText({ text: getStatusText() });
+  const rt = new RichText({
+    text: getStatusText() + (theme.extra && `\n${theme.extra.url}`)
+  });
   await rt.detectFacets(agent);
 
   console.log(`[bsky] Posting...`);
