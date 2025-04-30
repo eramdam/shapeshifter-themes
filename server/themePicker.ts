@@ -8,7 +8,7 @@ import { Theme } from "./types.js";
 
 const TOTAL_HOURS = 24;
 
-const BASE_WEBSITE_URL = "https://bejewelled-hotteok-46f90d.netlify.app";
+const BASE_WEBSITE_URL = "https://macthemes.garden";
 const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
 const remoteThemesJson = await remoteThemes.json();
 const decompressedRemoteThemes = remoteThemesJson;
