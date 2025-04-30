@@ -2,21 +2,10 @@ import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import fsPromises from "fs/promises";
-import _ from "lodash";
+import _, { pick } from "lodash";
 import objectHash from "object-hash";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
-
-const shapeShifterHashes = fs
-  .readFileSync("./data/shapeshifter-hashes.txt")
-  .toString()
-  .split("\n")
-  .map(i => i.trim());
-const kaleidoscopeHashes = fs
-  .readFileSync("./data/kaleidoscope-hashes.txt")
-  .toString()
-  .split("\n")
-  .map(i => i.trim());
 
 const TOTAL_HOURS = 24;
 
@@ -67,13 +56,16 @@ export async function pickTheme(hour?: number) {
   // Grab index of the current hour in our shuffled array
   const hourIndex = shuffledHours.indexOf(currentHour);
   // Is the index smaller than the percentage of classic themes?
-  // const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
-  const shouldUseClassicTheme = true;
+  const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
   const collection = shouldUseClassicTheme
     ? formattedRemoteThemes
     : shapeshifterThemes;
   const index = crypto.randomInt(0, collection.length - 1);
   const pickedTheme = collection[index];
+
+  if (shouldUseClassicTheme) {
+    pickedTheme.thumbnails = [pickedTheme.thumbnails[0]];
+  }
 
   if (pickedTheme.thumbnails.some(t => t.startsWith("http"))) {
     pickedTheme.thumbnails = await Promise.all(

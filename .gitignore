@@ -2,3 +2,6 @@
 .env
 node_modules/
 dist/
+assets/ksa-sampler-*
+assets/about-*
+assets/showcase-*
