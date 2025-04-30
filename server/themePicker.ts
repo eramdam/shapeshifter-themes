@@ -26,7 +26,13 @@ const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
       name: t.name,
       author: listFormatter.format(t.authors.map((a: any) => a.name)),
       extra: {
-        url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString()
+        url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
+        authors: t.authors.map((a: any) => {
+          return {
+            ...a,
+            url: new URL(a.url, BASE_WEBSITE_URL).toString()
+          };
+        })
       }
     };
   }
