@@ -59,17 +59,8 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       `[Mastodon] Uploaded ${theme.thumbnails.slice(0, 4).length} thumbnails`
     );
 
-    function padString(str: string) {
-      return str.length > 220 ? `${str.slice(0, 219)}…` : str;
-    }
-
     function getStatusText() {
-      const baseStatus = `${theme.name} - ${theme.author}`;
-      if (baseStatus.length >= 450) {
-        return baseStatus;
-      }
-
-      return `${padString(theme.name)} - ${padString(theme.author)}`;
+      return `${theme.name} - ${theme.author}\n${theme.extra?.url || ""}`.trim();
     }
 
     console.log(`[Mastodon] Posting...`);
