@@ -4,5 +4,6 @@ export interface Theme {
   author: string;
   extra?: {
     url: string;
+    authors: { name: string; url: string }[];
   };
 }
