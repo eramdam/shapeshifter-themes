@@ -1,13 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
-import { login } from "masto";
-import { Theme } from "./types.js";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 import { AtpAgent, RichText } from "@atproto/api";
+import { login } from "masto";
 import mime from "mime-types";
-import { TwitterApi } from "twitter-api-v2";
+import path, { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { Theme } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

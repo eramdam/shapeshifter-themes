@@ -1,9 +1,8 @@
 import crypto from "crypto";
-import fs from "fs";
-import path from "path";
 import fsPromises from "fs/promises";
-import _, { pick } from "lodash";
+import _ from "lodash";
 import objectHash from "object-hash";
+import path from "path";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
 
