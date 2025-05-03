@@ -26,6 +26,10 @@ const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
       author: listFormatter.format(t.authors.map((a: any) => a.name)),
       extra: {
         url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
+        opengraph: new URL(
+          `/themes-opengraph/${t.urlBase}.png`,
+          BASE_WEBSITE_URL
+        ).toString(),
         authors: t.authors.map((a: any) => {
           return {
             ...a,
@@ -66,10 +70,15 @@ export async function pickTheme(hour?: number) {
     ? formattedRemoteThemes
     : shapeshifterThemes;
   const index = crypto.randomInt(0, collection.length - 1);
-  const pickedTheme = collection[index];
+  const pickedTheme: Theme = collection[index];
 
+  // If we're showing a classic theme, use only the first thumbnail.
   if (shouldUseClassicTheme) {
-    pickedTheme.thumbnails = [pickedTheme.thumbnails[0]];
+    if (pickedTheme.extra?.opengraph && pickedTheme.thumbnails.length > 1) {
+      pickedTheme.thumbnails = [pickedTheme.extra?.opengraph];
+    } else {
+      pickedTheme.thumbnails = [pickedTheme.thumbnails[0]];
+    }
   }
 
   if (pickedTheme.thumbnails.some(t => t.startsWith("http"))) {

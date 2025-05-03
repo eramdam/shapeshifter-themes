@@ -5,5 +5,6 @@ export interface Theme {
   extra?: {
     url: string;
     authors: { name: string; url: string }[];
+    opengraph: string;
   };
 }
