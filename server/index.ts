@@ -1,10 +1,9 @@
 import "dotenv/config";
 import express from "express";
-import fs from "fs";
 
+import _ from "lodash";
 import { postThemeToBluesky, postThemeToMastodon } from "./post.js";
 import { findThemeForHash, pickTheme } from "./themePicker.js";
-import _ from "lodash";
 
 const app = express();
 

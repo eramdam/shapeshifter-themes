@@ -1,13 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
-import { login } from "masto";
-import { Theme } from "./types.js";
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 import { AtpAgent, RichText } from "@atproto/api";
+import { login } from "masto";
 import mime from "mime-types";
-import { TwitterApi } from "twitter-api-v2";
+import path, { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { Theme } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -59,17 +56,8 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       `[Mastodon] Uploaded ${theme.thumbnails.slice(0, 4).length} thumbnails`
     );
 
-    function padString(str: string) {
-      return str.length > 220 ? `${str.slice(0, 219)}…` : str;
-    }
-
     function getStatusText() {
-      const baseStatus = `${theme.name} - ${theme.author}`;
-      if (baseStatus.length >= 450) {
-        return baseStatus;
-      }
-
-      return `${padString(theme.name)} - ${padString(theme.author)}`;
+      return `${theme.name} - ${theme.author}\n${theme.extra?.url || ""}`.trim();
     }
 
     console.log(`[Mastodon] Posting...`);
@@ -98,6 +86,7 @@ export async function postThemeToBluesky(theme: Theme) {
     password: process.env.BSKY_PASSWORD || ""
   });
 
+  console.log(theme);
   const thumbnailsToUse = theme.thumbnails.slice(0, 4);
 
   const imageRecords = await Promise.all(
@@ -126,7 +115,9 @@ export async function postThemeToBluesky(theme: Theme) {
     return `${padString(theme.name)} - ${padString(theme.author)}`;
   }
 
-  const rt = new RichText({ text: getStatusText() });
+  const rt = new RichText({
+    text: getStatusText() + (theme.extra && `\n${theme.extra.url}`)
+  });
   await rt.detectFacets(agent);
 
   console.log(`[bsky] Posting...`);
