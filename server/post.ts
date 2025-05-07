@@ -116,7 +116,7 @@ export async function postThemeToBluesky(theme: Theme) {
   }
 
   const rt = new RichText({
-    text: getStatusText() + (theme.extra && `\n${theme.extra.url}`)
+    text: getStatusText() + ((theme.extra && `\n${theme.extra.url}`) || "")
   });
   await rt.detectFacets(agent);
 
