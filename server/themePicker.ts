@@ -5,6 +5,13 @@ import objectHash from "object-hash";
 import path from "path";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
+import fs from "fs";
+
+const shapeShifterHashes = fs
+  .readFileSync("./data/shapeshifter-hashes.txt")
+  .toString()
+  .split("\n")
+  .map(i => i.trim());
 
 const TOTAL_HOURS = 24;
 
@@ -41,6 +48,10 @@ const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
   }
 );
 
+const kaleidoscopeHashes = formattedRemoteThemes.map(t => {
+  return objectHash(t);
+});
+
 // Grab all themes.
 const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
 // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
@@ -66,11 +77,39 @@ export async function pickTheme(hour?: number) {
   const hourIndex = shuffledHours.indexOf(currentHour);
   // Is the index smaller than the percentage of classic themes?
   const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
-  const collection = shouldUseClassicTheme
-    ? formattedRemoteThemes
-    : shapeshifterThemes;
-  const index = crypto.randomInt(0, collection.length - 1);
-  const pickedTheme: Theme = collection[index];
+  const tweetedHashesPath = shouldUseClassicTheme
+    ? "tweeted-kaleidoscope.txt"
+    : "tweeted-shapeshifter.txt";
+  const hashes = shouldUseClassicTheme
+    ? kaleidoscopeHashes
+    : shapeShifterHashes;
+
+  // Filter our tweeted hashes to only list the themes we care about right now
+  let tweetedHashes = _.uniq(
+    (await fsPromises.readFile(`./data/${tweetedHashesPath}`))
+      .toString()
+      .split("\n")
+      .map(i => i.trim())
+  );
+  // Get the list of remaining hashes
+  let remainingHashes = hashes.filter(h => !tweetedHashes.includes(h));
+
+  // If we tweeted everything, we reset the list
+  if (remainingHashes.length === 0) {
+    tweetedHashes = [];
+    remainingHashes = hashes;
+  }
+
+  const pickedIndex = crypto.randomInt(0, remainingHashes.length);
+  let pickedHash = remainingHashes[pickedIndex];
+  const pickedTheme = themes.find(t => pickedHash === objectHash(t))!;
+
+  tweetedHashes = [...tweetedHashes, pickedHash];
+
+  await fsPromises.writeFile(
+    `./data/${tweetedHashesPath}`,
+    tweetedHashes.join("\n").trim()
+  );
 
   // If we're showing a classic theme, use only the first thumbnail.
   if (shouldUseClassicTheme) {
