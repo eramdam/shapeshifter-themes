@@ -31,6 +31,7 @@ const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
       }),
       name: t.name,
       author: listFormatter.format(t.authors.map((a: any) => a.name)),
+      createdAt: new Date(t.createdAt),
       extra: {
         url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
         opengraph: new URL(
@@ -48,7 +49,10 @@ const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
   }
 );
 
-const kaleidoscopeHashes = formattedRemoteThemes.map(t => {
+const kaleidoscopeHashes = _.orderBy(
+  formattedRemoteThemes,
+  t => t.createdAt
+).map(t => {
   return objectHash(t);
 });
 
@@ -100,8 +104,7 @@ export async function pickTheme(hour?: number) {
     remainingHashes = hashes;
   }
 
-  const pickedIndex = crypto.randomInt(0, remainingHashes.length);
-  let pickedHash = remainingHashes[pickedIndex];
+  let pickedHash = _.shuffle(remainingHashes)[0];
   const pickedTheme = themes.find(t => pickedHash === objectHash(t))!;
 
   tweetedHashes = [...tweetedHashes, pickedHash];

@@ -20,6 +20,7 @@ app.get(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
         shouldPostToBsky && postThemeToBluesky(theme)
       ])
     );
+    console.log(theme);
     console.log(
       `Posted ${theme.name} - ${theme.author} - isClassic: ${theme.shouldUseClassicTheme}`
     );
