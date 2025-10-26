@@ -7,7 +7,6 @@ import { pickTheme } from "./themePicker.js";
 
 const app = express();
 
-const shouldPostToTwitter = process.env.TWITTER_ENABLED === "true";
 const shouldPostToMastodon = process.env.MASTO_ENABLED === "true";
 const shouldPostToBsky = process.env.BSKY_ENABLED === "true";
 

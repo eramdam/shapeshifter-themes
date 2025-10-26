@@ -9,20 +9,9 @@ import { Theme } from "./types.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = {
-  twitter: {
-    consumer_key: process.env.CONSUMER_KEY || "",
-    consumer_secret: process.env.CONSUMER_SECRET || "",
-    access_token: process.env.ACCESS_TOKEN || "",
-    access_token_secret: process.env.ACCESS_TOKEN_SECRET || ""
-  },
   mastodon: {
     access_token: process.env.MASTO_ACCESS_TOKEN || "",
     api_url: process.env.MASTO_INSTANCE || ""
-  },
-  cohost: {
-    email: process.env.COHOST_EMAIL || "",
-    password: process.env.COHOST_PASSWORD || "",
-    projectHandle: process.env.COHOST_PROJECT || ""
   },
   bluesky: {
     email: process.env.BSKY_ID || "",
