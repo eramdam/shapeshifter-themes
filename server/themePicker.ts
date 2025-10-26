@@ -1,11 +1,10 @@
-import crypto from "crypto";
+import fs from "fs";
 import fsPromises from "fs/promises";
 import _ from "lodash";
 import objectHash from "object-hash";
 import path from "path";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
-import fs from "fs";
 
 const shapeShifterHashes = fs
   .readFileSync("./data/shapeshifter-hashes.txt")
@@ -166,12 +165,6 @@ function percentage(partial: number, total: number) {
 
 function percentageOf(percentage: number, total: number) {
   return (percentage / 100) * total;
-}
-
-export function findThemeForHash(hash: string) {
-  return themes.find(t => {
-    return objectHash(t) === hash;
-  });
 }
 
 function specialFiltering(theme: Theme) {

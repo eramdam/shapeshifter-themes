@@ -3,7 +3,7 @@ import express from "express";
 
 import _ from "lodash";
 import { postThemeToBluesky, postThemeToMastodon } from "./post.js";
-import { findThemeForHash, pickTheme } from "./themePicker.js";
+import { pickTheme } from "./themePicker.js";
 
 const app = express();
 
@@ -29,32 +29,6 @@ app.get(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
     console.error(e);
     res.sendStatus(500);
   }
-});
-app.get(`/${process.env.BOT_ENDPOINT}-singletheme`, async (req, res) => {
-  const givenHash = String(req.query.hash ?? "");
-  const services = String(req.query.services).split(",");
-  if (!givenHash) {
-    return res.sendStatus(404);
-  }
-
-  const theme = findThemeForHash(givenHash);
-
-  if (!theme) {
-    return res.sendStatus(404);
-  }
-
-  console.log({ theme });
-
-  await Promise.all(
-    _.compact([
-      services.includes("mastodon") &&
-        shouldPostToMastodon &&
-        postThemeToMastodon(theme),
-      services.includes("bsky") && shouldPostToBsky && postThemeToBluesky(theme)
-    ])
-  );
-  console.log(`Posted ${theme.name} - ${theme.author}`);
-  res.sendStatus(200);
 });
 
 app.get(`/${process.env.BOT_ENDPOINT}-ping`, async (req, res) => {
