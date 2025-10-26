@@ -56,6 +56,15 @@ const kaleidoscopeHashes = _.orderBy(
   return objectHash(t);
 });
 
+const specialDayThemes = formattedRemoteThemes
+  .filter(specialFiltering)
+  .map(t => objectHash(t));
+console.log({
+  specialDayThemes: formattedRemoteThemes
+    .filter(specialFiltering)
+    .map(t => t.name)
+});
+
 // Grab all themes.
 const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
 // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
@@ -72,7 +81,7 @@ const memoizedShuffle = _.memoize(_dateString => {
   return _.shuffle(hours);
 });
 
-export async function pickTheme(hour?: number) {
+export async function pickTheme(hour?: number, forceClassic = false) {
   // Get current hour (0-23)
   const currentHour = hour ?? new Date().getHours();
   // Shuffle hours by memoizing using the current _day_ so distribution is constant for a given day
@@ -80,12 +89,16 @@ export async function pickTheme(hour?: number) {
   // Grab index of the current hour in our shuffled array
   const hourIndex = shuffledHours.indexOf(currentHour);
   // Is the index smaller than the percentage of classic themes?
-  const shouldUseClassicTheme = hourIndex < kaleidoscopeOf;
+  const shouldUseClassicTheme = forceClassic
+    ? true
+    : hourIndex < kaleidoscopeOf;
   const tweetedHashesPath = shouldUseClassicTheme
     ? "tweeted-kaleidoscope.txt"
     : "tweeted-shapeshifter.txt";
   const hashes = shouldUseClassicTheme
-    ? kaleidoscopeHashes
+    ? specialDayThemes.length > 0
+      ? specialDayThemes
+      : kaleidoscopeHashes
     : shapeShifterHashes;
 
   // Filter our tweeted hashes to only list the themes we care about right now
@@ -157,4 +170,47 @@ export function findThemeForHash(hash: string) {
   return themes.find(t => {
     return objectHash(t) === hash;
   });
+}
+
+function specialFiltering(theme: Theme) {
+  const date = new Date();
+  const isHalloween = date.getUTCMonth() === 9 && date.getUTCDate() === 31;
+  const halloweenKeywords = [
+    "muertos",
+    "muerte",
+    "bonehead",
+    "halloween",
+    "hallowwen",
+    "gargoyle",
+    "evil",
+    "skeleton",
+    "spooky",
+    "cockroach",
+    "Diabla",
+    "ween",
+    "Dragon"
+  ];
+  const isChristmas =
+    date.getUTCMonth() === 11 &&
+    (date.getUTCDate() === 24 || date.getUTCDate() === 25);
+  const christmasKeywords = ["christmas", "holiday"];
+
+  if (!isHalloween && !isChristmas) {
+    return false;
+  }
+
+  if (isHalloween) {
+    return nameHasKeywords(theme.name, halloweenKeywords);
+  }
+
+  if (isChristmas) {
+    return nameHasKeywords(theme.name, christmasKeywords);
+  }
+
+  // Shouldn't be reached
+  return theme.createdAt;
+}
+
+function nameHasKeywords(name: string, keywords: string[]) {
+  return keywords.some(k => name.toLowerCase().includes(k.toLowerCase()));
 }
