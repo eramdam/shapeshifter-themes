@@ -14,66 +14,12 @@ const shapeShifterHashes = fs
   .map(i => i.trim());
 
 const TOTAL_HOURS = 24;
-
-const BASE_WEBSITE_URL = "https://macthemes.garden";
-const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
-const remoteThemesJson = await remoteThemes.json();
-const decompressedRemoteThemes = remoteThemesJson;
 const listFormatter = new Intl.ListFormat("en", {
   style: "long",
   type: "conjunction"
 });
-const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
-  (t: any) => {
-    return {
-      thumbnails: (t.thumbnails as string[]).map(t => {
-        return new URL(t, BASE_WEBSITE_URL).toString();
-      }),
-      name: t.name,
-      author: listFormatter.format(t.authors.map((a: any) => a.name)),
-      createdAt: new Date(t.createdAt),
-      extra: {
-        url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
-        opengraph: new URL(
-          `/themes-opengraph/${t.urlBase}.png`,
-          BASE_WEBSITE_URL
-        ).toString(),
-        authors: t.authors.map((a: any) => {
-          return {
-            ...a,
-            url: new URL(a.url, BASE_WEBSITE_URL).toString()
-          };
-        })
-      }
-    };
-  }
-);
+const BASE_WEBSITE_URL = "https://macthemes.garden";
 
-const kaleidoscopeHashes = _.orderBy(
-  formattedRemoteThemes,
-  t => t.createdAt
-).map(t => {
-  return objectHash(t);
-});
-
-const specialDayThemes = formattedRemoteThemes
-  .filter(specialFiltering)
-  .map(t => objectHash(t));
-console.log({
-  specialDayThemes: formattedRemoteThemes
-    .filter(specialFiltering)
-    .map(t => t.name)
-});
-
-// Grab all themes.
-const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
-// Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
-const kaleidoscopeOf = Math.floor(
-  percentageOf(
-    percentage(formattedRemoteThemes.length, themes.length),
-    TOTAL_HOURS
-  )
-);
 // All of the hours
 const hours = Array.from({ length: TOTAL_HOURS }).map((_val, index) => index);
 
@@ -82,6 +28,62 @@ const memoizedShuffle = _.memoize(_dateString => {
 });
 
 export async function pickTheme(hour?: number, forceClassic = false) {
+  const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
+  const remoteThemesJson = await remoteThemes.json();
+  const decompressedRemoteThemes = remoteThemesJson;
+
+  const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
+    (t: any) => {
+      return {
+        thumbnails: (t.thumbnails as string[]).map(t => {
+          return new URL(t, BASE_WEBSITE_URL).toString();
+        }),
+        name: t.name,
+        author: listFormatter.format(t.authors.map((a: any) => a.name)),
+        createdAt: new Date(t.createdAt),
+        extra: {
+          url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
+          opengraph: new URL(
+            `/themes-opengraph/${t.urlBase}.png`,
+            BASE_WEBSITE_URL
+          ).toString(),
+          authors: t.authors.map((a: any) => {
+            return {
+              ...a,
+              url: new URL(a.url, BASE_WEBSITE_URL).toString()
+            };
+          })
+        }
+      };
+    }
+  );
+
+  const kaleidoscopeHashes = _.orderBy(
+    formattedRemoteThemes,
+    t => t.createdAt
+  ).map(t => {
+    return objectHash(t);
+  });
+
+  const specialDayThemes = formattedRemoteThemes
+    .filter(specialFiltering)
+    .map(t => objectHash(t));
+  console.log({
+    specialDayThemes: formattedRemoteThemes
+      .filter(specialFiltering)
+      .map(t => t.name)
+  });
+
+  // Grab all themes.
+  const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
+  // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
+  const kaleidoscopeOf = Math.floor(
+    percentageOf(
+      percentage(formattedRemoteThemes.length, themes.length),
+      TOTAL_HOURS
+    )
+  );
+
   // Get current hour (0-23)
   const currentHour = hour ?? new Date().getHours();
   // Shuffle hours by memoizing using the current _day_ so distribution is constant for a given day
