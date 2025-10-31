@@ -186,7 +186,7 @@ function specialFiltering(theme: Theme) {
     "Dragon"
   ];
   const isChristmas = date.getUTCMonth() === 11 && date.getUTCDate() === 25;
-  const christmasKeywords = ["christmas", "holiday"];
+  const christmasKeywords = ["christmas", "holiday", "xmas", "x'mas"];
 
   if (!isHalloween && !isChristmas) {
     return false;
