@@ -45,8 +45,12 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       `[Mastodon] Uploaded ${theme.thumbnails.slice(0, 4).length} thumbnails`
     );
 
+    function getThemeStatusText(theme: Theme) {
+      return [theme.name, theme.author].filter(Boolean).join(" - ");
+    }
+
     function getStatusText() {
-      return `${theme.name} - ${theme.author}\n${theme.extra?.url || ""}`.trim();
+      return `${getThemeStatusText(theme)}\n${theme.extra?.url || ""}`.trim();
     }
 
     console.log(`[Mastodon] Posting...`);
@@ -95,17 +99,16 @@ export async function postThemeToBluesky(theme: Theme) {
     return str.length > 220 ? `${str.slice(0, 219)}…` : str;
   }
 
-  function getStatusText() {
-    const baseStatus = `${theme.name} - ${theme.author}`;
-    if (baseStatus.length >= 450) {
-      return baseStatus;
-    }
-
-    return `${padString(theme.name)} - ${padString(theme.author)}`;
+  function getThemeStatusText(theme: Theme) {
+    return [padString(theme.name), padString(theme.author)]
+      .filter(Boolean)
+      .join(" - ");
   }
 
   const rt = new RichText({
-    text: getStatusText() + ((theme.extra && `\n${theme.extra.url}`) || "")
+    text:
+      getThemeStatusText(theme) +
+      ((theme.extra && `\n${theme.extra.url}`) || "")
   });
   await rt.detectFacets(agent);
 
