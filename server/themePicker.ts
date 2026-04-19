@@ -137,25 +137,27 @@ function percentageOf(percentage: number, total: number) {
   return (percentage / 100) * total;
 }
 
+const halloweenKeywords = [
+  "muertos",
+  "muerte",
+  "bonehead",
+  "halloween",
+  "hallowwen",
+  "gargoyle",
+  "evil",
+  "skeleton",
+  "spooky",
+  "cockroach",
+  "Diabla",
+  "ween",
+  "Dragon"
+];
+const christmasKeywords = ["christmas", "holiday", "xmas", "x'mas", "winter"];
+
 function specialFiltering(theme: Theme, date: Date) {
   const isHalloween = date.getUTCMonth() === 9 && date.getUTCDate() === 31;
-  const halloweenKeywords = [
-    "muertos",
-    "muerte",
-    "bonehead",
-    "halloween",
-    "hallowwen",
-    "gargoyle",
-    "evil",
-    "skeleton",
-    "spooky",
-    "cockroach",
-    "Diabla",
-    "ween",
-    "Dragon"
-  ];
+
   const isChristmas = date.getUTCMonth() === 11 && date.getUTCDate() === 25;
-  const christmasKeywords = ["christmas", "holiday", "xmas", "x'mas"];
 
   if (!isHalloween && !isChristmas) {
     return false;
