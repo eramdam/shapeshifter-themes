@@ -26,55 +26,57 @@ const memoizedShuffle = _.memoize(_dateString => {
   return _.shuffle(hours);
 });
 
-export async function pickTheme(hour?: number, forceClassic = false) {
+const fetchRemoteThemes = _.memoize(async (key: string) => {
+  console.log({ key });
   const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
   const remoteThemesJson = await remoteThemes.json();
-  const decompressedRemoteThemes = remoteThemesJson;
 
-  const formattedRemoteThemes: Theme[] = decompressedRemoteThemes.map(
-    (t: any) => {
-      return {
-        thumbnails: (t.thumbnails as string[]).map(t => {
-          return new URL(t, BASE_WEBSITE_URL).toString();
-        }),
-        name: t.name,
-        author: listFormatter.format(t.authors.map((a: any) => a.name)),
-        createdAt: new Date(t.createdAt),
-        extra: {
-          url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
-          opengraph: new URL(
-            `/themes-opengraph/${t.urlBase}.png`,
-            BASE_WEBSITE_URL
-          ).toString(),
-          authors: t.authors.map((a: any) => {
-            return {
-              ...a,
-              url: new URL(a.url, BASE_WEBSITE_URL).toString()
-            };
-          })
-        }
-      };
-    }
+  const formattedRemoteThemes: Theme[] = remoteThemesJson.map((t: any) => {
+    return {
+      thumbnails: (t.thumbnails as string[]).map(t => {
+        return new URL(t, BASE_WEBSITE_URL).toString();
+      }),
+      name: t.name,
+      author: listFormatter.format(t.authors.map((a: any) => a.name)),
+      createdAt: new Date(t.createdAt),
+      extra: {
+        url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
+        opengraph: new URL(
+          `/themes-opengraph/${t.urlBase}.png`,
+          BASE_WEBSITE_URL
+        ).toString(),
+        authors: t.authors.map((a: any) => {
+          return {
+            ...a,
+            url: new URL(a.url, BASE_WEBSITE_URL).toString()
+          };
+        })
+      }
+    };
+  });
+
+  return formattedRemoteThemes;
+});
+
+export async function pickTheme(
+  currentDate: Date,
+  forceClassic = false,
+  noOutput = false
+) {
+  const formattedRemoteThemes = await fetchRemoteThemes(
+    currentDate.toDateString()
   );
 
-  const kaleidoscopeHashes = _.orderBy(
-    formattedRemoteThemes,
-    t => t.createdAt
-  ).map(t => {
-    return objectHash(t);
-  });
-
-  const specialDayThemes = formattedRemoteThemes
-    .filter(specialFiltering)
-    .map(t => objectHash(t));
-  console.log({
-    specialDayThemes: formattedRemoteThemes
-      .filter(specialFiltering)
-      .map(t => t.name)
-  });
+  const specialDayThemes = formattedRemoteThemes.filter(t =>
+    specialFiltering(t, currentDate)
+  );
+  console.log("specialDayThemes", specialDayThemes.length);
 
   // Grab all themes.
-  const themes: Theme[] = [...formattedRemoteThemes, ...shapeshifterThemes];
+  const themes: Theme[] = [
+    ...(specialDayThemes.length ? specialDayThemes : formattedRemoteThemes),
+    ...shapeshifterThemes
+  ];
   // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
   const kaleidoscopeOf = Math.floor(
     percentageOf(
@@ -84,7 +86,7 @@ export async function pickTheme(hour?: number, forceClassic = false) {
   );
 
   // Get current hour (0-23)
-  const currentHour = hour ?? new Date().getHours();
+  const currentHour = currentDate.getUTCHours();
   // Shuffle hours by memoizing using the current _day_ so distribution is constant for a given day
   const shuffledHours = memoizedShuffle(new Date().toDateString());
   // Grab index of the current hour in our shuffled array
@@ -93,40 +95,8 @@ export async function pickTheme(hour?: number, forceClassic = false) {
   const shouldUseClassicTheme = forceClassic
     ? true
     : hourIndex < kaleidoscopeOf;
-  const tweetedHashesPath = shouldUseClassicTheme
-    ? "tweeted-kaleidoscope.txt"
-    : "tweeted-shapeshifter.txt";
-  const hashes = shouldUseClassicTheme
-    ? specialDayThemes.length > 0
-      ? specialDayThemes
-      : kaleidoscopeHashes
-    : shapeShifterHashes;
 
-  // Filter our tweeted hashes to only list the themes we care about right now
-  let tweetedHashes = _.uniq(
-    (await fsPromises.readFile(`./data/${tweetedHashesPath}`))
-      .toString()
-      .split("\n")
-      .map(i => i.trim())
-  );
-  // Get the list of remaining hashes
-  let remainingHashes = hashes.filter(h => !tweetedHashes.includes(h));
-
-  // If we tweeted everything, we reset the list
-  if (remainingHashes.length === 0) {
-    tweetedHashes = [];
-    remainingHashes = hashes;
-  }
-
-  let pickedHash = _.shuffle(remainingHashes)[0];
-  const pickedTheme = themes.find(t => pickedHash === objectHash(t))!;
-
-  tweetedHashes = [...tweetedHashes, pickedHash];
-
-  await fsPromises.writeFile(
-    `./data/${tweetedHashesPath}`,
-    tweetedHashes.join("\n").trim()
-  );
+  const pickedTheme = _.shuffle(themes)[0];
 
   // If we're showing a classic theme, use only the first thumbnail.
   if (shouldUseClassicTheme) {
@@ -137,7 +107,7 @@ export async function pickTheme(hour?: number, forceClassic = false) {
     }
   }
 
-  if (pickedTheme.thumbnails.some(t => t.startsWith("http"))) {
+  if (!noOutput && pickedTheme.thumbnails.some(t => t.startsWith("http"))) {
     pickedTheme.thumbnails = await Promise.all(
       pickedTheme.thumbnails.map(async t => {
         if (!t.startsWith("http")) {
@@ -167,8 +137,7 @@ function percentageOf(percentage: number, total: number) {
   return (percentage / 100) * total;
 }
 
-function specialFiltering(theme: Theme) {
-  const date = new Date();
+function specialFiltering(theme: Theme, date: Date) {
   const isHalloween = date.getUTCMonth() === 9 && date.getUTCDate() === 31;
   const halloweenKeywords = [
     "muertos",

@@ -12,7 +12,7 @@ const shouldPostToBsky = process.env.BSKY_ENABLED === "true";
 
 app.get(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
-    const theme = await pickTheme();
+    const theme = await pickTheme(new Date());
     await Promise.all(
       _.compact([
         shouldPostToMastodon && postThemeToMastodon(theme),
