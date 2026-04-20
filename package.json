@@ -42,18 +42,10 @@
     "puppeteer": "^19.4.1"
   },
   "engines": {
-    "node": "^22.10.0"
+    "node": "^24.15"
   },
   "repository": {
     "url": ""
   },
-  "keywords": [
-    "node",
-    "glitch",
-    "gomix",
-    "hyperdev",
-    "twitter",
-    "twitterbot",
-    "bot"
-  ]
+  "keywords": []
 }
