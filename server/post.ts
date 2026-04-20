@@ -1,5 +1,5 @@
 import { AtpAgent, RichText } from "@atproto/api";
-import { login } from "masto";
+import { createRestAPIClient } from "masto";
 import mime from "mime-types";
 import path, { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -21,7 +21,7 @@ const config = {
 
 export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
   try {
-    const masto = await login({
+    const masto = createRestAPIClient({
       url: config.mastodon.api_url,
       accessToken: config.mastodon.access_token
     });
@@ -34,7 +34,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
     const attachments = await Promise.all(
       theme.thumbnails.slice(0, 4).map(thumbnail => {
         return handleSingleThumbnail(thumbnail).then(buf => {
-          return masto.v2.mediaAttachments.create({
+          return masto.v2.media.create({
             file: new Blob([new Uint8Array(buf.buf)]),
             description: `${theme.name} - ${theme.author}`
           });

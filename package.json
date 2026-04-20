@@ -24,7 +24,7 @@
     "express": "^5.2.1",
     "gif-extract-frames": "^1.0.2",
     "luxon": "^3.7.2",
-    "masto": "^5.0.4",
+    "masto": "^7.10.2",
     "mime-types": "^2.1.35",
     "node-fetch": "^3.3.0",
     "object-hash": "^3.0.0",
