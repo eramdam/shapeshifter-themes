@@ -35,7 +35,7 @@ export async function postThemeToMastodon(theme: Theme): Promise<any | void> {
       theme.thumbnails.slice(0, 4).map(thumbnail => {
         return handleSingleThumbnail(thumbnail).then(buf => {
           return masto.v2.mediaAttachments.create({
-            file: new Blob([buf.buf]),
+            file: new Blob([new Uint8Array(buf.buf)]),
             description: `${theme.name} - ${theme.author}`
           });
         });
@@ -86,7 +86,7 @@ export async function postThemeToBluesky(theme: Theme) {
     thumbnailsToUse.map(async thumbnail => {
       return handleSingleThumbnail(thumbnail).then(async buf => {
         return {
-          record: await agent.uploadBlob(buf.buf, {
+          record: await agent.uploadBlob(new Uint8Array(buf.buf), {
             encoding: buf.format
           }),
           metadata: buf.metadata
