@@ -1,15 +1,9 @@
-import fs from "fs";
 import fsPromises from "fs/promises";
 import _ from "lodash";
 import path from "path";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
-
-const shapeShifterHashes = fs
-  .readFileSync("./data/shapeshifter-hashes.txt")
-  .toString()
-  .split("\n")
-  .map(i => i.trim());
+import { DateTime } from "luxon";
 
 const TOTAL_HOURS = 24;
 const listFormatter = new Intl.ListFormat("en", {
@@ -26,19 +20,20 @@ const memoizedShuffle = _.memoize(_dateString => {
 });
 
 const fetchRemoteThemes = _.memoize(async (key: string) => {
-  console.log({ key });
   const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
   const remoteThemesJson = await remoteThemes.json();
 
   const formattedRemoteThemes: Theme[] = remoteThemesJson.map((t: any) => {
+    const createdAt = new Date(t.createdAt);
     return {
       thumbnails: (t.thumbnails as string[]).map(t => {
         return new URL(t, BASE_WEBSITE_URL).toString();
       }),
       name: t.name,
       author: listFormatter.format(t.authors.map((a: any) => a.name)),
-      createdAt: new Date(t.createdAt),
+      createdAt: createdAt,
       extra: {
+        key: t.urlBase,
         url: new URL(`/themes/${t.urlBase}`, BASE_WEBSITE_URL).toString(),
         opengraph: new URL(
           `/themes-opengraph/${t.urlBase}.png`,
@@ -51,10 +46,10 @@ const fetchRemoteThemes = _.memoize(async (key: string) => {
           };
         })
       }
-    };
+    } satisfies Theme;
   });
 
-  return formattedRemoteThemes;
+  return _.sortBy(formattedRemoteThemes, t => t.createdAt);
 });
 
 export async function pickTheme(
@@ -65,21 +60,39 @@ export async function pickTheme(
   const formattedRemoteThemes = await fetchRemoteThemes(
     currentDate.toDateString()
   );
+  let alreadyPostedKeys: string[] = [];
+
+  try {
+    alreadyPostedKeys = JSON.parse(
+      await fsPromises.readFile("./data/posted-keys.json", "utf-8")
+    ) as string[];
+  } catch (e) {}
 
   const specialDayThemes = formattedRemoteThemes.filter(t =>
     specialFiltering(t, currentDate)
   );
-  console.log("specialDayThemes", specialDayThemes.length);
 
-  // Grab all themes.
-  const themes: Theme[] = [
-    ...(specialDayThemes.length ? specialDayThemes : formattedRemoteThemes),
-    ...shapeshifterThemes
+  const remainingKaleidoscope = formattedRemoteThemes.filter(t => {
+    if (t.extra?.key) {
+      return !alreadyPostedKeys.includes(t.extra.key);
+    }
+    return true;
+  });
+
+  const nonSpecialDayThemes = remainingKaleidoscope.length
+    ? remainingKaleidoscope
+    : formattedRemoteThemes;
+
+  const kaleidoscopeThemes = [
+    ...(specialDayThemes.length ? specialDayThemes : nonSpecialDayThemes)
   ];
+
+  const allThemes = [...formattedRemoteThemes, ...shapeshifterThemes];
+
   // Calculate percentage (rounded to biggest integer) of Kaleidoscope themes out of the whole set
   const kaleidoscopeOf = Math.floor(
     percentageOf(
-      percentage(formattedRemoteThemes.length, themes.length),
+      percentage(formattedRemoteThemes.length, allThemes.length),
       TOTAL_HOURS
     )
   );
@@ -87,7 +100,7 @@ export async function pickTheme(
   // Get current hour (0-23)
   const currentHour = currentDate.getUTCHours();
   // Shuffle hours by memoizing using the current _day_ so distribution is constant for a given day
-  const shuffledHours = memoizedShuffle(new Date().toDateString());
+  const shuffledHours = memoizedShuffle(currentDate.toDateString());
   // Grab index of the current hour in our shuffled array
   const hourIndex = shuffledHours.indexOf(currentHour);
   // Is the index smaller than the percentage of classic themes?
@@ -95,7 +108,21 @@ export async function pickTheme(
     ? true
     : hourIndex < kaleidoscopeOf;
 
-  const pickedTheme = _.shuffle(themes)[0];
+  // Grab all themes.
+  const themes: Theme[] = shouldUseClassicTheme
+    ? kaleidoscopeThemes
+    : shapeshifterThemes;
+  console.log("themes.length", themes.length);
+  const pickedTheme = weightedShuffle(themes);
+
+  if (pickedTheme.extra?.key) {
+    alreadyPostedKeys.push(pickedTheme.extra.key);
+    await fsPromises.writeFile(
+      "./data/posted-keys.json",
+      JSON.stringify(alreadyPostedKeys),
+      "utf-8"
+    );
+  }
 
   // If we're showing a classic theme, use only the first thumbnail.
   if (shouldUseClassicTheme) {
@@ -176,4 +203,36 @@ function specialFiltering(theme: Theme, date: Date) {
 
 function nameHasKeywords(name: string, keywords: string[]) {
   return keywords.some(k => name.toLowerCase().includes(k.toLowerCase()));
+}
+
+// Based off https://codeberg.org/aenore/truthin32bit/src/branch/master/scripts/getPostsWeighted.js#L106
+function weightedShuffle(arr: Theme[]): Theme {
+  const sorted = arr
+    .map(t => DateTime.fromJSDate(t.createdAt || new Date(0)))
+    .toSorted();
+  const newestDate: DateTime = sorted.toReversed()[0];
+  const recentThemes = arr
+    .filter(t => {
+      if (!t.createdAt) {
+        return undefined;
+      }
+
+      const diff = newestDate.diff(DateTime.fromJSDate(t.createdAt)).as("days");
+
+      return Math.trunc(diff) <= 60;
+    })
+    .filter(Boolean);
+  const shouldPreferRecent = _.random(0, 10, false) < 5;
+  // console.log("recentThemes", recentThemes.length);
+  // console.log(
+  //   "shouldPreferRecent",
+  //   shouldPreferRecent && recentThemes.length > 0,
+  //   arr.length
+  // );
+
+  if (shouldPreferRecent && recentThemes.length > 0) {
+    return _.shuffle(recentThemes)[0];
+  }
+
+  return _.shuffle(arr)[0];
 }
