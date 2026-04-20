@@ -7,8 +7,7 @@
     "start": "tsx server/index.ts",
     "build": "tsc -p .",
     "typecheck": "tsc -p . --noEmit",
-    "typecheck:watch": "npm run typecheck -- --watch",
-    "serve": "forever stop macthemes; forever --uid='macthemes' --append start dist/server/index.js"
+    "typecheck:watch": "npm run typecheck -- --watch"
   },
   "type": "module",
   "dependencies": {
@@ -24,7 +23,6 @@
     "dotenv": "^16.0.3",
     "eslint": "^8.30.0",
     "express": "^4.18.2",
-    "forever": "^4.0.3",
     "gif-extract-frames": "^1.0.2",
     "husky": "^8.0.2",
     "lodash": "^4.17.21",
