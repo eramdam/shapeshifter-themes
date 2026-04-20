@@ -1,9 +1,9 @@
 import "dotenv/config";
 import express from "express";
 
-import _ from "lodash";
 import { postThemeToBluesky, postThemeToMastodon } from "./post.js";
 import { pickTheme } from "./themePicker.js";
+import { compact } from "es-toolkit";
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.get(`/${process.env.BOT_ENDPOINT}`, async (req, res) => {
   try {
     const theme = await pickTheme(new Date());
     await Promise.all(
-      _.compact([
+      compact([
         shouldPostToMastodon && postThemeToMastodon(theme),
         shouldPostToBsky && postThemeToBluesky(theme)
       ])

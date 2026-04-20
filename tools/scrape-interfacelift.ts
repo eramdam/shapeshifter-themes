@@ -3,8 +3,9 @@ import cheerio from "cheerio";
 import fs from "node:fs";
 import fetch from "node-fetch";
 import path from "node:path";
-import { compact, isString } from "lodash-es";
+
 import * as url from "url";
+import { compact, isString } from "es-toolkit";
 
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 

@@ -1,5 +1,4 @@
 import fs from "fs/promises";
-import _ from "lodash";
 import puppeteer, { Page } from "puppeteer";
 
 const BASE_URL = `https://web.archive.org/web/20060925184448fw_`;
@@ -53,8 +52,8 @@ async function getThemesOnPage(url: string, page: Page): Promise<Theme[]> {
       })
   );
 
-  return _(await Promise.all(themeTablePromises))
-    .compact()
+  return (await Promise.all(themeTablePromises))
+    .filter(Boolean)
     .map(rawTheme => {
       return {
         author: authorName,
@@ -62,8 +61,7 @@ async function getThemesOnPage(url: string, page: Page): Promise<Theme[]> {
         download: `${BASE_URL}/${rawTheme.downloadLink}`,
         image: `${BASE_URL}/${rawTheme.image}`
       };
-    })
-    .value();
+    });
 }
 
 (async () => {

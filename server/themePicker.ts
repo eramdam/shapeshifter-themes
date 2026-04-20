@@ -1,9 +1,9 @@
+import { memoize, random, shuffle, sortBy } from "es-toolkit";
 import fsPromises from "fs/promises";
-import _ from "lodash";
+import { DateTime } from "luxon";
 import path from "path";
 import shapeshifterThemes from "../data/merged.json" with { type: "json" };
 import { Theme } from "./types.js";
-import { DateTime } from "luxon";
 
 const TOTAL_HOURS = 24;
 const listFormatter = new Intl.ListFormat("en", {
@@ -15,15 +15,15 @@ const BASE_WEBSITE_URL = "https://macthemes.garden";
 // All of the hours
 const hours = Array.from({ length: TOTAL_HOURS }).map((_val, index) => index);
 
-const memoizedShuffle = _.memoize(_dateString => {
-  return _.shuffle(hours);
+const memoizedShuffle = memoize(_dateString => {
+  return shuffle(hours);
 });
 
-const fetchRemoteThemes = _.memoize(async (key: string) => {
+const fetchRemoteThemes = memoize(async (key: string) => {
   const remoteThemes = await fetch(new URL("/bot.json", BASE_WEBSITE_URL));
   const remoteThemesJson = await remoteThemes.json();
 
-  const formattedRemoteThemes: Theme[] = remoteThemesJson.map((t: any) => {
+  const formattedRemoteThemes = remoteThemesJson.map((t: any) => {
     const createdAt = new Date(t.createdAt);
     return {
       thumbnails: (t.thumbnails as string[]).map(t => {
@@ -47,9 +47,9 @@ const fetchRemoteThemes = _.memoize(async (key: string) => {
         })
       }
     } satisfies Theme;
-  });
+  }) as Theme[];
 
-  return _.sortBy(formattedRemoteThemes, t => t.createdAt);
+  return sortBy(formattedRemoteThemes, [theme => theme.createdAt]);
 });
 
 export async function pickTheme(
@@ -222,7 +222,7 @@ function weightedShuffle(arr: Theme[]): Theme {
       return Math.trunc(diff) <= 60;
     })
     .filter(Boolean);
-  const shouldPreferRecent = _.random(0, 10, false) < 5;
+  const shouldPreferRecent = random(0, 10) < 5;
   // console.log("recentThemes", recentThemes.length);
   // console.log(
   //   "shouldPreferRecent",
@@ -231,8 +231,8 @@ function weightedShuffle(arr: Theme[]): Theme {
   // );
 
   if (shouldPreferRecent && recentThemes.length > 0) {
-    return _.shuffle(recentThemes)[0];
+    return shuffle(recentThemes)[0];
   }
 
-  return _.shuffle(arr)[0];
+  return shuffle(arr)[0];
 }
