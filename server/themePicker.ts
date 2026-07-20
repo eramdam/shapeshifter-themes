@@ -178,7 +178,14 @@ const halloweenKeywords = [
   "ween",
   "Dragon"
 ];
-const christmasKeywords = ["christmas", "holiday", "xmas", "x'mas", "winter"];
+const christmasKeywords = [
+  "christmas",
+  "holiday",
+  "xmas",
+  "x'mas",
+  "winter",
+  "yule"
+];
 
 function specialFiltering(theme: Theme, date: Date) {
   const isHalloween = date.getUTCMonth() === 9 && date.getUTCDate() === 31;
